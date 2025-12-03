@@ -15,7 +15,7 @@ const categoryIcons: { [key: string]: any } = {
 export default function AdressesPage() {
   return (
     <div className="bg-cygne-cream min-h-screen">
-      <div className="pt-40 pb-12 px-6 text-center border-b border-cygne-brown/5">
+      <div className="pt-40 pb-12 px-6 text-center">
             <h1 className="text-5xl font-serif mb-4 text-cygne-brown">Bonnes Adresses</h1>
             <p className="text-cygne-brown uppercase tracking-[0.2em] text-xs font-bold opacity-70">
                 Nos coups de cœur à Colmar

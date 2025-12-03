@@ -3,7 +3,7 @@ import { siteConfig } from '@/data/content';
 export default function ReservationPage() {
   return (
     <div className="bg-cygne-cream min-h-screen flex flex-col">
-      <div className="pt-40 pb-12 px-6 text-center border-b border-cygne-brown/5">
+      <div className="pt-40 pb-12 px-6 text-center">
             <h1 className="text-5xl font-serif mb-4 text-cygne-brown">Réserver</h1>
             <p className="text-cygne-brown uppercase tracking-[0.2em] text-xs font-bold opacity-70">
                 Meilleur tarif garanti en direct

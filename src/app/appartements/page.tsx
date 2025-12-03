@@ -5,7 +5,7 @@ export default function AppartementsPage() {
   return (
     <div className="bg-cygne-cream min-h-screen">
       {/* Header Beige */}
-      <div className="pt-40 pb-12 px-6 text-center border-b border-cygne-brown/5">
+      <div className="pt-40 pb-12 px-6 text-center">
         <h1 className="text-5xl font-serif mb-4 text-cygne-brown">Nos Appartements</h1>
         <p className="text-cygne-brown uppercase tracking-[0.2em] text-xs font-bold opacity-70">
             Confort moderne & Charme Alsacien
