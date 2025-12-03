@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* SECTION IMAGE VILLE DE COLMAR - Bien intégrée */}
-      <section className="pt-32 md:pt-40 pb-24 md:pb-32 px-6 bg-cygne-cream">
+      <section className="pt-32 md:pt-10 pb-24 md:pb-32 px-6 bg-cygne-brown">
         <div className="max-w-4xl mx-auto">
           {/* Titre optionnel au-dessus */}
           <motion.div
@@ -90,7 +90,7 @@ export default function Home() {
             <span className="text-cygne-gold text-xs uppercase tracking-widest-xl mb-4 block font-bold">
               Notre Emplacement
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif text-cygne-brown font-light">
+            <h2 className="text-3xl md:text-5xl font-serif text-white font-light">
               Au cœur de Colmar
             </h2>
           </motion.div>
@@ -121,7 +121,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-center mt-8 text-cygne-brown/70 text-sm italic"
+            className="text-center mt-8 text-white/90 text-sm italic"
           >
             À quelques pas de la Petite Venise et du centre historique
           </motion.p>
