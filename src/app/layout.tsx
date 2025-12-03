@@ -27,10 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body className={`${playfair.variable} ${lato.variable} font-sans antialiased bg-stone-50`}>
+    <html lang="fr" className="overflow-x-hidden">
+      <body className={`${playfair.variable} ${lato.variable} font-sans antialiased bg-stone-50 overflow-x-hidden`}>
         <Navbar />
-        <main className="min-h-screen">
+        <main className="min-h-screen overflow-x-hidden">
             {children}
         </main>
         <Footer />

@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* SECTION IMAGE VILLE DE COLMAR - Bien intégrée */}
-      <section className="py-15 md:py-25 px-6 bg-white">
+      <section className="py-24 md:py-32 px-6 bg-cygne-cream">
         <div className="max-w-4xl mx-auto">
           {/* Titre optionnel au-dessus */}
           <motion.div
@@ -85,7 +85,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             <span className="text-cygne-gold text-xs uppercase tracking-widest-xl mb-4 block font-bold">
               Notre Emplacement
