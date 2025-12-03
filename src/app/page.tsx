@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* SECTION IMAGE VILLE DE COLMAR - Bien intégrée */}
-      <section className="py-24 md:py-32 px-6 bg-cygne-cream">
+      <section className="pt-32 md:pt-40 pb-24 md:pb-32 px-6 bg-cygne-cream">
         <div className="max-w-4xl mx-auto">
           {/* Titre optionnel au-dessus */}
           <motion.div
