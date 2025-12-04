@@ -8,8 +8,7 @@ export const suitesEn = [
     surface: "65 m²",
     features: ["1 Double bedroom", "Comfortable sofa bed", "Air conditioning", "Equipped kitchen", "Walk-in shower"],
     image: "/images/baudelaire.jpg",
-    images: ["/images/baudelaire.jpg"]
-    // Add more images here
+    images: ["/images/baudelaire.jpg","/images/baudelaire2.jpg","/images/baudelaire3.jpg","/images/baudelaire4.jpg","/images/baudelaire5.jpg"]
   },
   {
     id: "schubert",
@@ -21,7 +20,6 @@ export const suitesEn = [
     features: ["2 Bedrooms", "Large Living Room", "Soundproofing", "Washer / Dryer", "City View"],
     image: "/images/schubert.jpg",
     images: ["/images/schubert.jpg"]
-    // Add more images here
   },
   {
     id: "asselin",
@@ -31,9 +29,8 @@ export const suitesEn = [
     capacity: "6 to 10 people",
     surface: "115 m²",
     features: ["3 Large Bedrooms", "2 Bathrooms", "XXL Dining Area", "Reading nook", "Fully equipped"],
-    image: "/images/asselin.jpg",
-    images: ["/images/asselin.jpg"]
-    // Add more images here
+    image: "/images/asselin1.jpg",
+    images: ["/images/asselin1.jpg"]
   },
 ];
 
