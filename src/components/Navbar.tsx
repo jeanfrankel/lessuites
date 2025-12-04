@@ -53,6 +53,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
+          onClick={() => setIsOpen(false)}
           className="z-50 block ml-8 group"
           style={{ width: '240px', height: 'auto' }}
         >
