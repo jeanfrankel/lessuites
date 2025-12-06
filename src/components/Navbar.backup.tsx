@@ -26,22 +26,22 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-cygne-brown/95 py-2 shadow-sm' : 'bg-cygne-brown py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#EAE5D9]/95 py-2 shadow-sm' : 'bg-transparent py-4'}`}>
       {/* Language Selector - Top Right */}
       <div className="absolute top-2 right-6 z-50 hidden md:flex gap-2">
         <button
           onClick={() => setLanguage('fr')}
           className={`text-xs font-bold uppercase tracking-wider transition-colors ${
-            language === 'fr' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
+            language === 'fr' ? 'text-cygne-gold' : 'text-cygne-brown/50 hover:text-cygne-brown'
           }`}
         >
           FR
         </button>
-        <span className="text-cygne-cream/30">|</span>
+        <span className="text-cygne-brown/30">|</span>
         <button
           onClick={() => setLanguage('en')}
           className={`text-xs font-bold uppercase tracking-wider transition-colors ${
-            language === 'en' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
+            language === 'en' ? 'text-cygne-gold' : 'text-cygne-brown/50 hover:text-cygne-brown'
           }`}
         >
           EN
@@ -64,13 +64,13 @@ export default function Navbar() {
             style={{
               maxHeight: '80px',
               width: 'auto',
-              filter: 'invert(91%) sepia(12%) saturate(410%) hue-rotate(357deg) brightness(98%) contrast(90%)'
+              filter: 'invert(22%) sepia(8%) saturate(1200%) hue-rotate(356deg) brightness(93%) contrast(88%)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.filter = 'invert(77%) sepia(13%) saturate(629%) hue-rotate(358deg) brightness(92%) contrast(87%)';
+              e.currentTarget.style.filter = 'invert(63%) sepia(19%) saturate(618%) hue-rotate(358deg) brightness(92%) contrast(87%)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.filter = 'invert(91%) sepia(12%) saturate(410%) hue-rotate(357deg) brightness(98%) contrast(90%)';
+              e.currentTarget.style.filter = 'invert(22%) sepia(8%) saturate(1200%) hue-rotate(356deg) brightness(93%) contrast(88%)';
             }}
           />
         </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
                   className={`text-xs uppercase tracking-[0.15em] font-bold transition-colors ${
                     isActive
                       ? 'text-cygne-gold'
-                      : 'text-cygne-cream hover:text-cygne-gold'
+                      : 'text-cygne-brown hover:text-cygne-gold'
                   }`}
                 >
                   {link.name}
@@ -110,7 +110,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden z-50 transition-colors ${isOpen ? 'text-cygne-brown' : 'text-cygne-cream'}`}>
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50 text-cygne-brown">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 

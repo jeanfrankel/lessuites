@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Map from '@/components/Map';
 import Carousel from '@/components/Carousel';
-import BestPriceWidget from '@/components/BestPriceWidget';
+import CompactBookingWidget from '@/components/CompactBookingWidget';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
@@ -42,46 +42,58 @@ export default function Home() {
     <div className="bg-cygne-cream">
 
       {/* HERO SECTION : Fond Beige, Texte Marron */}
-      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-cygne-cream">
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative z-10 text-center px-6 max-w-6xl mx-auto text-cygne-brown pt-20"
-        >
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-xs md:text-sm uppercase tracking-widest-xl mb-8 text-cygne-gold font-sans font-bold"
+      <section className="relative w-full bg-cygne-cream pt-32 pb-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="text-center mb-12"
           >
-            {t('home.location')}
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-xs md:text-sm uppercase tracking-widest-xl mb-8 text-cygne-gold font-sans font-bold"
+            >
+              {t('home.location')}
+            </motion.p>
 
-          <motion.h1
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-5xl md:text-8xl font-serif mb-8 leading-[0.95] font-thin text-cygne-brown"
+            >
+              {t('home.title')}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              className="text-lg md:text-xl font-light tracking-wide mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed"
+            >
+              {t('home.subtitle')}
+            </motion.p>
+          </motion.div>
+
+          {/* Widget de réservation intégré */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-6xl md:text-9xl font-serif mb-10 leading-[0.95] font-thin text-cygne-brown"
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            className="mb-12"
           >
-            {t('home.title')}
-          </motion.h1>
+            <CompactBookingWidget />
+          </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="text-lg md:text-2xl font-light tracking-wide mb-16 max-w-2xl mx-auto opacity-90 leading-relaxed"
-          >
-            {t('home.subtitle')}
-          </motion.p>
-
+          {/* Bouton Découvrir */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-            className="flex flex-col md:flex-row gap-6 justify-center items-center"
+            transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+            className="flex justify-center"
           >
             <Link
               href="/appartements"
@@ -91,21 +103,7 @@ export default function Home() {
               <span className="absolute inset-0 bg-cygne-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
             </Link>
           </motion.div>
-        </motion.div>
-
-        {/* Indicateur de scroll subtil */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-[1px] h-16 bg-cygne-gold/40"
-          />
-        </motion.div>
+        </div>
       </section>
 
       {/* SECTION IMAGE VILLE DE COLMAR - Bien intégrée */}
@@ -212,9 +210,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* Widget Meilleur Tarif Reservit */}
-      <BestPriceWidget />
 
       {/* SECTION APERCU */}
       <section className="grid md:grid-cols-2 min-h-[650px]">
