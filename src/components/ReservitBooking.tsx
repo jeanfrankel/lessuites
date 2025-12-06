@@ -1,10 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 
 export default function ReservitBooking() {
   const [isLoading, setIsLoading] = useState(true);
+  const [reservitUrl, setReservitUrl] = useState('https://secure.reservit.com/engine/booking/2/254654');
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Récupérer les dates depuis les paramètres d'URL
+    const arrival = searchParams.get('arrival');
+    const departure = searchParams.get('departure');
+
+    if (arrival && departure) {
+      // Convertir le format YYYY-MM-DD en DD/MM/YYYY pour Reservit
+      const formatDate = (dateStr: string) => {
+        const [year, month, day] = dateStr.split('-');
+        return `${day}/${month}/${year}`;
+      };
+
+      const arrivalFormatted = formatDate(arrival);
+      const departureFormatted = formatDate(departure);
+
+      // Construire l'URL avec les dates
+      const urlWithDates = `https://secure.reservit.com/engine/booking/2/254654?arrival=${arrivalFormatted}&departure=${departureFormatted}`;
+      setReservitUrl(urlWithDates);
+    }
+  }, [searchParams]);
 
   return (
     <>
@@ -29,7 +53,7 @@ export default function ReservitBooking() {
         )}
 
         <iframe
-          src="https://secure.reservit.com/engine/booking/2/254654"
+          src={reservitUrl}
           className="w-full border-0"
           style={{
             minHeight: '800px',
