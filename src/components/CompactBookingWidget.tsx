@@ -101,22 +101,25 @@ export default function CompactBookingWidget() {
 
       {/* Widget de réservation compact */}
       <div className="compact-booking-wrapper relative bg-white rounded-lg overflow-hidden shadow-xl" ref={wrapperRef}>
-        {/* Bouton plein écran */}
+        {/* Bouton plein écran - Étendu pour masquer le titre Reservit */}
         <button
           onClick={toggleFullscreen}
-          className="absolute top-2 right-2 md:top-4 md:right-4 z-20 px-3 py-2 md:px-4 md:py-2 bg-cygne-gold text-white text-xs uppercase tracking-wider font-bold hover:bg-cygne-brown transition-all duration-300 rounded-sm shadow-lg flex items-center gap-1 md:gap-2"
+          className={`absolute top-0 z-40 px-4 bg-cygne-gold text-white text-xs uppercase tracking-wider font-bold hover:bg-cygne-brown transition-all duration-300 shadow-lg flex items-center justify-center gap-2 ${
+            isFullscreen
+              ? 'left-0 right-20 md:right-56 py-[1.4rem] md:py-[1.69rem]'
+              : 'left-[0px] right-16 md:right-44 py-[0.92rem] md:py-[1.375rem]'
+          }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="md:w-4 md:h-4"
           >
             {isFullscreen ? (
               <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
@@ -124,7 +127,7 @@ export default function CompactBookingWidget() {
               <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
             )}
           </svg>
-          <span className="hidden md:inline">{isFullscreen ? 'Quitter' : 'Plein écran'}</span>
+          <span>{isFullscreen ? 'Quitter le plein écran' : 'Réserver en plein écran'}</span>
         </button>
 
         {/* Loader pendant le chargement */}
