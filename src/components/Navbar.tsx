@@ -46,6 +46,24 @@ export default function Navbar() {
         >
           EN
         </button>
+        <span className="text-cygne-cream/30">|</span>
+        <button
+          onClick={() => setLanguage('de')}
+          className={`text-xs font-bold uppercase tracking-wider transition-colors ${
+            language === 'de' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
+          }`}
+        >
+          DE
+        </button>
+        <span className="text-cygne-cream/30">|</span>
+        <button
+          onClick={() => setLanguage('zh')}
+          className={`text-xs font-bold uppercase tracking-wider transition-colors ${
+            language === 'zh' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
+          }`}
+        >
+          中文
+        </button>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -134,6 +152,24 @@ export default function Navbar() {
                 }`}
               >
                 EN
+              </button>
+              <span className="text-cygne-brown/30">|</span>
+              <button
+                onClick={() => setLanguage('de')}
+                className={`text-sm font-bold uppercase tracking-wider transition-colors ${
+                  language === 'de' ? 'text-cygne-gold' : 'text-cygne-brown/50'
+                }`}
+              >
+                DE
+              </button>
+              <span className="text-cygne-brown/30">|</span>
+              <button
+                onClick={() => setLanguage('zh')}
+                className={`text-sm font-bold uppercase tracking-wider transition-colors ${
+                  language === 'zh' ? 'text-cygne-gold' : 'text-cygne-brown/50'
+                }`}
+              >
+                中文
               </button>
             </div>
 

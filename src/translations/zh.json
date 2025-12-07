@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "apartments": "公寓",
+    "place": "地点",
+    "addresses": "科尔马",
+    "book": "预订"
+  },
+  "home": {
+    "location": "科尔马 — 阿尔萨斯",
+    "title": "Les Suites du Cygne",
+    "subtitle": "阿尔萨斯生活艺术，在当代温馨的氛围中重新演绎。",
+    "cta": "探索我们的套房",
+    "ctaReservation": "立即预订您在科尔马中心的特色套房",
+    "ctaButton": "立即预订",
+    "locationTitle": "我们的位置",
+    "locationSubtitle": "位于科尔马中心",
+    "locationCaption": "距离小威尼斯和历史中心仅几步之遥",
+    "philosophyLabel": "我们的理念",
+    "philosophyTitle": "一个家庭住宅，一个艺术家的灵魂。",
+    "philosophyText": "坐落在老城门口，我们的阿尔萨斯住宅经过全面重新设计，为您提供宁静的避风港。远离标准化的住宿，我们为您提供真正的生活空间（最多115平方米），古老的魅力与绝对的舒适相遇。",
+    "philosophyLink": "了解更多关于这栋房子的信息",
+    "suitesTitle": "我们的套房",
+    "suitesText": "从波德莱尔套房的诗意到阿瑟兰套房的宏伟。为2至10人提供的独特空间。",
+    "suitesLink": "查看公寓",
+    "mapLabel": "位置",
+    "mapTitle": "如何找到我们",
+    "mapAddress": "20-22 Rue des Boulangers, 68000 Colmar",
+    "mapSubtitle": "距离历史中心仅几分钟步行路程"
+  },
+  "apartments": {
+    "title": "我们的公寓",
+    "subtitle": "现代舒适与阿尔萨斯魅力",
+    "servicesTitle": "包含服务",
+    "servicesText": "高速无线网络，空调，提供床上用品。",
+    "capacity": "容量",
+    "surface": "面积",
+    "seeAvailability": "查看可用性"
+  },
+  "info": {
+    "title": "信息与访问",
+    "subtitle": "所有实用信息",
+    "contactTitle": "联系我们",
+    "phone": "电话",
+    "mobile": "手机",
+    "clientRelations": "客户关系",
+    "administration": "行政管理",
+    "addressTitle": "地址与访问",
+    "addressNote1": "套房位于20号，但",
+    "addressNote1Bold": "入口在22号",
+    "addressNote1End": "（就在药房右边）",
+    "addressNote2": "该区域为步行区",
+    "addressNote3": "距离科尔马火车站仅1公里",
+    "checkinTitle": "入住",
+    "checkinTime": "下午5:00起",
+    "checkinNote1": "通过密码锁和钥匙箱访问",
+    "checkinNote2": "需要电话办理入住",
+    "checkinNote2End": "在您到达之前",
+    "checkinNote3": "如果您的到达时间不在下午5:00至晚上9:00之间，请联系我们安排您的访问",
+    "checkoutTitle": "退房",
+    "checkoutTime": "中午12:00前"
+  },
+  "addresses": {
+    "title": "推荐地址",
+    "subtitle": "我们在科尔马的最爱"
+  },
+  "reservation": {
+    "title": "预订",
+    "subtitle": "直接预订保证最优价格",
+    "heading": "您的住宿从这里开始",
+    "text": "如有任何要求，请直接联系我们。我们会在24小时内回复。",
+    "emailBtn": "通过电子邮件",
+    "phoneBtn": "+33 (0)6 45 32 18 61"
+  },
+  "footer": {
+    "description": "在真实而精致的环境中，邀请您体验阿尔萨斯生活艺术。",
+    "navigation": "导航",
+    "ourApartments": "我们的公寓",
+    "placeAccess": "地点与访问",
+    "discoverColmar": "探索科尔马",
+    "book": "预订",
+    "contact": "联系方式"
+  }
+}

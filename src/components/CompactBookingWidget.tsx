@@ -106,8 +106,8 @@ export default function CompactBookingWidget() {
           onClick={toggleFullscreen}
           className={`absolute top-0 z-40 px-4 bg-cygne-gold text-white text-xs uppercase tracking-wider font-bold hover:bg-cygne-brown transition-all duration-300 shadow-lg flex items-center justify-center gap-2 ${
             isFullscreen
-              ? 'left-0 right-20 md:right-56 py-[1.4rem] md:py-[1.69rem]'
-              : 'left-[0px] right-16 md:right-44 py-[0.92rem] md:py-[1.375rem]'
+              ? 'left-0 right-20 md:right-56 py-[1.7rem] md:py-[1.69rem]'
+              : 'left-[0px] right-16 md:right-44 py-[0.7rem] md:py-[1.375rem]'
           }`}
         >
           <svg

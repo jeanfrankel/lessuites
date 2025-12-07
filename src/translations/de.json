@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "apartments": "Wohnungen",
+    "place": "Der Ort",
+    "addresses": "Colmar",
+    "book": "Buchen"
+  },
+  "home": {
+    "location": "Colmar — Elsass",
+    "title": "Les Suites du Cygne",
+    "subtitle": "Die elsässische Lebensart, neu interpretiert in zeitgenössischer und warmer Atmosphäre.",
+    "cta": "Entdecken Sie unsere Suiten",
+    "ctaReservation": "Buchen Sie jetzt Ihren Aufenthalt in unseren außergewöhnlichen Suiten im Herzen von Colmar",
+    "ctaButton": "Jetzt buchen",
+    "locationTitle": "Unsere Lage",
+    "locationSubtitle": "Im Herzen von Colmar",
+    "locationCaption": "Nur wenige Schritte von Klein-Venedig und der Altstadt entfernt",
+    "philosophyLabel": "Unsere Philosophie",
+    "philosophyTitle": "Ein Familienhaus, eine Künstlerseele.",
+    "philosophyText": "Eingebettet vor den Toren der Altstadt wurde unsere elsässische Residenz komplett neu gestaltet, um Ihnen eine Oase der Ruhe zu bieten. Weit entfernt von standardisierten Unterkünften bieten wir Ihnen echte Wohnräume (bis zu 115 m²), in denen alter Charme auf absoluten Komfort trifft.",
+    "philosophyLink": "Mehr über das Haus erfahren",
+    "suitesTitle": "Unsere Suiten",
+    "suitesText": "Von der Poesie der Baudelaire-Suite bis zur Pracht der Asselin-Suite. Einzigartige Räume für 2 bis 10 Personen.",
+    "suitesLink": "Wohnungen ansehen",
+    "mapLabel": "Standort",
+    "mapTitle": "So finden Sie uns",
+    "mapAddress": "20-22 Rue des Boulangers, 68000 Colmar",
+    "mapSubtitle": "Nur wenige Gehminuten vom historischen Zentrum entfernt"
+  },
+  "apartments": {
+    "title": "Unsere Wohnungen",
+    "subtitle": "Moderner Komfort & Elsässischer Charme",
+    "servicesTitle": "Enthaltene Leistungen",
+    "servicesText": "Highspeed-WLAN, Klimaanlage, Bettwäsche inklusive.",
+    "capacity": "Kapazität",
+    "surface": "Fläche",
+    "seeAvailability": "Verfügbarkeit prüfen"
+  },
+  "info": {
+    "title": "Info & Zugang",
+    "subtitle": "Alle praktischen Informationen",
+    "contactTitle": "Kontaktieren Sie uns",
+    "phone": "Telefon",
+    "mobile": "Mobil",
+    "clientRelations": "Gästebetreuung",
+    "administration": "Verwaltung",
+    "addressTitle": "Adresse & Zugang",
+    "addressNote1": "Die Suiten befinden sich in der Nr. 20, aber",
+    "addressNote1Bold": "der Eingang ist durch die Nr. 22",
+    "addressNote1End": "(direkt rechts von der Apotheke)",
+    "addressNote2": "Die Gegend ist eine Fußgängerzone",
+    "addressNote3": "Nur 1 km vom Bahnhof Colmar entfernt",
+    "checkinTitle": "Check-in",
+    "checkinTime": "Ab 17:00 Uhr",
+    "checkinNote1": "Zugang über Tastenfeld und Schlüsselbox",
+    "checkinNote2": "Telefonischer Check-in erforderlich",
+    "checkinNote2End": "vor Ihrer Ankunft",
+    "checkinNote3": "Wenn Ihre Ankunftszeit nicht zwischen 17:00 und 21:00 Uhr liegt, kontaktieren Sie uns bitte, um Ihren Zugang zu organisieren",
+    "checkoutTitle": "Check-out",
+    "checkoutTime": "Bis 12:00 Uhr"
+  },
+  "addresses": {
+    "title": "Gute Adressen",
+    "subtitle": "Unsere Favoriten in Colmar"
+  },
+  "reservation": {
+    "title": "Buchen",
+    "subtitle": "Bester Preis garantiert bei Direktbuchung",
+    "heading": "Ihr Aufenthalt beginnt hier",
+    "text": "Für jede Anfrage kontaktieren Sie uns bitte direkt. Wir antworten innerhalb von 24 Stunden.",
+    "emailBtn": "Per E-Mail",
+    "phoneBtn": "+33 (0)6 45 32 18 61"
+  },
+  "footer": {
+    "description": "Eine Einladung zur elsässischen Lebensart in einem authentischen und raffinierten Rahmen.",
+    "navigation": "Navigation",
+    "ourApartments": "Unsere Wohnungen",
+    "placeAccess": "Der Ort & Zugang",
+    "discoverColmar": "Colmar entdecken",
+    "book": "Buchen",
+    "contact": "Kontakt"
+  }
+}
