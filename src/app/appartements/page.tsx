@@ -3,11 +3,17 @@
 import SuiteCard from '@/components/SuiteCard';
 import { suites } from '@/data/content';
 import { suitesEn } from '@/data/content-en';
+import { suitesDe } from '@/data/content-de';
+import { suitesZh } from '@/data/content-zh';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AppartementsPage() {
   const { t, language } = useLanguage();
-  const currentSuites = language === 'en' ? suitesEn : suites;
+  const currentSuites =
+    language === 'en' ? suitesEn :
+    language === 'de' ? suitesDe :
+    language === 'zh' ? suitesZh :
+    suites;
 
   return (
     <div className="bg-cygne-cream min-h-screen">

@@ -20,6 +20,31 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "Les Suites du Cygne | Appartements à Colmar",
   description: "Location d'appartements de charme pour groupes et familles au centre de Colmar.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
+  themeColor: '#433E37',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Les Suites du Cygne',
+  },
+  formatDetection: {
+    telephone: true,
+    email: true,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://lessuitesducygne.com',
+    siteName: 'Les Suites du Cygne',
+    title: 'Les Suites du Cygne | Appartements à Colmar',
+    description: 'Location d\'appartements de charme pour groupes et familles au centre de Colmar.',
+  },
 };
 
 export default function RootLayout({

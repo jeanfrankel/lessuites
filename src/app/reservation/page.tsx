@@ -2,7 +2,19 @@
 
 import { siteConfig } from '@/data/content';
 import { useLanguage } from '@/contexts/LanguageContext';
-import ReservitBooking from '@/components/ReservitBooking';
+import dynamic from 'next/dynamic';
+
+// Import dynamique pour ReservitBooking (iframe lourde)
+const ReservitBooking = dynamic(() => import('@/components/ReservitBooking'), {
+  loading: () => (
+    <div className="h-[800px] flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cygne-gold mb-4 mx-auto"></div>
+      </div>
+    </div>
+  ),
+  ssr: false
+});
 
 export default function ReservationPage() {
   const { t } = useLanguage();
@@ -12,13 +24,13 @@ export default function ReservationPage() {
       {/* Hero Section */}
       <div className="pt-40 pb-16 px-6 text-center bg-cygne-cream">
         <span className="text-cygne-gold text-xs uppercase tracking-widest-xl mb-4 block font-bold">
-          Réservation en ligne
+          {t('reservation.onlineBooking')}
         </span>
         <h1 className="text-5xl md:text-6xl font-serif mb-6 text-cygne-brown font-light">
           {t('reservation.title')}
         </h1>
         <p className="text-cygne-brown/70 text-lg font-light max-w-2xl mx-auto">
-          Réservez votre suite en quelques clics via notre système de réservation sécurisé
+          {t('reservation.bookingDescription')}
         </p>
       </div>
 
@@ -33,7 +45,7 @@ export default function ReservationPage() {
             <div className="flex items-center justify-center gap-4">
               <div className="w-12 h-[1px] bg-cygne-gold"></div>
               <p className="text-cygne-brown text-sm uppercase tracking-wider font-bold">
-                Système de réservation sécurisé via Reservit
+                {t('reservation.secureSystem')}
               </p>
               <div className="w-12 h-[1px] bg-cygne-gold"></div>
             </div>
@@ -50,13 +62,13 @@ export default function ReservationPage() {
           <div className="flex items-center justify-center mb-8">
             <div className="flex-grow h-[1px] bg-cygne-brown/20 max-w-xs"></div>
             <span className="px-6 text-cygne-brown/50 text-sm uppercase tracking-widest">
-              Besoin d'aide ?
+              {t('reservation.needHelp')}
             </span>
             <div className="flex-grow h-[1px] bg-cygne-brown/20 max-w-xs"></div>
           </div>
 
           <p className="text-cygne-brown/70 mb-8 text-base">
-            Notre équipe est à votre disposition pour toute question
+            {t('reservation.teamAvailable')}
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">

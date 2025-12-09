@@ -3,16 +3,23 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Script from 'next/script';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ReservitBooking() {
+  const { t, language } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
   const [reservitUrl, setReservitUrl] = useState('https://secure.reservit.com/engine/booking/2/254654');
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    // Convertir la langue en code Reservit
+    const reservitLang = language === 'fr' ? 'FR' : language === 'de' ? 'DE' : language === 'zh' ? 'ZH' : 'EN';
+
     // Récupérer les dates depuis les paramètres d'URL
     const arrival = searchParams.get('arrival');
     const departure = searchParams.get('departure');
+
+    let url = `https://secure.reservit.com/engine/booking/2/254654?langcode=${reservitLang}`;
 
     if (arrival && departure) {
       // Convertir le format YYYY-MM-DD en DD/MM/YYYY pour Reservit
@@ -24,11 +31,12 @@ export default function ReservitBooking() {
       const arrivalFormatted = formatDate(arrival);
       const departureFormatted = formatDate(departure);
 
-      // Construire l'URL avec les dates
-      const urlWithDates = `https://secure.reservit.com/engine/booking/2/254654?arrival=${arrivalFormatted}&departure=${departureFormatted}`;
-      setReservitUrl(urlWithDates);
+      // Ajouter les dates à l'URL
+      url += `&arrival=${arrivalFormatted}&departure=${departureFormatted}`;
     }
-  }, [searchParams]);
+
+    setReservitUrl(url);
+  }, [searchParams, language]);
 
   return (
     <>
@@ -46,7 +54,7 @@ export default function ReservitBooking() {
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-cygne-gold mb-4"></div>
               <p className="text-cygne-brown text-sm uppercase tracking-wider">
-                Chargement du système de réservation...
+                {t('booking.loadingSystem')}
               </p>
             </div>
           </div>

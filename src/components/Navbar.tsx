@@ -22,6 +22,7 @@ export default function Navbar() {
     { name: t('nav.apartments'), href: '/appartements' },
     { name: t('nav.place'), href: '/infos' },
     { name: t('nav.addresses'), href: '/adresses' },
+    { name: t('nav.extras'), href: '/extras' },
     { name: t('nav.book'), href: '/reservation' },
   ];
 

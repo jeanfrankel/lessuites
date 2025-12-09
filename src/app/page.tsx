@@ -3,13 +3,26 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Map from '@/components/Map';
+import dynamic from 'next/dynamic';
 import Carousel from '@/components/Carousel';
-import CompactBookingWidget from '@/components/CompactBookingWidget';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+// Import dynamique pour les composants lourds (chargés uniquement quand nécessaire)
+const Map = dynamic(() => import('@/components/Map'), {
+  loading: () => <div className="h-[500px] bg-cygne-cream/50 animate-pulse rounded-lg" />,
+  ssr: false // Map n'a pas besoin de SSR
+});
+
+const CompactBookingWidget = dynamic(() => import('@/components/CompactBookingWidget'), {
+  loading: () => (
+    <div className="h-[550px] bg-white rounded-lg shadow-xl flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cygne-gold"></div>
+    </div>
+  )
+});
+
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Images pour le carrousel de Colmar
   const colmarImages = [
@@ -302,8 +315,8 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <a
-              href="https://secure.reservit.com/engine/booking/2/254654/dates?langcode=FR"
-              className="inline-block px-12 py-5 bg-white text-cygne-brown uppercase tracking-[0.2em] text-sm font-bold hover:bg-cygne-brown hover:text-white transition-all duration-500 rounded-sm shadow-lg"
+              href={`https://secure.reservit.com/engine/booking/2/254654/dates?langcode=${language === 'fr' ? 'FR' : language === 'de' ? 'DE' : language === 'zh' ? 'ZH' : 'EN'}`}
+              className="inline-block px-12 py-5 bg-white text-black uppercase tracking-[0.2em] text-sm font-bold hover:bg-cygne-brown hover:text-white transition-all duration-500 rounded-sm shadow-lg"
             >
               {t('home.ctaButton')}
             </a>

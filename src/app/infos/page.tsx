@@ -1,10 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Map from '@/components/Map';
+import dynamic from 'next/dynamic';
 import { siteConfig } from '@/data/content';
 import { Phone, Mail, MapPin, Clock, KeyRound, Info, Train } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+
+// Import dynamique pour Map
+const Map = dynamic(() => import('@/components/Map'), {
+  loading: () => <div className="h-full min-h-[600px] bg-cygne-cream/50 animate-pulse rounded-lg" />,
+  ssr: false
+});
 
 export default function InfosPage() {
   const { t } = useLanguage();

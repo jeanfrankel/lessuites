@@ -2,11 +2,16 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Script from 'next/script';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function CompactBookingWidget() {
+  const { t, language } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // Convertir la langue en code Reservit
+  const reservitLang = language === 'fr' ? 'FR' : language === 'de' ? 'DE' : language === 'zh' ? 'ZH' : 'EN';
 
   const toggleFullscreen = () => {
     if (!wrapperRef.current) return;
@@ -104,10 +109,10 @@ export default function CompactBookingWidget() {
         {/* Bouton plein écran - Étendu pour masquer le titre Reservit - Caché sur mobile */}
         <button
           onClick={toggleFullscreen}
-          className={`absolute top-0 z-40 px-4 bg-cygne-gold text-white text-xs uppercase tracking-wider font-bold hover:bg-cygne-brown transition-all duration-300 shadow-lg hidden md:flex items-center justify-center gap-2 ${
+          className={`absolute top-0 z-40 px-6 bg-cygne-white text-black text-xs uppercase tracking-wider font-bold hover:shadow-lg transition-all duration-300 shadow-md hidden md:flex items-center justify-start gap-3 ${
             isFullscreen
               ? 'left-0 right-56 py-[1.69rem]'
-              : 'left-[0px] right-44 py-[1.375rem]'
+              : 'left-0 right-44 py-[1.375rem]'
           }`}
         >
           <svg
@@ -127,7 +132,7 @@ export default function CompactBookingWidget() {
               <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
             )}
           </svg>
-          <span>{isFullscreen ? 'Quitter le plein écran' : 'Réserver en plein écran'}</span>
+          <span>{isFullscreen ? t('booking.fullscreenExit') : t('booking.fullscreenEnter')}</span>
         </button>
 
         {/* Loader pendant le chargement */}
@@ -136,7 +141,7 @@ export default function CompactBookingWidget() {
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-10 w-10 border-b-2 border-cygne-gold mb-3"></div>
               <p className="text-cygne-brown text-xs uppercase tracking-wider">
-                Chargement...
+                {t('booking.loading')}
               </p>
             </div>
           </div>
@@ -144,7 +149,7 @@ export default function CompactBookingWidget() {
 
         {/* Iframe de réservation compact */}
         <iframe
-          src="https://secure.reservit.com/engine/booking/2/254654"
+          src={`https://secure.reservit.com/engine/booking/2/254654?langcode=${reservitLang}`}
           className="w-full border-0"
           title="Système de réservation compact"
           onLoad={() => setIsLoading(false)}

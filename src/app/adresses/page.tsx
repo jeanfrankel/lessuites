@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { bonnesAdresses } from '@/data/content';
 import { bonnesAdressesEn } from '@/data/content-en';
+import { bonnesAdressesDe } from '@/data/content-de';
+import { bonnesAdressesZh } from '@/data/content-zh';
 import { ExternalLink, Utensils, Coffee, ShoppingBag, Store, Wrench } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -11,14 +13,25 @@ const categoryIcons: { [key: string]: any } = {
   "Bars": Coffee,
   "Spécialités": Store,
   "Specialties": Store,
+  "Spezialitäten": Store,
+  "特色店": Store,
   "Shopping": ShoppingBag,
+  "购物": ShoppingBag,
   "Utile et pratique": Wrench,
   "Useful & Practical": Wrench,
+  "Nützlich & Praktisch": Wrench,
+  "实用信息": Wrench,
+  "餐厅": Utensils,
+  "酒吧": Coffee,
 };
 
 export default function AdressesPage() {
   const { t, language } = useLanguage();
-  const currentAdresses = language === 'en' ? bonnesAdressesEn : bonnesAdresses;
+  const currentAdresses =
+    language === 'en' ? bonnesAdressesEn :
+    language === 'de' ? bonnesAdressesDe :
+    language === 'zh' ? bonnesAdressesZh :
+    bonnesAdresses;
 
   return (
     <div className="bg-cygne-cream min-h-screen">

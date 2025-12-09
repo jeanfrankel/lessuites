@@ -24,7 +24,7 @@ interface SuiteCardProps {
 }
 
 export default function SuiteCard({ suite }: SuiteCardProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -107,7 +107,7 @@ export default function SuiteCard({ suite }: SuiteCardProps) {
         </div>
 
         <a
-          href="https://secure.reservit.com/engine/booking/2/254654/dates?langcode=FR"
+          href={`https://secure.reservit.com/engine/booking/2/254654/dates?langcode=${language === 'fr' ? 'FR' : language === 'de' ? 'DE' : language === 'zh' ? 'ZH' : 'EN'}`}
           className="btn-outline w-full block text-center mx-auto"
         >
           {t('apartments.seeAvailability')}

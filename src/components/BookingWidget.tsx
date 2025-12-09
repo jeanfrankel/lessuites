@@ -5,7 +5,7 @@ import { Calendar } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function BookingWidget() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const [arrival, setArrival] = useState('');
   const [departure, setDeparture] = useState('');
 
@@ -14,7 +14,7 @@ export default function BookingWidget() {
 
     if (!arrival || !departure) {
       e.preventDefault();
-      alert(language === 'fr' ? 'Veuillez remplir les dates' : 'Please fill in the dates');
+      alert(t('booking.fillDates'));
       return;
     }
 
@@ -44,7 +44,7 @@ export default function BookingWidget() {
         >
           {/* Hidden inputs for Reservit */}
           <input type="hidden" name="hotelid" value="254654" />
-          <input type="hidden" name="lang" value={language === 'fr' ? 'FR' : 'EN'} />
+          <input type="hidden" name="lang" value={language === 'fr' ? 'FR' : language === 'de' ? 'DE' : language === 'zh' ? 'ZH' : 'EN'} />
           <input type="hidden" name="action" value="resa" />
           <input type="hidden" name="fday" defaultValue="" />
           <input type="hidden" name="fmonth" defaultValue="" />
@@ -57,7 +57,7 @@ export default function BookingWidget() {
           <div className="flex-1 w-full">
             <label className="block text-xs uppercase tracking-wider text-cygne-brown/70 mb-1 font-bold">
               <Calendar className="inline mr-1" size={12} />
-              {language === 'fr' ? 'Arrivée' : 'Arrival'}
+              {t('booking.arrival')}
             </label>
             <input
               type="date"
@@ -73,7 +73,7 @@ export default function BookingWidget() {
           <div className="flex-1 w-full">
             <label className="block text-xs uppercase tracking-wider text-cygne-brown/70 mb-1 font-bold">
               <Calendar className="inline mr-1" size={12} />
-              {language === 'fr' ? 'Départ' : 'Departure'}
+              {t('booking.departure')}
             </label>
             <input
               type="date"
@@ -90,7 +90,7 @@ export default function BookingWidget() {
             type="submit"
             className="w-full md:w-auto px-6 py-2 bg-cygne-gold text-white uppercase tracking-[0.15em] text-xs font-bold hover:bg-cygne-brown transition-all duration-300 rounded-sm shadow-sm whitespace-nowrap"
           >
-            {language === 'fr' ? 'Réserver' : 'Book Now'}
+            {t('booking.bookNow')}
           </button>
         </form>
       </div>

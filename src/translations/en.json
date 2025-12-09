@@ -3,6 +3,7 @@
     "apartments": "Apartments",
     "place": "The Place",
     "addresses": "Colmar",
+    "extras": "Extras",
     "book": "Book"
   },
   "home": {
@@ -63,13 +64,42 @@
     "title": "Good Addresses",
     "subtitle": "Our favorites in Colmar"
   },
+  "extras": {
+    "title": "Extras & Services",
+    "subtitle": "Enhance your stay with our tailored options",
+    "breakfastTitle": "Breakfast",
+    "breakfastDesc": "Start your day with a delicious Alsatian breakfast, prepared with local and seasonal products.",
+    "breakfastPrice": "€15 per person",
+    "breakfastItems": "Fresh pastries, artisan bread, homemade jams, local cheeses, Alsatian cold cuts, fresh fruit juices, coffee and tea",
+    "drinksTitle": "Drinks & Alsace Wines",
+    "drinksDesc": "Discover our selection of Alsace wines and artisanal beverages to enjoy in your suite.",
+    "wineSelection": "Selection of white wines (Riesling, Gewurztraminer, Pinot Gris)",
+    "cremant": "Crémant d'Alsace",
+    "softDrinks": "Soft drinks and mineral water",
+    "servicesTitle": "Additional Services",
+    "servicesDesc": "Take advantage of our services to make your stay even more enjoyable.",
+    "concierge": "Concierge service",
+    "conciergeDesc": "Restaurant reservations, show tickets, personalized advice",
+    "cleaning": "Additional cleaning",
+    "cleaningDesc": "Daily housekeeping service on request",
+    "transfer": "Station/Airport transfer",
+    "transferDesc": "Shuttle service from Colmar station or airport",
+    "bookExtras": "Book your extras",
+    "bookExtrasDesc": "To book these services, contact us directly by email or phone when making your reservation.",
+    "contactUs": "Contact us"
+  },
   "reservation": {
     "title": "Book",
     "subtitle": "Best rate guaranteed direct",
     "heading": "Your stay begins here",
     "text": "For any request, please contact us directly. We respond within 24 hours.",
     "emailBtn": "By Email",
-    "phoneBtn": "+33 (0)6 45 32 18 61"
+    "phoneBtn": "+33 (0)6 45 32 18 61",
+    "onlineBooking": "Online booking",
+    "bookingDescription": "Book your suite in just a few clicks via our secure booking system",
+    "secureSystem": "Secure booking system via Reservit",
+    "needHelp": "Need help?",
+    "teamAvailable": "Our team is at your disposal for any questions"
   },
   "footer": {
     "description": "An invitation to the Alsatian art of living, in an authentic and refined setting.",
@@ -77,7 +107,18 @@
     "ourApartments": "Our Apartments",
     "placeAccess": "The Place & Access",
     "discoverColmar": "Discover Colmar",
+    "extras": "Extras & Services",
     "book": "Book",
     "contact": "Contact"
+  },
+  "booking": {
+    "fullscreenEnter": "Book in fullscreen",
+    "fullscreenExit": "Exit fullscreen",
+    "loading": "Loading...",
+    "loadingSystem": "Loading booking system...",
+    "arrival": "Arrival",
+    "departure": "Departure",
+    "bookNow": "Book Now",
+    "fillDates": "Please fill in the dates"
   }
 }

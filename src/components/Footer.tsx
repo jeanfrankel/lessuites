@@ -52,7 +52,7 @@ export default function Footer() {
                 <li><Link href="/appartements" className="hover:text-cygne-gold transition-colors">{t('footer.ourApartments')}</Link></li>
                 <li><Link href="/infos" className="hover:text-cygne-gold transition-colors">{t('footer.placeAccess')}</Link></li>
                 <li><Link href="/adresses" className="hover:text-cygne-gold transition-colors">{t('footer.discoverColmar')}</Link></li>
-                
+                <li><Link href="/extras" className="hover:text-cygne-gold transition-colors">{t('footer.extras')}</Link></li>
             </ul>
         </div>
 

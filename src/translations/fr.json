@@ -3,6 +3,7 @@
     "apartments": "Appartements",
     "place": "Le Lieu",
     "addresses": "Colmar",
+    "extras": "Extras",
     "book": "Réserver"
   },
   "home": {
@@ -63,13 +64,42 @@
     "title": "Bonnes Adresses",
     "subtitle": "Nos coups de cœur à Colmar"
   },
+  "extras": {
+    "title": "Extras & Services",
+    "subtitle": "Améliorez votre séjour avec nos options sur mesure",
+    "breakfastTitle": "Petit-déjeuner",
+    "breakfastDesc": "Commencez votre journée avec un délicieux petit-déjeuner alsacien, préparé avec des produits locaux et de saison.",
+    "breakfastPrice": "15€ par personne",
+    "breakfastItems": "Viennoiseries fraîches, pain artisanal, confitures maison, fromages locaux, charcuterie alsacienne, jus de fruits frais, café et thé",
+    "drinksTitle": "Boissons & Vins d'Alsace",
+    "drinksDesc": "Découvrez notre sélection de vins d'Alsace et boissons artisanales à déguster dans votre suite.",
+    "wineSelection": "Sélection de vins blancs (Riesling, Gewurztraminer, Pinot Gris)",
+    "cremant": "Crémant d'Alsace",
+    "softDrinks": "Boissons fraîches et eau minérale",
+    "servicesTitle": "Services Additionnels",
+    "servicesDesc": "Profitez de nos services pour rendre votre séjour encore plus agréable.",
+    "concierge": "Service de conciergerie",
+    "conciergeDesc": "Réservations de restaurants, billets de spectacles, conseils personnalisés",
+    "cleaning": "Ménage supplémentaire",
+    "cleaningDesc": "Service de ménage quotidien sur demande",
+    "transfer": "Transfert gare/aéroport",
+    "transferDesc": "Service de navette depuis la gare de Colmar ou l'aéroport",
+    "bookExtras": "Réserver vos extras",
+    "bookExtrasDesc": "Pour réserver ces services, contactez-nous directement par email ou téléphone lors de votre réservation.",
+    "contactUs": "Nous contacter"
+  },
   "reservation": {
     "title": "Réserver",
     "subtitle": "Meilleur tarif garanti en direct",
     "heading": "Votre séjour commence ici",
     "text": "Pour toute demande, privilégiez le contact direct. Nous vous répondons sous 24h.",
     "emailBtn": "Par Email",
-    "phoneBtn": "+33 (0)6 45 32 18 61"
+    "phoneBtn": "+33 (0)6 45 32 18 61",
+    "onlineBooking": "Réservation en ligne",
+    "bookingDescription": "Réservez votre suite en quelques clics via notre système de réservation sécurisé",
+    "secureSystem": "Système de réservation sécurisé via Reservit",
+    "needHelp": "Besoin d'aide ?",
+    "teamAvailable": "Notre équipe est à votre disposition pour toute question"
   },
   "footer": {
     "description": "Une invitation à la douceur de vivre alsacienne, dans un cadre authentique et raffiné.",
@@ -77,7 +107,18 @@
     "ourApartments": "Nos Appartements",
     "placeAccess": "Le Lieu & Accès",
     "discoverColmar": "Découvrir Colmar",
+    "extras": "Extras & Services",
     "book": "Réserver",
     "contact": "Contact"
+  },
+  "booking": {
+    "fullscreenEnter": "Réserver en plein écran",
+    "fullscreenExit": "Quitter le plein écran",
+    "loading": "Chargement...",
+    "loadingSystem": "Chargement du système de réservation...",
+    "arrival": "Arrivée",
+    "departure": "Départ",
+    "bookNow": "Réserver",
+    "fillDates": "Veuillez remplir les dates"
   }
 }
