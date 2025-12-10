@@ -14,6 +14,14 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // Optimisation du bundling et code splitting
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
+  },
+
+  // Optimisation des performances de compilation
+  reactStrictMode: true,
+
   // Headers de sécurité
   async headers() {
     return [

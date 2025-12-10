@@ -15,13 +15,20 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  /* Optimisations de rendu */
+  text-rendering: optimizeLegibility;
+  /* Optimiser le rendu des animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
-/* Smooth scroll behavior */
+/* Smooth scroll behavior avec optimisation */
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
+  /* Améliorer le rendu du scroll */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Empêcher le débordement horizontal */
@@ -35,12 +42,13 @@ section {
 }
 
 /* Effet de transition douce sur les boutons */
+/* Taille minimale 44x44px pour accessibilité mobile (Google guidelines) */
 .btn-gold {
-    @apply bg-cygne-gold text-white px-8 py-3 uppercase tracking-[0.15em] text-xs font-bold transition-all duration-500 hover:bg-cygne-brown hover:tracking-[0.25em];
+    @apply bg-cygne-gold text-white px-8 py-4 uppercase tracking-[0.15em] text-xs font-bold transition-all duration-500 hover:bg-cygne-brown hover:tracking-[0.25em] min-h-[44px];
 }
 
 .btn-outline {
-    @apply border border-cygne-brown text-cygne-brown px-8 py-3 uppercase tracking-[0.15em] text-xs font-bold transition-all duration-500 hover:bg-cygne-brown hover:text-white;
+    @apply border border-cygne-brown text-cygne-brown px-8 py-4 uppercase tracking-[0.15em] text-xs font-bold transition-all duration-500 hover:bg-cygne-brown hover:text-white min-h-[44px];
 }
 
 /* Animations d'apparition */

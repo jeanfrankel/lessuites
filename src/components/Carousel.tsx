@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
@@ -12,15 +12,19 @@ interface CarouselProps {
   className?: string;
   aspectRatio?: string;
   enableLightbox?: boolean;
+  altTexts?: string[];
+  defaultAlt?: string;
 }
 
-export default function Carousel({
+const Carousel = memo(function Carousel({
   images,
   autoplay = true,
   interval = 5000,
   className = '',
   aspectRatio = 'aspect-[4/3]',
-  enableLightbox = true
+  enableLightbox = true,
+  altTexts,
+  defaultAlt = 'Image de présentation'
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -128,13 +132,29 @@ export default function Carousel({
             >
               <Image
                 src={validImages[currentIndex]}
-                alt={`Image ${currentIndex + 1}`}
+                alt={altTexts?.[currentIndex] || `${defaultAlt} ${currentIndex + 1}`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 priority={currentIndex === 0}
-                loading={currentIndex === 0 ? undefined : "lazy"}
+                loading={currentIndex === 0 ? "eager" : "lazy"}
+                quality={85}
               />
+              {/* Préchargement des images suivantes */}
+              {validImages[currentIndex + 1] && (
+                <link
+                  rel="prefetch"
+                  as="image"
+                  href={validImages[currentIndex + 1]}
+                />
+              )}
+              {validImages[currentIndex + 2] && (
+                <link
+                  rel="prefetch"
+                  as="image"
+                  href={validImages[currentIndex + 2]}
+                />
+              )}
             </motion.div>
           </AnimatePresence>
 
@@ -218,7 +238,7 @@ export default function Carousel({
               >
                 <Image
                   src={validImages[currentIndex]}
-                  alt={`Image ${currentIndex + 1}`}
+                  alt={altTexts?.[currentIndex] || `${defaultAlt} ${currentIndex + 1}`}
                   fill
                   className="object-contain"
                   sizes="100vw"
@@ -255,4 +275,6 @@ export default function Carousel({
       )}
     </>
   );
-}
+});
+
+export default Carousel;

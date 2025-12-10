@@ -3,6 +3,7 @@
 import { siteConfig } from '@/data/content';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
@@ -18,9 +19,11 @@ export default function Footer() {
               href="/"
               className="block mb-4 w-56 hover:opacity-90 transition-opacity duration-300"
             >
-              <img
+              <Image
                 src="/images/file.svg"
-                alt="Les Suites du Cygne"
+                alt="Les Suites du Cygne - Appartements de charme à Colmar"
+                width={224}
+                height={150}
                 className="w-full h-auto transition-all duration-300"
                 style={{
                   maxHeight: '150px',
@@ -32,6 +35,7 @@ export default function Footer() {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.filter = 'invert(91%) sepia(12%) saturate(410%) hue-rotate(357deg) brightness(98%) contrast(90%)';
                 }}
+                priority
               />
             </Link>
             <p className="text-sm leading-loose opacity-80 max-w-xs font-light mb-6">

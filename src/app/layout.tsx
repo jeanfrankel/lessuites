@@ -4,29 +4,41 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 
-// Configuration des polices "Pro"
-const playfair = Playfair_Display({ 
+// Configuration des polices "Pro" avec optimisation
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: '--font-serif', 
+  variable: '--font-serif',
+  display: 'swap', // Améliore le chargement initial
 });
 
-const lato = Lato({ 
-  subsets: ["latin"], 
+const lato = Lato({
+  subsets: ["latin"],
   weight: ["300", "400", "700"],
   variable: '--font-sans',
+  display: 'swap', // Améliore le chargement initial
 });
 
-export const metadata: Metadata = {
-  title: "Les Suites du Cygne | Appartements à Colmar",
-  description: "Location d'appartements de charme pour groupes et familles au centre de Colmar.",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
+// Configuration du viewport (Next.js 16+)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
   themeColor: '#433E37',
+};
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Location Appartement de Charme à Colmar | Les Suites du Cygne',
+    template: '%s | Les Suites du Cygne'
+  },
+  description: "Location d'appartements de charme 4 étoiles à Colmar centre-ville. Appartements meublés pour 2 à 10 personnes, idéaux pour familles et groupes. Réservation en ligne.",
+  keywords: ['appartement Colmar', 'location meublée Colmar', 'hébergement Colmar', 'appartement de charme Colmar', 'location vacances Colmar', 'logement Colmar centre', 'location courte durée Colmar'],
+  authors: [{ name: 'Les Suites du Cygne' }],
+  creator: 'Les Suites du Cygne',
+  publisher: 'Les Suites du Cygne',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
@@ -37,13 +49,42 @@ export const metadata: Metadata = {
     telephone: true,
     email: true,
   },
+  alternates: {
+    canonical: 'https://lessuitesducygne.com',
+  },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
+    alternateLocale: ['en_US', 'de_DE', 'zh_CN'],
     url: 'https://lessuitesducygne.com',
     siteName: 'Les Suites du Cygne',
-    title: 'Les Suites du Cygne | Appartements à Colmar',
-    description: 'Location d\'appartements de charme pour groupes et familles au centre de Colmar.',
+    title: 'Location Appartement de Charme à Colmar | Les Suites du Cygne',
+    description: "Appartements de charme 4 étoiles au cœur de Colmar. Location meublée pour 2 à 10 personnes. Réservez votre séjour en Alsace.",
+    images: [
+      {
+        url: 'https://lessuitesducygne.com/images/baudelaire.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Les Suites du Cygne - Appartements de charme à Colmar',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Location Appartement de Charme à Colmar | Les Suites du Cygne',
+    description: "Appartements de charme 4 étoiles au cœur de Colmar pour familles et groupes.",
+    images: ['https://lessuitesducygne.com/images/baudelaire.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -54,6 +95,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="overflow-x-hidden">
+      <head>
+        {/* Preconnect pour les ressources externes critiques */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://secure.reservit.com" />
+        {/* Preload des images critiques de la page d'accueil */}
+        <link rel="preload" as="image" href="/images/colmar.jpg" />
+        <link rel="preload" as="image" href="/images/baudelaire.jpg" />
+        <LocalBusinessSchema />
+      </head>
       <body className={`${playfair.variable} ${lato.variable} font-sans antialiased bg-stone-50 overflow-x-hidden`}>
         <LanguageProvider>
           <Navbar />

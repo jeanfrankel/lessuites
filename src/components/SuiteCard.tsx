@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Users, MoveDiagonal, Check, Expand } from 'lucide-react';
@@ -23,7 +23,7 @@ interface SuiteCardProps {
     }
 }
 
-export default function SuiteCard({ suite }: SuiteCardProps) {
+const SuiteCard = memo(function SuiteCard({ suite }: SuiteCardProps) {
   const { t, language } = useLanguage();
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -34,6 +34,12 @@ export default function SuiteCard({ suite }: SuiteCardProps) {
     src,
     alt: `${suite.name} - Photo ${index + 1}`
   }));
+
+  // Génération des alt texts SEO-optimisés pour le carrousel
+  const carouselAltTexts = imageArray.map((_, index) =>
+    `${suite.name} - Appartement de charme 4 étoiles à Colmar - Vue ${index + 1}`
+  );
+
   return (
     <div className="group flex flex-col bg-white border border-stone-100 hover:border-cygne-gold/30 transition-all duration-500 hover:shadow-lg rounded-sm overflow-hidden h-full">
       {/* Zone Carrousel */}
@@ -44,6 +50,8 @@ export default function SuiteCard({ suite }: SuiteCardProps) {
              autoplay={true}
              interval={6000}
              aspectRatio="h-72"
+             altTexts={carouselAltTexts}
+             defaultAlt={`${suite.name} - Appartement de charme 4 étoiles à Colmar`}
            />
          ) : (
            <div
@@ -52,7 +60,7 @@ export default function SuiteCard({ suite }: SuiteCardProps) {
            >
              <Image
                src={suite.image}
-               alt={suite.name}
+               alt={`${suite.name} - Appartement de charme 4 étoiles à Colmar`}
                fill
                className="object-cover group-hover:scale-105 transition-transform duration-700"
                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -115,4 +123,6 @@ export default function SuiteCard({ suite }: SuiteCardProps) {
       </div>
     </div>
   );
-}
+});
+
+export default SuiteCard;
