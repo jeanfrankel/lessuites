@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -20,11 +21,31 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
       if (e.key === 'ArrowRight') onNavigate(Math.min(images.length - 1, currentIndex + 1));
     };
 
+    // Scroller immédiatement en haut
+    window.scrollTo(0, 0);
+
+    // Bloquer tout scroll
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    document.documentElement.style.height = '100vh';
+
+    // Empêcher le scroll avec la molette/touch
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+    };
+
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    window.addEventListener('touchmove', preventScroll, { passive: false });
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.height = '';
+      document.documentElement.style.height = '';
+      window.removeEventListener('wheel', preventScroll);
+      window.removeEventListener('touchmove', preventScroll);
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [currentIndex, images.length, onClose, onNavigate]);
@@ -33,13 +54,13 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
   const hasPrev = currentIndex > 0;
   const hasNext = currentIndex < images.length - 1;
 
-  return (
+  const lightboxContent = (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+      className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center overflow-hidden"
       onClick={onClose}
     >
       {/* Bouton fermer */}
@@ -116,4 +137,6 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
       </div>
     </motion.div>
   );
+
+  return typeof window !== 'undefined' ? createPortal(lightboxContent, document.body) : null;
 }

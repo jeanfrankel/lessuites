@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Expand } from 'lucide-react';
+import ImageLightbox from './ImageLightbox';
 
 interface CarouselProps {
   images: string[];
@@ -34,6 +35,12 @@ const Carousel = memo(function Carousel({
 
   // Filtrer les images vides
   const validImages = images.filter(img => img && img.trim() !== '');
+
+  // Préparer les images pour ImageLightbox
+  const lightboxImages = validImages.map((src, index) => ({
+    src,
+    alt: altTexts?.[index] || `${defaultAlt} - Photo ${index + 1}`
+  }));
 
   // Reprendre le défilement automatique après 8 secondes d'inactivité
   useEffect(() => {
@@ -84,6 +91,10 @@ const Carousel = memo(function Carousel({
       setDirection(index > prev ? 1 : -1);
       return index;
     });
+  }, []);
+
+  const handleLightboxNavigate = useCallback((index: number) => {
+    setCurrentIndex(index);
   }, []);
 
   if (validImages.length === 0) return null;
@@ -207,72 +218,16 @@ const Carousel = memo(function Carousel({
     </div>
 
       {/* Lightbox plein écran */}
-      {isLightboxOpen && (
-        <div className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center">
-          {/* Bouton fermer */}
-          <button
-            onClick={() => setIsLightboxOpen(false)}
-            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all z-50"
-            aria-label="Fermer"
-          >
-            <X size={32} />
-          </button>
-
-          {/* Image en plein écran */}
-          <div className="relative w-full h-full flex items-center justify-center p-8 overflow-hidden">
-            <AnimatePresence initial={false} custom={direction}>
-              <motion.div
-                key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.3 },
-                  scale: { duration: 0.3 }
-                }}
-                className="absolute inset-0 flex items-center justify-center p-8"
-                style={{ willChange: 'transform, opacity' }}
-              >
-                <Image
-                  src={validImages[currentIndex]}
-                  alt={altTexts?.[currentIndex] || `${defaultAlt} ${currentIndex + 1}`}
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Navigation dans le lightbox */}
-          {validImages.length > 1 && (
-            <>
-              <button
-                onClick={() => goToPrevious()}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-4 rounded-full transition-all z-50"
-                aria-label="Image précédente"
-              >
-                <ChevronLeft size={32} />
-              </button>
-              <button
-                onClick={() => goToNext()}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-4 rounded-full transition-all z-50"
-                aria-label="Image suivante"
-              >
-                <ChevronRight size={32} />
-              </button>
-
-              {/* Compteur d'images */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full">
-                {currentIndex + 1} / {validImages.length}
-              </div>
-            </>
-          )}
-        </div>
-      )}
+      <AnimatePresence>
+        {isLightboxOpen && (
+          <ImageLightbox
+            images={lightboxImages}
+            currentIndex={currentIndex}
+            onClose={() => setIsLightboxOpen(false)}
+            onNavigate={handleLightboxNavigate}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 });
