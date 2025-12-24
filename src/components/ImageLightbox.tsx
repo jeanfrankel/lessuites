@@ -21,14 +21,18 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
       if (e.key === 'ArrowRight') onNavigate(Math.min(images.length - 1, currentIndex + 1));
     };
 
-    // Scroller immédiatement en haut
-    window.scrollTo(0, 0);
+    // Calculer la largeur de la scrollbar pour éviter le décalage du contenu
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const originalPaddingRight = document.body.style.paddingRight;
+    const originalOverflow = document.body.style.overflow;
 
-    // Bloquer tout scroll
+    // Bloquer tout scroll sur le body
     document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-    document.documentElement.style.height = '100vh';
+    
+    // Ajouter le padding pour compenser la disparition de la scrollbar
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
 
     // Empêcher le scroll avec la molette/touch
     const preventScroll = (e: Event) => {
@@ -40,10 +44,8 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-      document.body.style.height = '';
-      document.documentElement.style.height = '';
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
       window.removeEventListener('wheel', preventScroll);
       window.removeEventListener('touchmove', preventScroll);
       window.removeEventListener('keydown', handleKeyDown);
@@ -60,7 +62,8 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 bg-black/95 flex items-center justify-center overflow-hidden"
+      style={{ zIndex: 99999 }}
       onClick={onClose}
     >
       {/* Bouton fermer */}

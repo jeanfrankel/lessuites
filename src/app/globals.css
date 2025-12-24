@@ -17,9 +17,6 @@ body {
   max-width: 100vw;
   /* Optimisations de rendu */
   text-rendering: optimizeLegibility;
-  /* Optimiser le rendu des animations */
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 /* Smooth scroll behavior avec optimisation */

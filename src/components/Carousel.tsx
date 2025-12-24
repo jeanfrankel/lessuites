@@ -139,7 +139,6 @@ const Carousel = memo(function Carousel({
                 scale: { duration: 0.3 }
               }}
               className="absolute inset-0"
-              style={{ willChange: 'transform, opacity' }}
             >
               <Image
                 src={validImages[currentIndex]}
