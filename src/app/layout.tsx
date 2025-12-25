@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalLayout from "@/components/ConditionalLayout";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 
@@ -107,11 +106,9 @@ export default function RootLayout({
       </head>
       <body className={`${playfair.variable} ${lato.variable} font-sans antialiased bg-stone-50 overflow-x-hidden`}>
         <LanguageProvider>
-          <Navbar />
-          <main className="min-h-screen overflow-x-hidden">
-              {children}
-          </main>
-          <Footer />
+          <ConditionalLayout>
+            {children}
+          </ConditionalLayout>
         </LanguageProvider>
       </body>
     </html>
