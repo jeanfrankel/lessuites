@@ -51,7 +51,6 @@ export default defineType({
       type: 'image',
       options: {
         hotspot: true,
-        metadata: ['lqip', 'dimensions'],
       },
       validation: (Rule) => Rule.required(),
     }),
@@ -64,7 +63,6 @@ export default defineType({
           type: 'image',
           options: {
             hotspot: true,
-            metadata: ['lqip', 'dimensions'],
           },
         },
       ],
