@@ -1,43 +1,44 @@
-'use client';
+import { client } from '@/sanity/lib/client';
+import { pageAppartementsQuery, suitesQuery } from '@/sanity/lib/queries';
+import { urlFor } from '@/sanity/lib/image';
+import AppartementsClient from './AppartementsClient';
 
-import SuiteCard from '@/components/SuiteCard';
-import { suites } from '@/data/content';
-import { suitesEn } from '@/data/content-en';
-import { suitesDe } from '@/data/content-de';
-import { suitesZh } from '@/data/content-zh';
-import { useLanguage } from '@/contexts/LanguageContext';
+export const revalidate = 60;
 
-export default function AppartementsPage() {
-  const { t, language } = useLanguage();
-  const currentSuites =
-    language === 'en' ? suitesEn :
-    language === 'de' ? suitesDe :
-    language === 'zh' ? suitesZh :
-    suites;
+export default async function AppartementsPage() {
+  const [pageData, suitesData] = await Promise.all([
+    client.fetch(pageAppartementsQuery),
+    client.fetch(suitesQuery),
+  ]);
 
-  return (
-    <div className="bg-cygne-cream min-h-screen">
-      {/* Header Beige */}
-      <div className="pt-40 pb-12 px-6 text-center">
-        <h1 className="text-5xl font-serif mb-4 text-cygne-brown">{t('apartments.title')}</h1>
-        <p className="text-cygne-brown uppercase tracking-[0.2em] text-xs font-bold opacity-70">
-            {t('apartments.subtitle')}
-        </p>
-      </div>
+  // Transformer les images des suites
+  const transformedSuites = suitesData.map((suite: any) => ({
+    ...suite,
+    mainImage: suite.mainImage && suite.mainImage.asset
+      ? {
+          url: urlFor(suite.mainImage)
+            .width(800)
+            .fit('max')
+            .auto('format')
+            .quality(75)
+            .url(),
+          lqip: suite.mainImage.asset?.metadata?.lqip,
+        }
+      : null,
+    gallery: suite.gallery && suite.gallery.length > 0
+      ? suite.gallery
+          .filter((img: any) => img && img.asset && (img.asset._ref || img.asset._id))
+          .map((img: any) => ({
+            url: urlFor(img)
+              .width(1920)
+              .fit('max')
+              .auto('format')
+              .quality(75)
+              .url(),
+            lqip: img.asset?.metadata?.lqip,
+          }))
+      : [],
+  }));
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-3 gap-8">
-            {currentSuites.map((suite) => (
-                <SuiteCard key={suite.id} suite={suite} />
-            ))}
-        </div>
-        <div className="mt-20 text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl font-serif text-cygne-brown mb-4">{t('apartments.servicesTitle')}</h3>
-            <p className="text-cygne-brown/70 leading-relaxed">
-                {t('apartments.servicesText')}
-            </p>
-        </div>
-      </div>
-    </div>
-  );
+  return <AppartementsClient pageData={pageData} suites={transformedSuites} />;
 }
