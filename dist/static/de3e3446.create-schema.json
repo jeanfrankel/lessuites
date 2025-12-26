@@ -1,0 +1,2189 @@
+[
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "location",
+            "type": "object",
+            "title": "Localisation"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre principal"
+          },
+          {
+            "fields": [
+              {
+                "rows": 2,
+                "name": "fr",
+                "type": "text",
+                "title": "Français"
+              },
+              {
+                "rows": 2,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              },
+              {
+                "rows": 2,
+                "name": "de",
+                "type": "text",
+                "title": "Deutsch"
+              },
+              {
+                "rows": 2,
+                "name": "zh",
+                "type": "text",
+                "title": "中文"
+              }
+            ],
+            "name": "subtitle",
+            "type": "object",
+            "title": "Sous-titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "cta",
+            "type": "object",
+            "title": "Bouton Call-to-Action"
+          }
+        ],
+        "name": "hero",
+        "type": "object",
+        "title": "Section Hero (Haut de page)"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "subtitle",
+            "type": "object",
+            "title": "Sous-titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "text",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "text",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "text",
+                "title": "中文"
+              }
+            ],
+            "name": "caption",
+            "type": "object",
+            "title": "Légende sous les images"
+          },
+          {
+            "of": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "type": "image"
+              }
+            ],
+            "name": "gallery",
+            "type": "array",
+            "title": "Galerie d'images de Colmar"
+          }
+        ],
+        "name": "colmarSection",
+        "type": "object",
+        "title": "Section Colmar"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "label",
+            "type": "object",
+            "title": "Label (petit texte au-dessus)"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "rows": 5,
+                "name": "fr",
+                "type": "text",
+                "title": "Français"
+              },
+              {
+                "rows": 5,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              },
+              {
+                "rows": 5,
+                "name": "de",
+                "type": "text",
+                "title": "Deutsch"
+              },
+              {
+                "rows": 5,
+                "name": "zh",
+                "type": "text",
+                "title": "中文"
+              }
+            ],
+            "name": "text",
+            "type": "object",
+            "title": "Texte"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "link",
+            "type": "object",
+            "title": "Texte du lien"
+          }
+        ],
+        "name": "philosophySection",
+        "type": "object",
+        "title": "Section Philosophie"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "rows": 3,
+                "name": "fr",
+                "type": "text",
+                "title": "Français"
+              },
+              {
+                "rows": 3,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              },
+              {
+                "rows": 3,
+                "name": "de",
+                "type": "text",
+                "title": "Deutsch"
+              },
+              {
+                "rows": 3,
+                "name": "zh",
+                "type": "text",
+                "title": "中文"
+              }
+            ],
+            "name": "text",
+            "type": "object",
+            "title": "Texte"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "link",
+            "type": "object",
+            "title": "Texte du bouton"
+          },
+          {
+            "description": "Images qui défilent dans le carousel des suites",
+            "of": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "type": "image"
+              }
+            ],
+            "name": "gallery",
+            "type": "array",
+            "title": "Photos des suites"
+          }
+        ],
+        "name": "suitesSection",
+        "type": "object",
+        "title": "Section Nos Suites"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "text",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "text",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "text",
+                "title": "中文"
+              }
+            ],
+            "name": "text",
+            "type": "object",
+            "title": "Texte"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "button",
+            "type": "object",
+            "title": "Texte du bouton"
+          }
+        ],
+        "name": "ctaSection",
+        "type": "object",
+        "title": "Section Call-to-Action Réservation"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "label",
+            "type": "object"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "text",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "text",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "text",
+                "title": "中文"
+              }
+            ],
+            "name": "address",
+            "type": "object",
+            "title": "Adresse"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "subtitle",
+            "type": "object",
+            "title": "Sous-titre"
+          }
+        ],
+        "name": "mapSection",
+        "type": "object",
+        "title": "Section Localisation avec carte"
+      }
+    ],
+    "name": "pageHome",
+    "type": "document",
+    "title": "🏠 Page d'accueil"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "subtitle",
+            "type": "object",
+            "title": "Sous-titre"
+          }
+        ],
+        "name": "header",
+        "type": "object",
+        "title": "En-tête de page"
+      },
+      {
+        "fields": [
+          {
+            "rows": 4,
+            "name": "fr",
+            "type": "text",
+            "title": "Français"
+          },
+          {
+            "rows": 4,
+            "name": "en",
+            "type": "text",
+            "title": "English"
+          },
+          {
+            "rows": 4,
+            "name": "de",
+            "type": "text",
+            "title": "Deutsch"
+          },
+          {
+            "rows": 4,
+            "name": "zh",
+            "type": "text",
+            "title": "中文"
+          }
+        ],
+        "name": "intro",
+        "type": "object",
+        "title": "Texte d'introduction"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "title",
+                "type": "object",
+                "title": "Nom de la suite"
+              },
+              {
+                "description": "Ex: baudelaire, schubert, asselin",
+                "name": "slug",
+                "type": "string",
+                "title": "URL (slug)"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "name": "mainImage",
+                "type": "image",
+                "title": "Image principale"
+              },
+              {
+                "of": [
+                  {
+                    "options": {
+                      "hotspot": true
+                    },
+                    "type": "image"
+                  }
+                ],
+                "name": "gallery",
+                "type": "array",
+                "title": "Galerie d'images"
+              },
+              {
+                "fields": [
+                  {
+                    "rows": 3,
+                    "name": "fr",
+                    "type": "text",
+                    "title": "Français"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "en",
+                    "type": "text",
+                    "title": "English"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "de",
+                    "type": "text",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "zh",
+                    "type": "text",
+                    "title": "中文"
+                  }
+                ],
+                "name": "description",
+                "type": "object",
+                "title": "Description courte"
+              },
+              {
+                "name": "capacity",
+                "type": "number",
+                "title": "Capacité (personnes)"
+              },
+              {
+                "name": "surface",
+                "type": "number",
+                "title": "Surface (m²)"
+              },
+              {
+                "name": "bedrooms",
+                "type": "number",
+                "title": "Nombre de chambres"
+              },
+              {
+                "description": "Ex: \"À partir de 150€/nuit\"",
+                "name": "price",
+                "type": "string",
+                "title": "Prix indicatif"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "suites",
+        "type": "array",
+        "title": "Suites / Appartements"
+      }
+    ],
+    "name": "pageAppartements",
+    "type": "document",
+    "title": "🏨 Page Appartements"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "subtitle",
+            "type": "object",
+            "title": "Sous-titre"
+          }
+        ],
+        "name": "header",
+        "type": "object",
+        "title": "En-tête de page"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "sectionTitle",
+            "type": "object",
+            "title": "Titre de la section"
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "title": "Téléphone fixe"
+          },
+          {
+            "name": "mobile",
+            "type": "string",
+            "title": "Téléphone mobile"
+          },
+          {
+            "name": "emailClient",
+            "type": "string",
+            "title": "Email clients"
+          },
+          {
+            "name": "emailAdmin",
+            "type": "string",
+            "title": "Email administration"
+          },
+          {
+            "name": "address",
+            "type": "text",
+            "title": "Adresse complète"
+          }
+        ],
+        "name": "contact",
+        "type": "object",
+        "title": "Informations de contact"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "time",
+                "type": "string",
+                "title": "Horaire"
+              },
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "label",
+                "type": "object"
+              }
+            ],
+            "name": "checkIn",
+            "type": "object",
+            "title": "Check-in"
+          },
+          {
+            "fields": [
+              {
+                "name": "time",
+                "type": "string",
+                "title": "Horaire"
+              },
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "label",
+                "type": "object"
+              }
+            ],
+            "name": "checkOut",
+            "type": "object",
+            "title": "Check-out"
+          }
+        ],
+        "name": "schedule",
+        "type": "object",
+        "title": "Horaires"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "text",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "text",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "text",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "text",
+                    "title": "中文"
+                  }
+                ],
+                "name": "text",
+                "type": "object",
+                "title": "Texte"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "accessNotes",
+        "type": "array",
+        "title": "Notes d'accès"
+      }
+    ],
+    "name": "pageInfos",
+    "type": "document",
+    "title": "ℹ️ Page Informations"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "subtitle",
+            "type": "object",
+            "title": "Sous-titre"
+          }
+        ],
+        "name": "header",
+        "type": "object",
+        "title": "En-tête de page"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "☕ Café/Petit-déjeuner",
+                      "value": "coffee"
+                    },
+                    {
+                      "title": "🍷 Vin/Boissons",
+                      "value": "wine"
+                    },
+                    {
+                      "title": "🎁 Autre",
+                      "value": "gift"
+                    }
+                  ]
+                },
+                "name": "icon",
+                "type": "string",
+                "title": "Icône"
+              },
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "title",
+                "type": "object",
+                "title": "Titre"
+              },
+              {
+                "fields": [
+                  {
+                    "rows": 3,
+                    "name": "fr",
+                    "type": "text",
+                    "title": "Français"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "en",
+                    "type": "text",
+                    "title": "English"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "de",
+                    "type": "text",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "zh",
+                    "type": "text",
+                    "title": "中文"
+                  }
+                ],
+                "name": "description",
+                "type": "object"
+              },
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "price",
+                "type": "object",
+                "title": "Prix"
+              },
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "text",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "text",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "text",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "text",
+                    "title": "中文"
+                  }
+                ],
+                "name": "items",
+                "type": "object",
+                "title": "Liste des items inclus"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "extras",
+        "type": "array",
+        "title": "Extras proposés"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "🔔 Conciergerie",
+                      "value": "concierge"
+                    },
+                    {
+                      "title": "✨ Ménage",
+                      "value": "cleaning"
+                    },
+                    {
+                      "title": "🚗 Transfert",
+                      "value": "car"
+                    },
+                    {
+                      "title": "📦 Autre",
+                      "value": "other"
+                    }
+                  ]
+                },
+                "name": "icon",
+                "type": "string",
+                "title": "Icône"
+              },
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "title",
+                "type": "object",
+                "title": "Titre"
+              },
+              {
+                "fields": [
+                  {
+                    "rows": 3,
+                    "name": "fr",
+                    "type": "text",
+                    "title": "Français"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "en",
+                    "type": "text",
+                    "title": "English"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "de",
+                    "type": "text",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "rows": 3,
+                    "name": "zh",
+                    "type": "text",
+                    "title": "中文"
+                  }
+                ],
+                "name": "description",
+                "type": "object"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "services",
+        "type": "array",
+        "title": "Services proposés"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "text",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "text",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "text",
+                "title": "中文"
+              }
+            ],
+            "name": "text",
+            "type": "object",
+            "title": "Texte"
+          }
+        ],
+        "name": "contactCta",
+        "type": "object",
+        "title": "Section Call-to-Action Contact"
+      }
+    ],
+    "name": "pageExtras",
+    "type": "document",
+    "title": "✨ Page Extras & Services"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "title",
+            "type": "object",
+            "title": "Titre"
+          },
+          {
+            "fields": [
+              {
+                "name": "fr",
+                "type": "string",
+                "title": "Français"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              },
+              {
+                "name": "de",
+                "type": "string",
+                "title": "Deutsch"
+              },
+              {
+                "name": "zh",
+                "type": "string",
+                "title": "中文"
+              }
+            ],
+            "name": "subtitle",
+            "type": "object",
+            "title": "Sous-titre"
+          }
+        ],
+        "name": "header",
+        "type": "object",
+        "title": "En-tête de page"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "🍴 Restaurants",
+                      "value": "restaurant"
+                    },
+                    {
+                      "title": "☕ Bars/Cafés",
+                      "value": "bar"
+                    },
+                    {
+                      "title": "🛍️ Shopping",
+                      "value": "shopping"
+                    },
+                    {
+                      "title": "🏪 Spécialités",
+                      "value": "specialty"
+                    },
+                    {
+                      "title": "🔧 Utile & Pratique",
+                      "value": "practical"
+                    }
+                  ]
+                },
+                "name": "icon",
+                "type": "string",
+                "title": "Icône"
+              },
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "categoryName",
+                "type": "object",
+                "title": "Nom de la catégorie"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "name": "name",
+                        "type": "string",
+                        "title": "Nom de l'établissement"
+                      },
+                      {
+                        "fields": [
+                          {
+                            "name": "fr",
+                            "type": "string",
+                            "title": "Français"
+                          },
+                          {
+                            "name": "en",
+                            "type": "string",
+                            "title": "English"
+                          },
+                          {
+                            "name": "de",
+                            "type": "string",
+                            "title": "Deutsch"
+                          },
+                          {
+                            "name": "zh",
+                            "type": "string",
+                            "title": "中文"
+                          }
+                        ],
+                        "name": "type",
+                        "type": "object",
+                        "title": "Type (optionnel)"
+                      },
+                      {
+                        "fields": [
+                          {
+                            "rows": 3,
+                            "name": "fr",
+                            "type": "text",
+                            "title": "Français"
+                          },
+                          {
+                            "rows": 3,
+                            "name": "en",
+                            "type": "text",
+                            "title": "English"
+                          },
+                          {
+                            "rows": 3,
+                            "name": "de",
+                            "type": "text",
+                            "title": "Deutsch"
+                          },
+                          {
+                            "rows": 3,
+                            "name": "zh",
+                            "type": "text",
+                            "title": "中文"
+                          }
+                        ],
+                        "name": "description",
+                        "type": "object"
+                      },
+                      {
+                        "validation": [
+                          {
+                            "rules": [
+                              {
+                                "flag": "uri",
+                                "constraint": {
+                                  "options": {
+                                    "scheme": [
+                                      "/^http$/",
+                                      "/^https$/"
+                                    ],
+                                    "allowRelative": false,
+                                    "relativeOnly": false,
+                                    "allowCredentials": false
+                                  }
+                                }
+                              }
+                            ],
+                            "level": "error"
+                          }
+                        ],
+                        "name": "link",
+                        "type": "url",
+                        "title": "Lien (site web)"
+                      }
+                    ],
+                    "type": "object"
+                  }
+                ],
+                "name": "items",
+                "type": "array",
+                "title": "Établissements"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "categories",
+        "type": "array",
+        "title": "Catégories de bonnes adresses"
+      }
+    ],
+    "name": "pageAdresses",
+    "type": "document",
+    "title": "📍 Page Bonnes Adresses"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Titre"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "initialValue": true,
+        "name": "published",
+        "type": "boolean",
+        "title": "Publié"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "order",
+        "type": "number",
+        "title": "Ordre d'affichage"
+      },
+      {
+        "rows": 2,
+        "name": "shortDescription",
+        "type": "text",
+        "title": "Description courte"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "description",
+        "type": "array",
+        "title": "Description complète"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mainImage",
+        "type": "image",
+        "title": "Image principale"
+      },
+      {
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "type": "image"
+          }
+        ],
+        "name": "gallery",
+        "type": "array",
+        "title": "Galerie d'images"
+      },
+      {
+        "name": "capacity",
+        "type": "number",
+        "title": "Capacité (personnes)"
+      },
+      {
+        "name": "surface",
+        "type": "number",
+        "title": "Surface (m²)"
+      },
+      {
+        "name": "bedrooms",
+        "type": "number",
+        "title": "Nombre de chambres"
+      },
+      {
+        "name": "price",
+        "type": "number",
+        "title": "Prix à partir de (€/nuit)"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "amenities",
+        "type": "array",
+        "title": "Équipements"
+      },
+      {
+        "description": "ID pour l'intégration avec le système de réservation Reservit",
+        "name": "reservitId",
+        "type": "string",
+        "title": "ID Reservit"
+      }
+    ],
+    "name": "suite",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "logo",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "fields": [
+                  {
+                    "name": "fr",
+                    "type": "string",
+                    "title": "Français"
+                  },
+                  {
+                    "name": "en",
+                    "type": "string",
+                    "title": "English"
+                  },
+                  {
+                    "name": "de",
+                    "type": "string",
+                    "title": "Deutsch"
+                  },
+                  {
+                    "name": "zh",
+                    "type": "string",
+                    "title": "中文"
+                  }
+                ],
+                "name": "label",
+                "type": "object"
+              },
+              {
+                "description": "Ex: /appartements, /infos, etc.",
+                "name": "href",
+                "type": "string",
+                "title": "Lien"
+              },
+              {
+                "name": "order",
+                "type": "number",
+                "title": "Ordre"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "menuItems",
+        "type": "array",
+        "title": "Éléments du menu"
+      }
+    ],
+    "name": "navbar",
+    "type": "document",
+    "title": "Menu de navigation"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Titre du site"
+      },
+      {
+        "rows": 3,
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "fields": [
+          {
+            "name": "street",
+            "type": "string",
+            "title": "Rue"
+          },
+          {
+            "name": "city",
+            "type": "string",
+            "title": "Ville"
+          },
+          {
+            "name": "postalCode",
+            "type": "string",
+            "title": "Code postal"
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "title": "Pays"
+          }
+        ],
+        "name": "address",
+        "type": "object",
+        "title": "Adresse"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "title": "Téléphone"
+      },
+      {
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": false,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "facebook",
+            "type": "url"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": false,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "instagram",
+            "type": "url"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": false,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "twitter",
+            "type": "url"
+          }
+        ],
+        "name": "socialMedia",
+        "type": "object",
+        "title": "Réseaux sociaux"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document",
+    "title": "Paramètres du site"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Titre"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image",
+        "title": "Image de test"
+      }
+    ],
+    "name": "testImage",
+    "type": "document",
+    "title": "🧪 Test Upload Image"
+  }
+]

@@ -124,7 +124,38 @@ export const pageHomeQuery = `*[_id == "pageHome"][0] {
 // Page Appartements
 export const pageAppartementsQuery = `*[_id == "pageAppartements"][0] {
   header,
-  intro
+  intro,
+  suites[] {
+    title,
+    slug,
+    description,
+    capacity,
+    surface,
+    bedrooms,
+    price,
+    mainImage {
+      ...,
+      asset-> {
+        _id,
+        url,
+        metadata {
+          lqip,
+          dimensions
+        }
+      }
+    },
+    gallery[] {
+      ...,
+      asset-> {
+        _id,
+        url,
+        metadata {
+          lqip,
+          dimensions
+        }
+      }
+    }
+  }
 }`
 
 // Page Informations

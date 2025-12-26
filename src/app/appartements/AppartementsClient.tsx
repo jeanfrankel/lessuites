@@ -13,6 +13,29 @@ export default function AppartementsClient({ pageData, suites }: { pageData: any
 
   const intro = pageData?.intro?.[language] || pageData?.intro?.fr || '';
 
+  // Transformer les suites pour le format attendu par SuiteCard
+  const transformedSuites = suites.map((suite) => ({
+    id: suite.slug,
+    name: suite.title?.[language] || suite.title?.fr || '',
+    subtitle: '', // Pas de sous-titre dans le nouveau format
+    description: suite.description?.[language] || suite.description?.fr || '',
+    capacity: suite.capacity ? `${suite.capacity} ${language === 'fr' ? 'personnes' : language === 'en' ? 'people' : language === 'de' ? 'Personen' : '人'}` : '',
+    surface: suite.surface ? `${suite.surface} m²` : '',
+    features: suite.bedrooms
+      ? [`${suite.bedrooms} ${
+          language === 'fr'
+            ? (suite.bedrooms > 1 ? 'Chambres' : 'Chambre')
+            : language === 'en'
+            ? (suite.bedrooms > 1 ? 'Bedrooms' : 'Bedroom')
+            : language === 'de'
+            ? (suite.bedrooms > 1 ? 'Schlafzimmer' : 'Schlafzimmer')
+            : '卧室'
+        }`]
+      : [],
+    image: suite.mainImageUrl,
+    images: suite.galleryUrls,
+  }));
+
   return (
     <div className="bg-cygne-cream min-h-screen">
       {/* Header Beige */}
@@ -25,8 +48,8 @@ export default function AppartementsClient({ pageData, suites }: { pageData: any
 
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-3 gap-8">
-          {suites.map((suite) => (
-            <SuiteCard key={suite._id} suite={suite} />
+          {transformedSuites.map((suite, index) => (
+            <SuiteCard key={suite.id || index} suite={suite} />
           ))}
         </div>
         {intro && (
