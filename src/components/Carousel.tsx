@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, Expand } from 'lucide-react';
 import ImageLightbox from './ImageLightbox';
 
 interface CarouselProps {
-  images: string[];
+  images: string[] | { url: string; lqip?: string }[];
   autoplay?: boolean;
   interval?: number;
   className?: string;
@@ -33,12 +33,17 @@ const Carousel = memo(function Carousel({
   const [direction, setDirection] = useState(0);
   const [userInteracted, setUserInteracted] = useState(false);
 
+  // Normaliser les images (string[] ou objet[])
+  const normalizedImages = images.map(img =>
+    typeof img === 'string' ? { url: img, lqip: undefined } : img
+  );
+
   // Filtrer les images vides
-  const validImages = images.filter(img => img && img.trim() !== '');
+  const validImages = normalizedImages.filter(img => img.url && img.url.trim() !== '');
 
   // Préparer les images pour ImageLightbox
-  const lightboxImages = validImages.map((src, index) => ({
-    src,
+  const lightboxImages = validImages.map((img, index) => ({
+    src: img.url,
     alt: altTexts?.[index] || `${defaultAlt} - Photo ${index + 1}`
   }));
 
@@ -141,7 +146,7 @@ const Carousel = memo(function Carousel({
               className="absolute inset-0"
             >
               <Image
-                src={validImages[currentIndex]}
+                src={validImages[currentIndex].url}
                 alt={altTexts?.[currentIndex] || `${defaultAlt} ${currentIndex + 1}`}
                 fill
                 className="object-cover"
@@ -149,20 +154,22 @@ const Carousel = memo(function Carousel({
                 priority={currentIndex === 0}
                 loading={currentIndex === 0 ? "eager" : "lazy"}
                 quality={85}
+                placeholder={validImages[currentIndex].lqip ? "blur" : "empty"}
+                blurDataURL={validImages[currentIndex].lqip}
               />
               {/* Préchargement des images suivantes */}
               {validImages[currentIndex + 1] && (
                 <link
                   rel="prefetch"
                   as="image"
-                  href={validImages[currentIndex + 1]}
+                  href={validImages[currentIndex + 1].url}
                 />
               )}
               {validImages[currentIndex + 2] && (
                 <link
                   rel="prefetch"
                   as="image"
-                  href={validImages[currentIndex + 2]}
+                  href={validImages[currentIndex + 2].url}
                 />
               )}
             </motion.div>

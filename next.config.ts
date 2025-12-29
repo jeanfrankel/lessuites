@@ -15,8 +15,6 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.sanity.io',
       },
     ],
-    // Autoriser les adresses privées en développement
-    unoptimized: process.env.NODE_ENV === 'development',
   },
   // Optimisation pour la production
   poweredByHeader: false,

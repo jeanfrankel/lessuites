@@ -32,11 +32,11 @@ export default function HomeClient({ pageData }: { pageData: any }) {
     return data?.[field]?.[language] || data?.[field]?.fr || '';
   };
 
-  // Préparer les images de Colmar
+  // Préparer les images de Colmar (avec LQIP pour blur placeholder)
   const colmarImages = pageData?.colmarSection?.gallery || [];
 
-  // Images des suites depuis la galerie de la section Suites
-  const suitesImages = (pageData?.suitesSection?.gallery || []).map((img: any) => img.url);
+  // Images des suites depuis la galerie de la section Suites (avec LQIP)
+  const suitesImages = pageData?.suitesSection?.gallery || [];
 
   // Textes alternatifs pour les images des suites
   const suitesAltTexts = (pageData?.suitesSection?.gallery || []).map(
@@ -110,7 +110,7 @@ export default function HomeClient({ pageData }: { pageData: any }) {
           >
             {colmarImages.length > 0 ? (
               <Carousel
-                images={colmarImages.map((img: any) => img.url)}
+                images={colmarImages}
                 autoplay={true}
                 interval={4000}
                 defaultAlt="Vue de Colmar - Ville pittoresque d'Alsace"
