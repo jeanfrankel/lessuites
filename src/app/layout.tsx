@@ -5,18 +5,22 @@ import ConditionalLayout from "@/components/ConditionalLayout";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 
-// Configuration des polices "Pro" avec optimisation
+// Configuration des polices avec optimisation maximale
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: '--font-serif',
-  display: 'swap', // Améliore le chargement initial
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const lato = Lato({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
   variable: '--font-sans',
-  display: 'swap', // Améliore le chargement initial
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 });
 
 // Configuration du viewport (Next.js 16+)
@@ -96,12 +100,8 @@ export default function RootLayout({
     <html lang="fr" className="overflow-x-hidden">
       <head>
         {/* Preconnect pour les ressources externes critiques */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.sanity.io" />
         <link rel="dns-prefetch" href="https://secure.reservit.com" />
-        {/* Preload des images critiques de la page d'accueil */}
-        <link rel="preload" as="image" href="/images/colmar.jpg" />
-        <link rel="preload" as="image" href="/images/baudelaire.jpg" />
         <LocalBusinessSchema />
       </head>
       <body className={`${playfair.variable} ${lato.variable} font-sans antialiased bg-stone-50 overflow-x-hidden`}>

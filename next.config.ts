@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.sanity.io',
       },
     ],
+    // Désactiver l'optimisation en dev seulement (à cause de l'erreur IPv6)
+    unoptimized: process.env.NODE_ENV === 'development',
   },
   // Optimisation pour la production
   poweredByHeader: false,

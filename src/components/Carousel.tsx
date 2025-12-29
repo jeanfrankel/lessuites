@@ -107,18 +107,15 @@ const Carousel = memo(function Carousel({
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
-      opacity: 0,
-      scale: 0.98
+      opacity: 0
     }),
     center: {
       x: 0,
-      opacity: 1,
-      scale: 1
+      opacity: 1
     },
     exit: (direction: number) => ({
       x: direction > 0 ? '-100%' : '100%',
-      opacity: 0,
-      scale: 0.98
+      opacity: 0
     })
   };
 
@@ -139,9 +136,8 @@ const Carousel = memo(function Carousel({
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.3 },
-                scale: { duration: 0.3 }
+                x: { type: "tween", duration: 0.3, ease: "easeInOut" },
+                opacity: { duration: 0.2 }
               }}
               className="absolute inset-0"
             >
