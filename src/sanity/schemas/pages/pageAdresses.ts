@@ -4,11 +4,13 @@ export default defineType({
   name: 'pageAdresses',
   title: '📍 Page Bonnes Adresses',
   type: 'document',
+  description: 'Gérez les bonnes adresses à Colmar (restaurants, bars, shopping, etc.)',
   fields: [
     // EN-TÊTE
     defineField({
       name: 'header',
-      title: 'En-tête de page',
+      title: '📝 En-tête de page',
+      description: 'Le titre et sous-titre affichés en haut de la page',
       type: 'object',
       fields: [
         {
@@ -39,7 +41,8 @@ export default defineType({
     // CATÉGORIES D'ADRESSES
     defineField({
       name: 'categories',
-      title: 'Catégories de bonnes adresses',
+      title: '📂 Catégories de bonnes adresses',
+      description: 'Organisez vos adresses par catégories (Restaurants, Bars, Shopping, etc.)',
       type: 'array',
       of: [
         {
@@ -47,7 +50,8 @@ export default defineType({
           fields: [
             {
               name: 'icon',
-              title: 'Icône',
+              title: '🎨 Icône de la catégorie',
+              description: 'Choisissez l\'icône qui représente cette catégorie',
               type: 'string',
               options: {
                 list: [
@@ -57,11 +61,14 @@ export default defineType({
                   { title: '🏪 Spécialités', value: 'specialty' },
                   { title: '🔧 Utile & Pratique', value: 'practical' },
                 ],
+                layout: 'dropdown',
               },
+              validation: Rule => Rule.required(),
             },
             {
               name: 'categoryName',
-              title: 'Nom de la catégorie',
+              title: '🏷️ Nom de la catégorie (multilingue)',
+              description: 'Le nom affiché pour cette catégorie dans chaque langue',
               type: 'object',
               fields: [
                 { name: 'fr', type: 'string', title: 'Français' },
@@ -72,7 +79,8 @@ export default defineType({
             },
             {
               name: 'items',
-              title: 'Établissements',
+              title: '🏪 Liste des établissements',
+              description: 'Ajoutez ici tous les établissements de cette catégorie',
               type: 'array',
               of: [
                 {
@@ -80,12 +88,15 @@ export default defineType({
                   fields: [
                     {
                       name: 'name',
-                      title: 'Nom de l\'établissement',
+                      title: '🏢 Nom de l\'établissement',
+                      description: 'Ex: La Maison des Têtes, Restaurant Bartholdi...',
                       type: 'string',
+                      validation: Rule => Rule.required(),
                     },
                     {
                       name: 'type',
-                      title: 'Type (optionnel)',
+                      title: '🔖 Type (optionnel)',
+                      description: 'Ex: Japonais, Bar à vin, Boutique textile...',
                       type: 'object',
                       fields: [
                         { name: 'fr', type: 'string', title: 'Français' },
@@ -96,8 +107,10 @@ export default defineType({
                     },
                     {
                       name: 'description',
-                      title: 'Description',
+                      title: '📝 Description',
+                      description: 'Décrivez l\'établissement en quelques phrases',
                       type: 'object',
+                      validation: Rule => Rule.required(),
                       fields: [
                         { name: 'fr', type: 'text', title: 'Français', rows: 3 },
                         { name: 'en', type: 'text', title: 'English', rows: 3 },
@@ -107,8 +120,12 @@ export default defineType({
                     },
                     {
                       name: 'link',
-                      title: 'Lien (site web)',
+                      title: '🔗 Lien (site web)',
+                      description: 'Lien vers le site web, Facebook, Instagram... (optionnel)',
                       type: 'url',
+                      validation: Rule => Rule.uri({
+                        scheme: ['http', 'https']
+                      }),
                     },
                   ],
                   preview: {

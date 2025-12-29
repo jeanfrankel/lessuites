@@ -59,7 +59,7 @@ const SuiteCard = memo(function SuiteCard({ suite }: SuiteCardProps) {
              onClick={() => setIsLightboxOpen(true)}
            >
              <Image
-               src={suite.image}
+               src={imageArray[0] || suite.image}
                alt={`${suite.name} - Appartement de charme 4 étoiles à Colmar`}
                fill
                className="object-cover group-hover:scale-105 transition-transform duration-700"

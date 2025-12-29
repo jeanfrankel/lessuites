@@ -4,11 +4,13 @@ export default defineType({
   name: 'pageExtras',
   title: '✨ Page Extras & Services',
   type: 'document',
+  description: 'Gérez les services additionnels proposés (petit-déjeuner, boissons, conciergerie...)',
   fields: [
     // EN-TÊTE
     defineField({
       name: 'header',
-      title: 'En-tête de page',
+      title: '📝 En-tête de page',
+      description: 'Le titre et sous-titre affichés en haut de la page',
       type: 'object',
       fields: [
         {
@@ -39,7 +41,8 @@ export default defineType({
     // EXTRAS (Petit-déjeuner, Boissons)
     defineField({
       name: 'extras',
-      title: 'Extras proposés',
+      title: '☕ Extras proposés',
+      description: 'Services payants comme le petit-déjeuner, les boissons, etc.',
       type: 'array',
       of: [
         {
@@ -47,7 +50,8 @@ export default defineType({
           fields: [
             {
               name: 'icon',
-              title: 'Icône',
+              title: '🎨 Icône',
+              description: 'Choisissez l\'icône pour cet extra',
               type: 'string',
               options: {
                 list: [
@@ -55,12 +59,16 @@ export default defineType({
                   { title: '🍷 Vin/Boissons', value: 'wine' },
                   { title: '🎁 Autre', value: 'gift' },
                 ],
+                layout: 'dropdown',
               },
+              validation: Rule => Rule.required(),
             },
             {
               name: 'title',
-              title: 'Titre',
+              title: '🏷️ Titre (multilingue)',
+              description: 'Nom de cet extra dans chaque langue',
               type: 'object',
+              validation: Rule => Rule.required(),
               fields: [
                 { name: 'fr', type: 'string', title: 'Français' },
                 { name: 'en', type: 'string', title: 'English' },
@@ -70,8 +78,10 @@ export default defineType({
             },
             {
               name: 'description',
-              title: 'Description',
+              title: '📝 Description',
+              description: 'Décrivez cet extra en détail',
               type: 'object',
+              validation: Rule => Rule.required(),
               fields: [
                 { name: 'fr', type: 'text', title: 'Français', rows: 3 },
                 { name: 'en', type: 'text', title: 'English', rows: 3 },
@@ -81,7 +91,8 @@ export default defineType({
             },
             {
               name: 'price',
-              title: 'Prix',
+              title: '💰 Prix (optionnel)',
+              description: 'Ex: 15€ par personne, Sur demande...',
               type: 'object',
               fields: [
                 { name: 'fr', type: 'string', title: 'Français' },
@@ -92,7 +103,8 @@ export default defineType({
             },
             {
               name: 'items',
-              title: 'Liste des items inclus',
+              title: '📋 Liste des items inclus (optionnel)',
+              description: 'Liste de ce qui est inclus dans cet extra',
               type: 'object',
               fields: [
                 { name: 'fr', type: 'text', title: 'Français' },
@@ -106,6 +118,19 @@ export default defineType({
             select: {
               title: 'title.fr',
               subtitle: 'price.fr',
+              iconValue: 'icon',
+            },
+            prepare({ title, subtitle, iconValue }) {
+              const iconMap: { [key: string]: string } = {
+                'coffee': '☕',
+                'wine': '🍷',
+                'gift': '🎁',
+              };
+              return {
+                title: title,
+                subtitle: subtitle,
+                media: () => iconMap[iconValue] || '🎁',
+              };
             },
           },
         },
@@ -115,7 +140,8 @@ export default defineType({
     // SERVICES (Conciergerie, Ménage, Transfert)
     defineField({
       name: 'services',
-      title: 'Services proposés',
+      title: '🛎️ Services proposés',
+      description: 'Services gratuits ou sur demande (conciergerie, ménage, transfert...)',
       type: 'array',
       of: [
         {
@@ -123,7 +149,8 @@ export default defineType({
           fields: [
             {
               name: 'icon',
-              title: 'Icône',
+              title: '🎨 Icône',
+              description: 'Choisissez l\'icône pour ce service',
               type: 'string',
               options: {
                 list: [
@@ -132,12 +159,16 @@ export default defineType({
                   { title: '🚗 Transfert', value: 'car' },
                   { title: '📦 Autre', value: 'other' },
                 ],
+                layout: 'dropdown',
               },
+              validation: Rule => Rule.required(),
             },
             {
               name: 'title',
-              title: 'Titre',
+              title: '🏷️ Titre (multilingue)',
+              description: 'Nom de ce service dans chaque langue',
               type: 'object',
+              validation: Rule => Rule.required(),
               fields: [
                 { name: 'fr', type: 'string', title: 'Français' },
                 { name: 'en', type: 'string', title: 'English' },
@@ -147,8 +178,10 @@ export default defineType({
             },
             {
               name: 'description',
-              title: 'Description',
+              title: '📝 Description',
+              description: 'Décrivez ce service en quelques mots',
               type: 'object',
+              validation: Rule => Rule.required(),
               fields: [
                 { name: 'fr', type: 'text', title: 'Français', rows: 3 },
                 { name: 'en', type: 'text', title: 'English', rows: 3 },
@@ -160,7 +193,19 @@ export default defineType({
           preview: {
             select: {
               title: 'title.fr',
-              icon: 'icon',
+              iconValue: 'icon',
+            },
+            prepare({ title, iconValue }) {
+              const iconMap: { [key: string]: string } = {
+                'concierge': '🔔',
+                'cleaning': '✨',
+                'car': '🚗',
+                'other': '📦',
+              };
+              return {
+                title: title,
+                media: () => iconMap[iconValue] || '📦',
+              };
             },
           },
         },
@@ -170,7 +215,8 @@ export default defineType({
     // SECTION CTA CONTACT
     defineField({
       name: 'contactCta',
-      title: 'Section Call-to-Action Contact',
+      title: '📞 Section Call-to-Action Contact',
+      description: 'Section d\'appel à l\'action en bas de page pour réserver les extras',
       type: 'object',
       fields: [
         {

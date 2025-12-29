@@ -4,11 +4,13 @@ export default defineType({
   name: 'pageInfos',
   title: 'ℹ️ Page Informations',
   type: 'document',
+  description: 'Informations pratiques : contact, horaires, accès',
   fields: [
     // EN-TÊTE
     defineField({
       name: 'header',
-      title: 'En-tête de page',
+      title: '📝 En-tête de page',
+      description: 'Le titre et sous-titre affichés en haut de la page',
       type: 'object',
       fields: [
         {
@@ -39,12 +41,14 @@ export default defineType({
     // CONTACT
     defineField({
       name: 'contact',
-      title: 'Informations de contact',
+      title: '📞 Informations de contact',
+      description: 'Toutes les coordonnées de contact',
       type: 'object',
       fields: [
         {
           name: 'sectionTitle',
-          title: 'Titre de la section',
+          title: '🏷️ Titre de la section (multilingue)',
+          description: 'Titre affiché au-dessus des coordonnées',
           type: 'object',
           fields: [
             { name: 'fr', type: 'string', title: 'Français' },
@@ -53,29 +57,68 @@ export default defineType({
             { name: 'zh', type: 'string', title: '中文' },
           ],
         },
-        { name: 'phone', title: 'Téléphone fixe', type: 'string' },
-        { name: 'mobile', title: 'Téléphone mobile', type: 'string' },
-        { name: 'emailClient', title: 'Email clients', type: 'string' },
-        { name: 'emailAdmin', title: 'Email administration', type: 'string' },
-        { name: 'address', title: 'Adresse complète', type: 'text' },
+        {
+          name: 'phone',
+          title: '📞 Téléphone fixe',
+          description: 'Ex: +33 (0)3 89 20 93 64',
+          type: 'string',
+          validation: Rule => Rule.required(),
+        },
+        {
+          name: 'mobile',
+          title: '📱 Téléphone mobile',
+          description: 'Ex: +33 (0)6 45 32 18 61',
+          type: 'string',
+          validation: Rule => Rule.required(),
+        },
+        {
+          name: 'emailClient',
+          title: '✉️ Email clients',
+          description: 'Email pour les relations clients',
+          type: 'string',
+          validation: Rule => Rule.required().email(),
+        },
+        {
+          name: 'emailAdmin',
+          title: '✉️ Email administration',
+          description: 'Email pour l\'administration',
+          type: 'string',
+          validation: Rule => Rule.required().email(),
+        },
+        {
+          name: 'address',
+          title: '📍 Adresse complète',
+          description: 'Adresse complète de l\'établissement',
+          type: 'text',
+          validation: Rule => Rule.required(),
+        },
       ],
     }),
 
     // HORAIRES
     defineField({
       name: 'schedule',
-      title: 'Horaires',
+      title: '🕐 Horaires',
+      description: 'Horaires de check-in et check-out',
       type: 'object',
       fields: [
         {
           name: 'checkIn',
-          title: 'Check-in',
+          title: '🔑 Check-in',
+          description: 'Heure d\'arrivée',
           type: 'object',
           fields: [
-            { name: 'time', title: 'Horaire', type: 'string' },
+            {
+              name: 'time',
+              title: 'Horaire',
+              description: 'Ex: À partir de 17h',
+              type: 'string',
+              validation: Rule => Rule.required(),
+            },
             {
               name: 'label',
-              title: 'Label',
+              title: '🏷️ Label (multilingue)',
+              description: 'Titre de cette section',
               type: 'object',
               fields: [
                 { name: 'fr', type: 'string', title: 'Français' },
@@ -88,13 +131,21 @@ export default defineType({
         },
         {
           name: 'checkOut',
-          title: 'Check-out',
+          title: '🚪 Check-out',
+          description: 'Heure de départ',
           type: 'object',
           fields: [
-            { name: 'time', title: 'Horaire', type: 'string' },
+            {
+              name: 'time',
+              title: 'Horaire',
+              description: 'Ex: Jusqu\'à 12h',
+              type: 'string',
+              validation: Rule => Rule.required(),
+            },
             {
               name: 'label',
-              title: 'Label',
+              title: '🏷️ Label (multilingue)',
+              description: 'Titre de cette section',
               type: 'object',
               fields: [
                 { name: 'fr', type: 'string', title: 'Français' },
@@ -111,7 +162,8 @@ export default defineType({
     // NOTES D'ACCÈS
     defineField({
       name: 'accessNotes',
-      title: 'Notes d\'accès',
+      title: '📋 Notes d\'accès',
+      description: 'Informations importantes pour accéder à l\'établissement',
       type: 'array',
       of: [
         {
@@ -119,8 +171,10 @@ export default defineType({
           fields: [
             {
               name: 'text',
-              title: 'Texte',
+              title: '📝 Texte (multilingue)',
+              description: 'Note d\'information importante',
               type: 'object',
+              validation: Rule => Rule.required(),
               fields: [
                 { name: 'fr', type: 'text', title: 'Français' },
                 { name: 'en', type: 'text', title: 'English' },
