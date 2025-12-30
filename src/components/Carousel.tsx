@@ -154,20 +154,26 @@ const Carousel = memo(function Carousel({
                 blurDataURL={validImages[currentIndex].lqip}
               />
               {/* Préchargement des images suivantes */}
-              {validImages[currentIndex + 1] && (
-                <link
-                  rel="prefetch"
-                  as="image"
-                  href={validImages[currentIndex + 1].url}
-                />
-              )}
-              {validImages[currentIndex + 2] && (
-                <link
-                  rel="prefetch"
-                  as="image"
-                  href={validImages[currentIndex + 2].url}
-                />
-              )}
+              <div style={{ display: 'none' }}>
+                {validImages[(currentIndex + 1) % validImages.length] && (
+                  <Image
+                    src={validImages[(currentIndex + 1) % validImages.length].url}
+                    alt="preload next"
+                    width={10}
+                    height={10}
+                    priority
+                  />
+                )}
+                {validImages[(currentIndex - 1 + validImages.length) % validImages.length] && (
+                  <Image
+                    src={validImages[(currentIndex - 1 + validImages.length) % validImages.length].url}
+                    alt="preload prev"
+                    width={10}
+                    height={10}
+                    priority
+                  />
+                )}
+              </div>
             </motion.div>
           </AnimatePresence>
 

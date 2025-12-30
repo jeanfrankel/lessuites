@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -14,6 +14,20 @@ interface ImageLightboxProps {
 }
 
 export default function ImageLightbox({ images, currentIndex, onClose, onNavigate }: ImageLightboxProps) {
+  const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
+  const [direction, setDirection] = useState(0);
+  const prevIndex = useRef(currentIndex);
+
+  // Détecter la direction du changement
+  useEffect(() => {
+    if (currentIndex > prevIndex.current) {
+      setDirection(1);
+    } else if (currentIndex < prevIndex.current) {
+      setDirection(-1);
+    }
+    prevIndex.current = currentIndex;
+  }, [currentIndex]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -21,34 +35,41 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
       if (e.key === 'ArrowRight') onNavigate(Math.min(images.length - 1, currentIndex + 1));
     };
 
-    // Calculer la largeur de la scrollbar pour éviter le décalage du contenu
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    const originalPaddingRight = document.body.style.paddingRight;
-    const originalOverflow = document.body.style.overflow;
+    // Créer un conteneur dédié pour le portal
+    const portalContainer = document.createElement('div');
+    portalContainer.style.position = 'fixed';
+    portalContainer.style.top = '0';
+    portalContainer.style.left = '0';
+    portalContainer.style.right = '0';
+    portalContainer.style.bottom = '0';
+    portalContainer.style.zIndex = '99999';
+    document.body.appendChild(portalContainer);
+    setPortalElement(portalContainer);
 
-    // Bloquer tout scroll sur le body
-    document.body.style.overflow = 'hidden';
+    // Sauvegarder la position de scroll
+    const scrollY = window.scrollY;
     
-    // Ajouter le padding pour compenser la disparition de la scrollbar
-    if (scrollbarWidth > 0) {
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-    }
+    // Bloquer le scroll sur html et body
+    const originalOverflowBody = document.body.style.overflow;
+    const originalOverflowHtml = document.documentElement.style.overflow;
+    
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
-    // Empêcher le scroll avec la molette/touch
-    const preventScroll = (e: Event) => {
-      e.preventDefault();
-    };
-
-    window.addEventListener('wheel', preventScroll, { passive: false });
-    window.addEventListener('touchmove', preventScroll, { passive: false });
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      document.body.style.overflow = originalOverflow;
-      document.body.style.paddingRight = originalPaddingRight;
-      window.removeEventListener('wheel', preventScroll);
-      window.removeEventListener('touchmove', preventScroll);
+      // Restaurer le scroll
+      document.body.style.overflow = originalOverflowBody;
+      document.documentElement.style.overflow = originalOverflowHtml;
+      
+      // Restaurer la position (au cas où)
+      window.scrollTo(0, scrollY);
+      
       window.removeEventListener('keydown', handleKeyDown);
+      if (portalContainer && portalContainer.parentNode) {
+        portalContainer.parentNode.removeChild(portalContainer);
+      }
     };
   }, [currentIndex, images.length, onClose, onNavigate]);
 
@@ -56,14 +77,43 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
   const hasPrev = currentIndex > 0;
   const hasNext = currentIndex < images.length - 1;
 
+  // Préchargement des images adjacentes
+  const nextImage = hasNext ? images[currentIndex + 1] : null;
+  const prevImage = hasPrev ? images[currentIndex - 1] : null;
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 1,
+      zIndex: 2
+    }),
+    center: {
+      zIndex: 2,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction: number) => ({
+      zIndex: 1,
+      x: direction < 0 ? '30%' : '-30%',
+      opacity: 0
+    })
+  };
+
   const lightboxContent = (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="fixed inset-0 bg-black/95 flex items-center justify-center overflow-hidden"
-      style={{ zIndex: 99999 }}
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: '#000000',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        touchAction: 'none'
+      }}
       onClick={onClose}
     >
       {/* Bouton fermer */}
@@ -87,7 +137,7 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
             e.stopPropagation();
             onNavigate(currentIndex - 1);
           }}
-          className="absolute left-6 z-50 p-4 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 text-white"
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-50 p-4 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 text-white"
           aria-label="Image précédente"
         >
           <ChevronLeft size={32} />
@@ -101,7 +151,7 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
             e.stopPropagation();
             onNavigate(currentIndex + 1);
           }}
-          className="absolute right-6 z-50 p-4 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 text-white"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-50 p-4 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-300 text-white"
           aria-label="Image suivante"
         >
           <ChevronRight size={32} />
@@ -110,36 +160,81 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
 
       {/* Image */}
       <div
-        className="relative w-full h-full flex items-center justify-center p-12"
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '80px'
+        }}
         onClick={(e) => e.stopPropagation()}
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className="relative w-full h-full"
-          >
-            <Image
-              src={currentImage.src}
-              alt={currentImage.alt}
-              fill
-              className="object-contain"
-              sizes="100vw"
-              priority
-            />
-          </motion.div>
-        </AnimatePresence>
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={currentIndex}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+              }}
+              style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <Image
+                src={currentImage.src}
+                alt={currentImage.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+                quality={90}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Titre de l'image */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white text-center">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white text-center z-50">
         <p className="text-lg font-serif">{currentImage.alt}</p>
       </div>
-    </motion.div>
+
+      {/* Préchargement invisible */}
+      <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', opacity: 0 }}>
+        {nextImage && (
+          <Image
+            src={nextImage.src}
+            alt="preload next"
+            width={10}
+            height={10}
+            priority
+          />
+        )}
+        {prevImage && (
+          <Image
+            src={prevImage.src}
+            alt="preload prev"
+            width={10}
+            height={10}
+            priority
+          />
+        )}
+      </div>
+    </div>
   );
 
-  return typeof window !== 'undefined' ? createPortal(lightboxContent, document.body) : null;
+  return portalElement ? createPortal(lightboxContent, portalElement) : null;
 }
