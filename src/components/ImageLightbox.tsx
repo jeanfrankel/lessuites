@@ -28,13 +28,8 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
     prevIndex.current = currentIndex;
   }, [currentIndex]);
 
+  // Créer le portal une seule fois au montage
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft') onNavigate(Math.max(0, currentIndex - 1));
-      if (e.key === 'ArrowRight') onNavigate(Math.min(images.length - 1, currentIndex + 1));
-    };
-
     // Créer un conteneur dédié pour le portal
     const portalContainer = document.createElement('div');
     portalContainer.style.position = 'fixed';
@@ -43,33 +38,46 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
     portalContainer.style.right = '0';
     portalContainer.style.bottom = '0';
     portalContainer.style.zIndex = '99999';
+    portalContainer.style.backgroundColor = '#000000';
     document.body.appendChild(portalContainer);
     setPortalElement(portalContainer);
 
     // Sauvegarder la position de scroll
     const scrollY = window.scrollY;
-    
+
     // Bloquer le scroll sur html et body
     const originalOverflowBody = document.body.style.overflow;
     const originalOverflowHtml = document.documentElement.style.overflow;
-    
+
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
-
-    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
       // Restaurer le scroll
       document.body.style.overflow = originalOverflowBody;
       document.documentElement.style.overflow = originalOverflowHtml;
-      
+
       // Restaurer la position (au cas où)
       window.scrollTo(0, scrollY);
-      
-      window.removeEventListener('keydown', handleKeyDown);
+
       if (portalContainer && portalContainer.parentNode) {
         portalContainer.parentNode.removeChild(portalContainer);
       }
+    };
+  }, []); // <- Dépendances vides = exécuté une seule fois
+
+  // Gérer les événements clavier séparément
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft') onNavigate(Math.max(0, currentIndex - 1));
+      if (e.key === 'ArrowRight') onNavigate(Math.min(images.length - 1, currentIndex + 1));
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [currentIndex, images.length, onClose, onNavigate]);
 
@@ -82,21 +90,18 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
   const prevImage = hasPrev ? images[currentIndex - 1] : null;
 
   const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? '100%' : '-100%',
-      opacity: 1,
+    enter: {
+      opacity: 0,
       zIndex: 2
-    }),
+    },
     center: {
       zIndex: 2,
-      x: 0,
       opacity: 1
     },
-    exit: (direction: number) => ({
+    exit: {
       zIndex: 1,
-      x: direction < 0 ? '30%' : '-30%',
       opacity: 0
-    })
+    }
   };
 
   const lightboxContent = (
@@ -171,18 +176,21 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-          <AnimatePresence initial={false} custom={direction}>
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#000000'
+        }}>
+          <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={currentIndex}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
+                duration: 0.2,
+                ease: "linear"
               }}
               style={{
                 position: 'absolute',
@@ -190,7 +198,9 @@ export default function ImageLightbox({ images, currentIndex, onClose, onNavigat
                 height: '100%',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                backgroundColor: '#000000',
+                willChange: 'opacity'
               }}
             >
               <Image
