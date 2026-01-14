@@ -198,7 +198,7 @@ export default function Navbar() {
           <a
             href={`tel:${siteConfig.contact.mobile.replace(/\s/g, '')}`}
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 px-6 py-3 border border-cygne-brown/30 text-cygne-brown hover:border-cygne-gold hover:text-cygne-gold transition-all duration-300 rounded-sm text-sm uppercase tracking-[0.1em] font-bold mb-2"
+            className="flex items-center gap-2 px-8 py-3 bg-cygne-gold text-white text-lg font-serif hover:bg-cygne-brown transition-all duration-300 rounded-sm mb-2"
           >
             <Phone size={16} />
             {t('nav.call')}
