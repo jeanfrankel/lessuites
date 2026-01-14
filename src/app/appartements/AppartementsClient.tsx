@@ -1,6 +1,7 @@
 'use client';
 
 import SuiteCard from '@/components/SuiteCard';
+import AmenitiesSection from '@/components/AmenitiesSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AppartementsClient({ pageData, suites }: { pageData: any; suites: any[] }) {
@@ -21,19 +22,10 @@ export default function AppartementsClient({ pageData, suites }: { pageData: any
     description: suite.description?.[language] || suite.description?.fr || '',
     capacity: suite.capacity ? `${suite.capacity} ${language === 'fr' ? 'personnes' : language === 'en' ? 'people' : language === 'de' ? 'Personen' : '人'}` : '',
     surface: suite.surface ? `${suite.surface} m²` : '',
-    features: suite.bedrooms
-      ? [`${suite.bedrooms} ${
-          language === 'fr'
-            ? (suite.bedrooms > 1 ? 'Chambres' : 'Chambre')
-            : language === 'en'
-            ? (suite.bedrooms > 1 ? 'Bedrooms' : 'Bedroom')
-            : language === 'de'
-            ? (suite.bedrooms > 1 ? 'Schlafzimmer' : 'Schlafzimmer')
-            : '卧室'
-        }`]
-      : [],
+    features: [],
     image: suite.mainImageUrl,
     images: suite.galleryUrls,
+    amenitiesData: suite.amenitiesData,
   }));
 
   return (
@@ -60,6 +52,10 @@ export default function AppartementsClient({ pageData, suites }: { pageData: any
           </div>
         )}
       </div>
+
+      {pageData?.establishmentAmenities && (
+        <AmenitiesSection data={pageData.establishmentAmenities} />
+      )}
     </div>
   );
 }

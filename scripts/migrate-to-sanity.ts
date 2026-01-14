@@ -208,7 +208,7 @@ async function migratePageInfos() {
         zh: translations.zh.info.contactTitle,
       },
       phone: '+33 (0)3 89 20 93 64',
-      mobile: '+33 (0)6 45 32 18 61',
+      mobile: '+33 6 09 17 24 61',
       emailClient: 'staff@lessuitesducygne.fr',
       emailAdmin: 'admin@lessuitesducygne.fr',
       address: '20-22 Rue des Boulangers, 68000 Colmar, France',

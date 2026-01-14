@@ -67,7 +67,7 @@ export default defineType({
         {
           name: 'mobile',
           title: '📱 Téléphone mobile',
-          description: 'Ex: +33 (0)6 45 32 18 61',
+          description: 'Ex: +33 6 09 17 24 61',
           type: 'string',
           validation: Rule => Rule.required(),
         },

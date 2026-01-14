@@ -154,6 +154,19 @@ export const pageAppartementsQuery = `*[_id == "pageAppartements"][0] {
           dimensions
         }
       }
+    },
+    amenitiesData[] {
+      title,
+      items
+    }
+  },
+  establishmentAmenities {
+    title,
+    rating,
+    amenitiesCategories[] {
+      title,
+      icon,
+      items
     }
   }
 }`

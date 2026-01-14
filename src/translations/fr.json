@@ -1,7 +1,9 @@
 {
   "nav": {
+    "home": "Accueil",
+    "call": "Nous appeler",
     "apartments": "Appartements",
-    "place": "Le Lieu",
+    "place": "Infos",
     "addresses": "Colmar",
     "extras": "Extras",
     "book": "Réserver"
@@ -94,7 +96,7 @@
     "heading": "Votre séjour commence ici",
     "text": "Pour toute demande, privilégiez le contact direct. Nous vous répondons sous 24h.",
     "emailBtn": "Par Email",
-    "phoneBtn": "+33 (0)6 45 32 18 61",
+    "phoneBtn": "+33 6 09 17 24 61",
     "onlineBooking": "Réservation en ligne",
     "bookingDescription": "Réservez votre suite en quelques clics via notre système de réservation sécurisé",
     "secureSystem": "Système de réservation sécurisé via Reservit",
@@ -104,10 +106,11 @@
   "footer": {
     "description": "Une invitation à la douceur de vivre alsacienne, dans un cadre authentique et raffiné.",
     "navigation": "Navigation",
-    "ourApartments": "Nos Appartements",
-    "placeAccess": "Le Lieu & Accès",
-    "discoverColmar": "Découvrir Colmar",
-    "extras": "Extras & Services",
+    "home": "Accueil",
+    "ourApartments": "Appartements",
+    "placeAccess": "Infos",
+    "discoverColmar": "Colmar",
+    "extras": "Extras",
     "book": "Réserver",
     "contact": "Contact"
   },
@@ -120,5 +123,12 @@
     "departure": "Départ",
     "bookNow": "Réserver",
     "fillDates": "Veuillez remplir les dates"
+  },
+  "reviews": {
+    "label": "Avis clients",
+    "title": "Ce que nos clients disent",
+    "rating": "Note globale",
+    "experiences": "expériences vécues",
+    "onBooking": "sur Booking.com"
   }
 }

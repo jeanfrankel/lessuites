@@ -53,6 +53,7 @@ export default function Footer() {
         <div>
             <h4 className="text-cygne-gold text-xs uppercase tracking-[0.2em] font-bold mb-8">{t('footer.navigation')}</h4>
             <ul className="space-y-4 text-sm font-light">
+                <li><Link href="/" className="hover:text-cygne-gold transition-colors">{t('footer.home')}</Link></li>
                 <li><Link href="/appartements" className="hover:text-cygne-gold transition-colors">{t('footer.ourApartments')}</Link></li>
                 <li><Link href="/infos" className="hover:text-cygne-gold transition-colors">{t('footer.placeAccess')}</Link></li>
                 <li><Link href="/adresses" className="hover:text-cygne-gold transition-colors">{t('footer.discoverColmar')}</Link></li>

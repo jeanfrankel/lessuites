@@ -89,9 +89,24 @@ export default defineType({
     }),
     defineField({
       name: 'amenities',
-      title: 'Équipements',
+      title: 'Équipements (Liste simple)',
       type: 'array',
       of: [{ type: 'string' }],
+      hidden: true, // Masqué au profit de la nouvelle structure
+    }),
+    defineField({
+      name: 'amenitiesData',
+      title: 'Détail des équipements (Par catégorie)',
+      type: 'array',
+      of: [{
+        type: 'object',
+        name: 'category',
+        title: 'Catégorie',
+        fields: [
+          { name: 'title', type: 'string', title: 'Titre de la catégorie' },
+          { name: 'items', type: 'array', of: [{ type: 'string' }], title: 'Éléments' }
+        ]
+      }]
     }),
     defineField({
       name: 'reservitId',

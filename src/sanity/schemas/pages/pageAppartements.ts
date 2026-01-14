@@ -119,6 +119,20 @@ export default defineType({
               type: 'string',
               description: 'Ex: "À partir de 150€/nuit"',
             },
+            {
+              name: 'amenitiesData',
+              title: 'Détail des équipements (Par catégorie)',
+              type: 'array',
+              of: [{
+                type: 'object',
+                name: 'category',
+                title: 'Catégorie',
+                fields: [
+                  { name: 'title', type: 'string', title: 'Titre de la catégorie' },
+                  { name: 'items', type: 'array', of: [{ type: 'string' }], title: 'Éléments' }
+                ]
+              }]
+            },
           ],
           preview: {
             select: {
@@ -136,6 +150,48 @@ export default defineType({
           },
         },
       ],
+    }),
+
+    // EQUIPEMENTS ETABLISSEMENT (BAS DE PAGE)
+    defineField({
+      name: 'establishmentAmenities',
+      title: 'Équipements de l\'établissement',
+      description: 'Section affichée en bas de page (style Booking.com)',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Titre de la section',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+          ],
+          initialValue: { fr: "Équipements de l'établissement Les Suites Du Cygne" }
+        },
+        {
+          name: 'rating',
+          title: 'Note équipement',
+          type: 'string',
+          description: 'Ex: "9,2"',
+          initialValue: "9,2"
+        },
+        {
+          name: 'amenitiesCategories',
+          title: 'Catégories d\'équipements',
+          type: 'array',
+          of: [{
+            type: 'object',
+            name: 'category',
+            title: 'Catégorie',
+            fields: [
+              { name: 'title', type: 'string', title: 'Titre de la catégorie' },
+              { name: 'icon', type: 'string', title: 'Nom de l\'icône (lucide-react)' },
+              { name: 'items', type: 'array', of: [{ type: 'string' }], title: 'Éléments' }
+            ]
+          }]
+        }
+      ]
     }),
   ],
   preview: {

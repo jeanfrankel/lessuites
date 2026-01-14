@@ -5,6 +5,43 @@ import dynamic from 'next/dynamic';
 import Carousel from '@/components/Carousel';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+// Données des avis Booking
+const bookingReviews = [
+  {
+    author: "Fortunato",
+    country: "Suisse",
+    rating: 10,
+    text: {
+      fr: "Excellent emplacement, proche du centre névralgique de Colmar, parking public à 5' à pieds. Appartement très spacieux, parfaitement équipé, accès simple par soi-même.",
+      en: "Excellent location, close to the heart of Colmar, public parking 5 min walk away. Very spacious apartment, perfectly equipped, easy self check-in.",
+      de: "Ausgezeichnete Lage, nahe dem Zentrum von Colmar, öffentlicher Parkplatz 5 Gehminuten entfernt. Sehr geräumige Wohnung, perfekt ausgestattet, einfacher Selbst-Check-in.",
+      zh: "位置极佳，靠近科尔马中心，步行5分钟即可到达公共停车场。公寓非常宽敞，设备齐全，自助入住简单方便。"
+    }
+  },
+  {
+    author: "Quentin",
+    country: "Suisse",
+    rating: 10,
+    text: {
+      fr: "Emplacement parfait (entrée du vieux centre de Colmar, 15 min à pied de la gare, 2 min à pied du parking Rapp). Logement bien équipé avec un grand espace de vie pour un agréable séjour entre amis ou en famille.",
+      en: "Perfect location (entrance to old Colmar, 15 min walk from station, 2 min from Rapp parking). Well-equipped accommodation with large living space for a pleasant stay with friends or family.",
+      de: "Perfekte Lage (Eingang zur Altstadt von Colmar, 15 Min. Fußweg vom Bahnhof, 2 Min. vom Parkplatz Rapp). Gut ausgestattete Unterkunft mit großem Wohnbereich für einen angenehmen Aufenthalt mit Freunden oder Familie.",
+      zh: "位置完美（科尔马老城入口，距火车站步行15分钟，距Rapp停车场2分钟）。设备齐全的住宿，宽敞的生活空间，适合与朋友或家人愉快度假。"
+    }
+  },
+  {
+    author: "Perrier",
+    country: "France",
+    rating: 10,
+    text: {
+      fr: "Échanges préalables réguliers, bonnes recommandations et équipements de l'appartement très complets. Notre hôte a été facilitatrice pour nous accueillir en avance. Merci Adeline !",
+      en: "Regular prior exchanges, good recommendations and very complete apartment equipment. Our host was helpful in welcoming us early. Thank you Adeline!",
+      de: "Regelmäßiger vorheriger Austausch, gute Empfehlungen und sehr vollständige Wohnungsausstattung. Unsere Gastgeberin war hilfreich und hat uns früher empfangen. Danke Adeline!",
+      zh: "事先沟通顺畅，推荐很好，公寓设备非常齐全。房东很贴心，提前接待了我们。谢谢Adeline！"
+    }
+  }
+];
+
 const Map = dynamic(() => import('@/components/Map'), {
   loading: () => <div className="h-[500px] bg-cygne-cream/50 animate-pulse rounded-lg" />,
   ssr: false
@@ -19,7 +56,7 @@ const CompactBookingWidget = dynamic(() => import('@/components/CompactBookingWi
 });
 
 export default function HomeClient({ pageData }: { pageData: any }) {
-  const { language } = useLanguage();
+  const { language, t: tContext } = useLanguage();
 
   // Extraire les données selon la langue
   const t = (section: string, field: string) => {
@@ -165,6 +202,67 @@ export default function HomeClient({ pageData }: { pageData: any }) {
             aspectRatio="aspect-auto min-h-[450px] md:min-h-[650px]"
             altTexts={suitesAltTexts}
           />
+        </div>
+      </section>
+
+      {/* SECTION AVIS BOOKING */}
+      <section className="py-20 md:py-28 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-cygne-gold text-xs uppercase tracking-widest-xl mb-4 block font-bold">
+              {tContext('reviews.label')}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif text-cygne-brown font-light mb-8">
+              {tContext('reviews.title')}
+            </h2>
+
+            {/* Note globale Booking */}
+            <div className="flex flex-col items-center gap-4 mb-8">
+              <div className="flex items-center gap-4">
+                <div className="bg-[#003580] text-white text-4xl md:text-5xl font-bold px-5 py-3 rounded-lg shadow-lg">
+                  9.1
+                </div>
+                <div className="text-left">
+                  <p className="text-cygne-brown font-medium text-lg">{tContext('reviews.rating')}</p>
+                  <p className="text-cygne-brown/60 text-sm">244 {tContext('reviews.experiences')}</p>
+                </div>
+              </div>
+              <a
+                href="https://www.booking.com/hotel/fr/les-suites-du-cygne.fr.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#003580] hover:underline text-sm font-medium"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.36 12.73c.1-.21.14-.43.14-.66 0-.65-.42-1.15-1-1.15-.42 0-.77.25-.93.62l-.02-.01c-.2-.98-.96-1.72-1.91-1.72-1.06 0-1.93.9-1.93 2.02s.87 2.02 1.93 2.02c.95 0 1.71-.74 1.91-1.72l.02-.01c.16.37.51.62.93.62.58 0 1-.5 1-1.15 0-.23-.04-.45-.14-.66l-.01.01zm-7.27-2.91c-1.06 0-1.93.9-1.93 2.02s.87 2.02 1.93 2.02 1.93-.9 1.93-2.02-.87-2.02-1.93-2.02zm-6.55 0c-1.06 0-1.93.9-1.93 2.02s.87 2.02 1.93 2.02 1.93-.9 1.93-2.02-.87-2.02-1.93-2.02zm-3.18 3.17c-.42 0-.77-.25-.93-.62l-.02.01c-.2.98-.96 1.72-1.91 1.72-1.06 0-1.93-.9-1.93-2.02s.87-2.02 1.93-2.02c.95 0 1.71.74 1.91 1.72l.02.01c.16-.37.51-.62.93-.62.58 0 1 .5 1 1.15 0 .23-.04.45-.14.66l.01-.01c-.1.21-.14.43-.14.66 0 .65.42 1.15 1 1.15"/>
+                </svg>
+                {tContext('reviews.onBooking')}
+              </a>
+            </div>
+          </div>
+
+          {/* Grille des avis */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {bookingReviews.map((review, index) => (
+              <div
+                key={index}
+                className="bg-cygne-cream p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <p className="font-medium text-cygne-brown">{review.author}</p>
+                    <p className="text-sm text-cygne-brown/60">{review.country}</p>
+                  </div>
+                  <div className="bg-[#003580] text-white font-bold px-3 py-1 rounded text-lg">
+                    {review.rating}
+                  </div>
+                </div>
+                <p className="text-cygne-brown/80 italic leading-relaxed">
+                  "{review.text[language as keyof typeof review.text]}"
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -128,7 +128,7 @@ export default function ExtrasClient({ pageData }: ExtrasClientProps) {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-wrap justify-center gap-8">
               {services.map((service, index) => {
                 const Icon = iconMap[service.icon] || ConciergeBell;
                 const serviceTitle = service.title?.[language] || service.title?.fr || '';
@@ -141,7 +141,7 @@ export default function ExtrasClient({ pageData }: ExtrasClientProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white p-6 rounded-lg shadow-md border border-stone-100 hover:border-cygne-gold hover:shadow-lg transition-all duration-300 text-center"
+                    className="bg-white p-8 rounded-lg shadow-md border border-stone-100 hover:border-cygne-gold hover:shadow-lg transition-all duration-300 text-center w-full max-w-md"
                   >
                     <div className="inline-flex p-4 bg-cygne-gold/10 rounded-full mb-4">
                       <Icon className="text-cygne-gold" size={28} />

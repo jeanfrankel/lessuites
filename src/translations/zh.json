@@ -1,7 +1,9 @@
 {
   "nav": {
+    "home": "首页",
+    "call": "联系我们",
     "apartments": "公寓",
-    "place": "地点",
+    "place": "信息",
     "addresses": "科尔马",
     "extras": "附加服务",
     "book": "预订"
@@ -94,7 +96,7 @@
     "heading": "您的住宿从这里开始",
     "text": "如有任何要求，请直接联系我们。我们会在24小时内回复。",
     "emailBtn": "通过电子邮件",
-    "phoneBtn": "+33 (0)6 45 32 18 61",
+    "phoneBtn": "+33 6 09 17 24 61",
     "onlineBooking": "在线预订",
     "bookingDescription": "通过我们的安全预订系统，只需点击几下即可预订您的套房",
     "secureSystem": "通过Reservit的安全预订系统",
@@ -104,9 +106,10 @@
   "footer": {
     "description": "在真实而精致的环境中，邀请您体验阿尔萨斯生活艺术。",
     "navigation": "导航",
-    "ourApartments": "我们的公寓",
-    "placeAccess": "地点与访问",
-    "discoverColmar": "探索科尔马",
+    "home": "首页",
+    "ourApartments": "公寓",
+    "placeAccess": "信息",
+    "discoverColmar": "科尔马",
     "extras": "附加服务",
     "book": "预订",
     "contact": "联系方式"
@@ -120,5 +123,12 @@
     "departure": "离开",
     "bookNow": "立即预订",
     "fillDates": "请填写日期"
+  },
+  "reviews": {
+    "label": "客户评价",
+    "title": "客户评价",
+    "rating": "综合评分",
+    "experiences": "条评价",
+    "onBooking": "来自 Booking.com"
   }
 }
