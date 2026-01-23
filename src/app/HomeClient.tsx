@@ -270,7 +270,7 @@ export default function HomeClient({ pageData }: { pageData: any }) {
             {/* Double Rating Block */}
             <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 mb-16">
               {/* Booking */}
-              <div className="flex flex-col items-center justify-between bg-white p-8 rounded-lg shadow-md w-full md:w-auto min-w-[320px] border border-gray-100 flex-1 max-w-sm">
+              <div className="flex flex-col items-center justify-between bg-white p-6 md:p-8 rounded-lg shadow-md w-full md:w-auto min-w-[280px] md:min-w-[320px] border border-gray-100 flex-1 max-w-sm">
                 <div className="flex flex-col items-center w-full">
                   <Image
                     src="/images/booking_custom.svg"
@@ -284,7 +284,7 @@ export default function HomeClient({ pageData }: { pageData: any }) {
                     <span className="text-2xl text-gray-400">/10</span>
                   </div>
                   <div className="text-base text-gray-500 font-medium">{pageData?.reviewsSection?.bookingReviewCount?.[language] || pageData?.reviewsSection?.bookingReviewCount?.fr || tContext('reviews.bookingReviews')}</div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#003580] mt-2 bg-[#003580]/10 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#003580] mt-2 bg-[#003580]/10 px-3 py-1 rounded-full text-center whitespace-normal md:whitespace-nowrap">
                     {pageData?.reviewsSection?.bookingLabel?.[language] || pageData?.reviewsSection?.bookingLabel?.fr || tContext('reviews.fabulous')}
                   </span>
                 </div>
@@ -293,7 +293,7 @@ export default function HomeClient({ pageData }: { pageData: any }) {
                   href="https://www.booking.com/hotel/fr/les-suites-du-cygne.fr.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 border border-[#003580] text-[#003580] rounded hover:bg-[#003580] hover:text-white transition-all duration-300 text-xs font-bold uppercase tracking-widest"
+                  className="px-6 py-3 border border-[#003580] text-[#003580] rounded hover:bg-[#003580] hover:text-white transition-all duration-300 text-xs font-bold uppercase tracking-widest mt-6"
                 >
                   {pageData?.reviewsSection?.viewOnBooking?.[language] || pageData?.reviewsSection?.viewOnBooking?.fr || tContext('reviews.viewOnBooking')}
                 </a>
@@ -303,7 +303,7 @@ export default function HomeClient({ pageData }: { pageData: any }) {
               <div className="hidden md:block w-px bg-gray-200 my-4"></div>
 
               {/* Airbnb */}
-              <div className="flex flex-col items-center justify-between bg-white p-8 rounded-lg shadow-md w-full md:w-auto min-w-[320px] border border-gray-100 flex-1 max-w-sm">
+              <div className="flex flex-col items-center justify-between bg-white p-6 md:p-8 rounded-lg shadow-md w-full md:w-auto min-w-[280px] md:min-w-[320px] border border-gray-100 flex-1 max-w-sm">
                 <div className="flex flex-col items-center w-full">
                   <Image
                     src="/images/Airbnb-Logo.png"

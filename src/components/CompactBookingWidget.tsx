@@ -63,25 +63,25 @@ export default function CompactBookingWidget() {
         /* Optimisation mobile */
         @media (max-width: 768px) {
           .compact-booking-wrapper {
-            height: 550px;
+            height: 600px;
           }
           .compact-booking-wrapper iframe {
-            transform: scale(0.65);
+            transform: scale(0.85);
             transform-origin: top left;
-            width: 153.85% !important;
-            height: 846px;
+            width: 117.65% !important;
+            height: 750px;
           }
         }
 
         @media (max-width: 480px) {
           .compact-booking-wrapper {
-            height: 550px;
+            height: 650px;
           }
           .compact-booking-wrapper iframe {
-            transform: scale(0.55);
+            transform: scale(0.9);
             transform-origin: top left;
-            width: 181.82% !important;
-            height: 1000px;
+            width: 111.11% !important;
+            height: 800px;
           }
         }
 
@@ -109,11 +109,10 @@ export default function CompactBookingWidget() {
         {/* Bouton plein écran - Étendu pour masquer le titre Reservit - Caché sur mobile */}
         <button
           onClick={toggleFullscreen}
-          className={`absolute top-0 z-40 px-6 bg-cygne-white text-black text-xs uppercase tracking-wider font-bold hover:shadow-lg transition-all duration-300 shadow-md hidden md:flex items-center justify-start gap-3 ${
-            isFullscreen
+          className={`absolute top-0 z-40 px-6 bg-cygne-white text-black text-xs uppercase tracking-wider font-bold hover:shadow-lg transition-all duration-300 shadow-md hidden md:flex items-center justify-start gap-3 ${isFullscreen
               ? 'left-0 right-56 py-[1.69rem]'
               : 'left-0 right-44 py-[1.375rem]'
-          }`}
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -127,9 +126,9 @@ export default function CompactBookingWidget() {
             strokeLinejoin="round"
           >
             {isFullscreen ? (
-              <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
+              <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" />
             ) : (
-              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
             )}
           </svg>
           <span>{isFullscreen ? t('booking.fullscreenExit') : t('booking.fullscreenEnter')}</span>
