@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Services & Extras | Les Suites du Cygne Colmar',
     description: 'Services supplémentaires : petit-déjeuner, parking, services personnalisés.',
-    url: 'https://lessuitesducygne.com/extras',
+    url: '/extras',
   },
   alternates: {
-    canonical: 'https://lessuitesducygne.com/extras',
+    canonical: '/extras',
   },
 };
 

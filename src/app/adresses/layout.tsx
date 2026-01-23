@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bonnes Adresses à Colmar | Restaurants & Shopping',
     description: 'Nos meilleures adresses : restaurants alsaciens, bars, pâtisseries et boutiques locales.',
-    url: 'https://lessuitesducygne.com/adresses',
+    url: '/adresses',
   },
   alternates: {
-    canonical: 'https://lessuitesducygne.com/adresses',
+    canonical: '/adresses',
   },
 };
 

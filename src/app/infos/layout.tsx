@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Informations Pratiques & Contact | Les Suites du Cygne Colmar',
     description: 'Horaires, accès, parking et contact. 20-22 Rue des Boulangers, 68000 Colmar.',
-    url: 'https://lessuitesducygne.com/infos',
+    url: '/infos',
   },
   alternates: {
-    canonical: 'https://lessuitesducygne.com/infos',
+    canonical: '/infos',
   },
 };
 

@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Réservation | Appartements 4 Étoiles Colmar',
     description: 'Réservez directement votre appartement. Meilleur tarif garanti.',
-    url: 'https://lessuitesducygne.com/reservation',
+    url: '/reservation',
   },
   alternates: {
-    canonical: 'https://lessuitesducygne.com/reservation',
+    canonical: '/reservation',
   },
 };
 

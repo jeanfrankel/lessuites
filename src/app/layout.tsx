@@ -32,7 +32,13 @@ export const viewport = {
   themeColor: '#433E37',
 };
 
+// URL de base pour la production - INDISPENSABLE pour OpenGraph
+const baseUrl = 'https://lessuitesducygne.fr';
+
 export const metadata: Metadata = {
+  // MetadataBase: Essentiel pour les URLs absolues des images OG
+  metadataBase: new URL(baseUrl),
+
   title: {
     default: 'Location Appartement de Charme à Colmar | Les Suites du Cygne',
     template: '%s | Les Suites du Cygne'
@@ -42,6 +48,20 @@ export const metadata: Metadata = {
   authors: [{ name: 'Les Suites du Cygne' }],
   creator: 'Les Suites du Cygne',
   publisher: 'Les Suites du Cygne',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon-144x144.png', sizes: '144x144', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
@@ -53,19 +73,19 @@ export const metadata: Metadata = {
     email: true,
   },
   alternates: {
-    canonical: 'https://lessuitesducygne.com',
+    canonical: baseUrl,
   },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     alternateLocale: ['en_US', 'de_DE', 'zh_CN'],
-    url: 'https://lessuitesducygne.com',
+    url: baseUrl,
     siteName: 'Les Suites du Cygne',
     title: 'Location Appartement de Charme à Colmar | Les Suites du Cygne',
     description: "Appartements de charme 4 étoiles au cœur de Colmar. Location meublée pour 2 à 10 personnes. Réservez votre séjour en Alsace.",
     images: [
       {
-        url: 'https://lessuitesducygne.com/images/baudelaire.jpg',
+        url: '/images/baudelaire.jpg', // Relatif car metadataBase est défini
         width: 1200,
         height: 630,
         alt: 'Les Suites du Cygne - Appartements de charme à Colmar',
@@ -76,7 +96,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Location Appartement de Charme à Colmar | Les Suites du Cygne',
     description: "Appartements de charme 4 étoiles au cœur de Colmar pour familles et groupes.",
-    images: ['https://lessuitesducygne.com/images/baudelaire.jpg'],
+    images: ['/images/baudelaire.jpg'], // Relatif car metadataBase est défini
   },
   robots: {
     index: true,

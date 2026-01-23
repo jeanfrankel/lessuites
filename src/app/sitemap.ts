@@ -1,57 +1,50 @@
 import { MetadataRoute } from 'next';
 
+// URL de base - doit correspondre à metadataBase dans layout.tsx
+const baseUrl = 'https://lessuitesducygne.fr';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lessuitesducygne.com';
   const currentDate = new Date();
 
   // Pages statiques principales
-  const mainPages = [
+  const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/appartements`,
       lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/reservation`,
       lastModified: currentDate,
-      changeFrequency: 'daily' as const,
+      changeFrequency: 'daily',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/infos`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/adresses`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/extras`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'monthly',
       priority: 0.6,
     },
   ];
 
-  // Pages individuelles des suites (pour le SEO local)
-  const suites = ['baudelaire', 'schubert', 'asselin'];
-  const suitePages = suites.map((suite) => ({
-    url: `${baseUrl}/appartements#${suite}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  return [...mainPages, ...suitePages];
+  return routes;
 }

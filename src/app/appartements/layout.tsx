@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Appartements de Charme 4 Étoiles à Colmar | Les Suites du Cygne',
     description: 'Découvrez nos 3 appartements de charme 4 étoiles à Colmar : Suite Baudelaire (2-4 pers.), Suite Schubert (4-6 pers.), Suite Asselin (6-10 pers.).',
-    url: 'https://lessuitesducygne.com/appartements',
+    url: '/appartements',
     images: [
       {
-        url: 'https://lessuitesducygne.com/images/baudelaire.jpg',
+        url: '/images/baudelaire.jpg',
         width: 1200,
         height: 630,
         alt: 'Suite Baudelaire - Appartement de charme 4 étoiles à Colmar',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://lessuitesducygne.com/appartements',
+    canonical: '/appartements',
   },
 };
 
