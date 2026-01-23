@@ -113,6 +113,8 @@ export default defineType({
       ],
     }),
 
+
+
     // SECTION PHILOSOPHIE
     defineField({
       name: 'philosophySection',
@@ -249,6 +251,145 @@ export default defineType({
             { name: 'de', type: 'string', title: 'Deutsch' },
             { name: 'zh', type: 'string', title: '中文' },
           ],
+        },
+        {
+          name: 'bestRate',
+          title: 'Message meilleur tarif garanti',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+      ],
+    }),
+
+    // SECTION AVIS CLIENTS
+    defineField({
+      name: 'reviewsSection',
+      title: 'Section Avis Clients',
+      type: 'object',
+      fields: [
+        {
+          name: 'label',
+          title: 'Label (petit texte)',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'title',
+          title: 'Titre',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'viewOnBooking',
+          title: 'Bouton "Voir sur Booking"',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'bookingRating',
+          title: 'Note Booking.com',
+          type: 'string',
+          description: 'Ex: "9.1"',
+        },
+        {
+          name: 'bookingReviewCount',
+          title: 'Nombre d\'avis Booking',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'bookingLabel',
+          title: 'Label Booking (ex: Fabuleux)',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'airbnbRating',
+          title: 'Note Airbnb',
+          type: 'string',
+          description: 'Ex: "4.89"',
+        },
+        {
+          name: 'airbnbReviewCount',
+          title: 'Nombre d\'avis Airbnb',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'reviews',
+          title: 'Avis clients',
+          type: 'array',
+          of: [{
+            type: 'object',
+            fields: [
+              { name: 'author', type: 'string', title: 'Nom de l\'auteur' },
+              { name: 'country', type: 'string', title: 'Pays / Info' },
+              {
+                name: 'source',
+                type: 'string',
+                title: 'Source',
+                options: {
+                  list: [
+                    { title: 'Booking.com', value: 'Booking.com' },
+                    { title: 'Airbnb', value: 'Airbnb' },
+                  ],
+                },
+              },
+              { name: 'rating', type: 'number', title: 'Note' },
+              {
+                name: 'text',
+                title: 'Texte de l\'avis',
+                type: 'object',
+                fields: [
+                  { name: 'fr', type: 'text', title: 'Français', rows: 3 },
+                  { name: 'en', type: 'text', title: 'English', rows: 3 },
+                  { name: 'de', type: 'text', title: 'Deutsch', rows: 3 },
+                  { name: 'zh', type: 'text', title: '中文', rows: 3 },
+                ],
+              },
+            ],
+            preview: {
+              select: {
+                title: 'author',
+                subtitle: 'source',
+              },
+            },
+          }],
         },
       ],
     }),

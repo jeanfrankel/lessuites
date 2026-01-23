@@ -47,7 +47,8 @@
     "mobile": "Mobile",
     "clientRelations": "Guest Relations",
     "administration": "Administration",
-    "addressTitle": "Address & Access",
+    "addressTitle": "Address",
+    "parkingTitle": "Parking & Access",
     "addressNote1": "The suites are at n° 20, but",
     "addressNote1Bold": "the entrance is through 22",
     "addressNote1End": "(just to the right of the pharmacy)",
@@ -60,11 +61,15 @@
     "checkinNote2End": "before your arrival",
     "checkinNote3": "If your arrival time is not between 5:00 PM and 9:00 PM, contact us to arrange your access",
     "checkoutTitle": "Check-out",
-    "checkoutTime": "Until 12:00 PM"
+    "checkoutTime": "Until 12:00 PM",
+    "fromTime": "From",
+    "untilTime": "Until"
   },
   "addresses": {
     "title": "Good Addresses",
-    "subtitle": "Our favorites in Colmar"
+    "subtitle": "Our favorites in Colmar",
+    "festiveSeason": "Festive Season",
+    "learnMore": "Learn more"
   },
   "extras": {
     "title": "Extras & Services",
@@ -129,6 +134,11 @@
     "title": "What our guests say",
     "rating": "Overall rating",
     "experiences": "experiences",
-    "onBooking": "on Booking.com"
+    "onBooking": "on Booking.com",
+    "bestRate": "Best rate guaranteed by booking directly on our website",
+    "viewOnBooking": "View on Booking",
+    "bookingReviews": "244 reviews",
+    "airbnbReviews": "72 reviews",
+    "fabulous": "Fabulous"
   }
 }

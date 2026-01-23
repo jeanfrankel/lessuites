@@ -47,7 +47,8 @@
     "mobile": "Mobile",
     "clientRelations": "Relations Clients",
     "administration": "Administration",
-    "addressTitle": "Adresse & Accès",
+    "addressTitle": "Adresse",
+    "parkingTitle": "Stationnement & Accès",
     "addressNote1": "Les suites sont au n° 20, mais",
     "addressNote1Bold": "l'entrée se fait par le 22",
     "addressNote1End": "(juste à droite de la pharmacie)",
@@ -60,11 +61,15 @@
     "checkinNote2End": "avant votre arrivée",
     "checkinNote3": "Si vos horaires d'arrivée ne sont pas entre 17h et 21h, contactez-nous pour organiser votre accès",
     "checkoutTitle": "Check-out",
-    "checkoutTime": "Jusqu'à 12h"
+    "checkoutTime": "Jusqu'à 12h",
+    "fromTime": "À partir de",
+    "untilTime": "Jusqu'à"
   },
   "addresses": {
     "title": "Bonnes Adresses",
-    "subtitle": "Nos coups de cœur à Colmar"
+    "subtitle": "Nos coups de cœur à Colmar",
+    "festiveSeason": "Saison Festive",
+    "learnMore": "En savoir plus"
   },
   "extras": {
     "title": "Extras & Services",
@@ -129,6 +134,11 @@
     "title": "Ce que nos clients disent",
     "rating": "Note globale",
     "experiences": "expériences vécues",
-    "onBooking": "sur Booking.com"
+    "onBooking": "sur Booking.com & Airbnb",
+    "bestRate": "Meilleur tarif garanti en réservant directement sur notre site",
+    "viewOnBooking": "Voir sur Booking",
+    "bookingReviews": "244 avis",
+    "airbnbReviews": "72 avis",
+    "fabulous": "Fabuleux"
   }
 }

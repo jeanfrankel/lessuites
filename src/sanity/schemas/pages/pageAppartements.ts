@@ -166,8 +166,21 @@ export default defineType({
           fields: [
             { name: 'fr', type: 'string', title: 'Français' },
             { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
           ],
           initialValue: { fr: "Équipements de l'établissement Les Suites Du Cygne" }
+        },
+        {
+          name: 'intro',
+          title: 'Texte d\'introduction',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'text', title: 'Français', rows: 2 },
+            { name: 'en', type: 'text', title: 'English', rows: 2 },
+            { name: 'de', type: 'text', title: 'Deutsch', rows: 2 },
+            { name: 'zh', type: 'text', title: '中文', rows: 2 },
+          ],
         },
         {
           name: 'rating',
@@ -187,7 +200,21 @@ export default defineType({
             fields: [
               { name: 'title', type: 'string', title: 'Titre de la catégorie' },
               { name: 'icon', type: 'string', title: 'Nom de l\'icône (lucide-react)' },
-              { name: 'items', type: 'array', of: [{ type: 'string' }], title: 'Éléments' }
+              {
+                name: 'items',
+                type: 'array',
+                title: 'Éléments',
+                of: [{
+                  type: 'object',
+                  fields: [
+                    { name: 'fr', type: 'string', title: 'Français' },
+                    { name: 'en', type: 'string', title: 'English' },
+                    { name: 'de', type: 'string', title: 'Deutsch' },
+                    { name: 'zh', type: 'string', title: '中文' }
+                  ],
+                  preview: { select: { title: 'fr' } }
+                }]
+              }
             ]
           }]
         }

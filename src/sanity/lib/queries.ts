@@ -118,6 +118,7 @@ export const pageHomeQuery = `*[_id == "pageHome"][0] {
     }
   },
   ctaSection,
+  reviewsSection,
   mapSection
 }`
 
@@ -162,6 +163,7 @@ export const pageAppartementsQuery = `*[_id == "pageAppartements"][0] {
   },
   establishmentAmenities {
     title,
+    intro,
     rating,
     amenitiesCategories[] {
       title,
@@ -190,7 +192,22 @@ export const pageExtrasQuery = `*[_id == "pageExtras"][0] {
 // Page Bonnes Adresses
 export const pageAdressesQuery = `*[_id == "pageAdresses"][0] {
   header,
-  categories
+  addressesSectionHeader,
+  categories,
+  christmasSection {
+    ...,
+    gallery[] {
+      ...,
+      asset-> {
+        _id,
+        url,
+        metadata {
+          lqip,
+          dimensions
+        }
+      }
+    }
+  }
 }`
 
 // ===== NAVIGATION =====

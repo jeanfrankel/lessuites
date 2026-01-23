@@ -118,7 +118,7 @@ export default function Navbar() {
             className="flex items-center gap-2 px-5 py-2.5 bg-cygne-gold text-white uppercase tracking-[0.15em] text-xs font-bold hover:bg-cygne-gold/80 transition-all duration-300 rounded-sm mr-40"
           >
             <Phone size={14} />
-            {t('nav.call')}
+            +33 6 45 32 18 61
           </a>
 
           {links.map((link) => {

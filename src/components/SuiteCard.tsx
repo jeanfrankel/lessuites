@@ -131,7 +131,7 @@ const SuiteCard = memo(function SuiteCard({ suite }: SuiteCardProps) {
             href={`https://secure.reservit.com/engine/booking/2/254654/dates?langcode=${language === 'fr' ? 'FR' : language === 'de' ? 'DE' : language === 'zh' ? 'ZH' : 'EN'}`}
             className="btn-outline w-full block text-center mx-auto"
           >
-            {t('apartments.seeAvailability')}
+            {t('apartments.seeAvailability') || 'Voir les disponibilités'}
           </a>
         </div>
       </div>

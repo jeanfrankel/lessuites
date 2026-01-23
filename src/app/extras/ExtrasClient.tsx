@@ -34,6 +34,7 @@ interface ExtrasClientProps {
     contactCta: {
       title: { fr: string; en: string; de: string; zh: string };
       text: { fr: string; en: string; de: string; zh: string };
+      bestRateText?: { fr: string; en: string; de: string; zh: string };
     };
   };
 }
@@ -46,7 +47,13 @@ export default function ExtrasClient({ pageData }: ExtrasClientProps) {
   const extras = pageData?.extras || [];
   const services = pageData?.services || [];
   const ctaTitle = pageData?.contactCta?.title?.[language] || pageData?.contactCta?.title?.fr || '';
-  const ctaText = pageData?.contactCta?.text?.[language] || pageData?.contactCta?.text?.fr || '';
+
+  // Use bestRateText if available, otherwise fall back to text
+  const ctaText = pageData?.contactCta?.bestRateText?.[language]
+    || pageData?.contactCta?.bestRateText?.fr
+    || pageData?.contactCta?.text?.[language]
+    || pageData?.contactCta?.text?.fr
+    || '';
 
   return (
     <div className="bg-cygne-cream min-h-screen">

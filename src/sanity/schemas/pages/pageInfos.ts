@@ -110,10 +110,15 @@ export default defineType({
           fields: [
             {
               name: 'time',
-              title: 'Horaire',
-              description: 'Ex: À partir de 17h',
-              type: 'string',
-              validation: Rule => Rule.required(),
+              title: 'Horaire (multilingue)',
+              description: 'Ex: À partir de 17h / From 5:00 PM',
+              type: 'object',
+              fields: [
+                { name: 'fr', type: 'string', title: 'Français' },
+                { name: 'en', type: 'string', title: 'English' },
+                { name: 'de', type: 'string', title: 'Deutsch' },
+                { name: 'zh', type: 'string', title: '中文' },
+              ],
             },
             {
               name: 'label',
@@ -137,10 +142,15 @@ export default defineType({
           fields: [
             {
               name: 'time',
-              title: 'Horaire',
-              description: 'Ex: Jusqu\'à 12h',
-              type: 'string',
-              validation: Rule => Rule.required(),
+              title: 'Horaire (multilingue)',
+              description: 'Ex: Jusqu\'à 12h / Until 12:00 PM',
+              type: 'object',
+              fields: [
+                { name: 'fr', type: 'string', title: 'Français' },
+                { name: 'en', type: 'string', title: 'English' },
+                { name: 'de', type: 'string', title: 'Deutsch' },
+                { name: 'zh', type: 'string', title: '中文' },
+              ],
             },
             {
               name: 'label',

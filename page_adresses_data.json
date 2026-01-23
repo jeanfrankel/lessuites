@@ -1,0 +1,409 @@
+{
+  "_createdAt": "2025-12-28T17:37:08Z",
+  "_id": "pageAdresses",
+  "_rev": "OYJyM2HwmSarePJOmMZ8kn",
+  "_system": {
+    "base": {
+      "id": "pageAdresses",
+      "rev": "hQiVE6pILvyqpi183V40qK"
+    }
+  },
+  "_type": "pageAdresses",
+  "_updatedAt": "2025-12-28T17:47:48Z",
+  "categories": [
+    {
+      "_key": "c9e86a2828e420d1548e36ea65d92668",
+      "categoryName": {
+        "de": "Restaurants",
+        "en": "Restaurants ",
+        "fr": "Restaurants",
+        "zh": "餐厅"
+      },
+      "icon": "restaurant",
+      "items": [
+        {
+          "_key": "hQiVE6pILvyqpi183V3sMW",
+          "description": {
+            "de": "Ein berühmtes historisches Denkmal in Colmar, das auch ein 5-Sterne-Hotel und ein köstliches Restaurant beherbergt!",
+            "en": "A famous historic monument in Colmar, which also houses a 5-star hotel and a delicious restaurant!",
+            "fr": "Un monument historique célèbre de Colmar, qui abrite également un hôtel 5 étoiles et un délicieux restaurant ! ",
+            "zh": "科尔马著名的历史古迹，也是一家五星级酒店和美味餐厅的所在地！"
+          },
+          "link": "https://www.facebook.com/maisondestetes/",
+          "name": "La Maison des Têtes"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sNK",
+          "description": {
+            "de": "Ein traditionelles elsässisches Restaurant, mit elsässischer Küche, elsässischen Weinen und von einer elsässischen Familie geführt... Unser verstorbener Großvater aß dort jeden Tag zu Mittag... Was soll man mehr sagen? 🙂",
+            "en": "A traditional Alsatian restaurant, with Alsatian cuisine, Alsatian wines, and run by an Alsatian family... Our late grandfather had lunch there every day... What more can we say? 🙂",
+            "fr": "Un restaurant alsacien traditionnel, avec de la cuisine alsacienne, des vins alsaciens, et géré par une famille alsacienne… Notre regretté grand-père y déjeunait tous les jours… Que dire de plus ? 🙂",
+            "zh": "一家传统的阿尔萨斯餐厅，供应阿尔萨斯美食、阿尔萨斯葡萄酒，由阿尔萨斯家族经营……我们已故的祖父每天都在那里吃午餐……还能说什么呢？🙂"
+          },
+          "name": "Restaurant Bartholdi"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sO8",
+          "description": {
+            "de": "Hochwertige japanische Küche",
+            "en": "Quality Japanese cuisine",
+            "fr": "Cuisine japonaise de qualité",
+            "zh": "优质日本料理"
+          },
+          "name": "Au Soleil Levant",
+          "type": {
+            "de": "Japanisch",
+            "en": "Japanese",
+            "fr": "Japonais",
+            "zh": "日本料理"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sOw",
+          "description": {
+            "de": "Wir lieben es hier zu essen, wenn wir elsässische Küche wollen, aber reservieren Sie im Voraus, denn jeder liebt es auch...",
+            "en": "We love eating here when we want Alsatian cuisine, but book in advance as everyone loves it too...",
+            "fr": "Nous aimons manger ici quand nous voulons une cuisine alsacienne, mais réservez à l'avance car tout le monde l'aime aussi…",
+            "zh": "当我们想吃阿尔萨斯美食时，我们喜欢在这里用餐，但要提前预订，因为大家都喜欢这里……"
+          },
+          "link": "https://www.facebook.com/Jadis-et-Gourmande-Colmar-232759433432780",
+          "name": "Jadis et Gourmande"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sPk",
+          "description": {
+            "de": "Wir gehen als Familie dorthin, wenn wir einen besonderen Moment verbringen wollen. Die Küche ist im französischen Stil und sehr kreativ... Meine Mutter könnte nicht so gut kochen wie sie... Es ist elegant und schmackhaft, ohne prätentiös zu sein... 😉",
+            "en": "We go there as a family when we want a special moment. The cuisine is French style, and very creative... My mother couldn't cook as well as them... It's elegant and tasty, without being pretentious... 😉",
+            "fr": "Nous y allons en famille quand nous voulons passer un moment spécial. La cuisine est de style français, et très créative… Ma mère ne pourrait pas cuisiner aussi bien qu'eux… C'est élégant et savoureux, sans être prétentieux… 😉",
+            "zh": "当我们想度过特别时光时，我们会全家去那里。菜肴是法式风格，非常有创意……我妈妈都做不出他们那样的水平……优雅美味，毫不做作……😉"
+          },
+          "link": "https://www.facebook.com/LAtelier-du-Peintre-446803228837808/",
+          "name": "L'Atelier du Peintre"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sQY",
+          "description": {
+            "de": "Ein weiteres elsässisches Restaurant, das wirklich einen Besuch wert ist. Tipp: Ihr 'Schweinshaxe mit Munster' ist köstlich!",
+            "en": "Another Alsatian restaurant really worth the visit. Tip: their 'Ham Hock with Munster' is delicious!",
+            "fr": "Un autre restaurant alsacien qui vaut vraiment le détour. Astuce : leur « Jamboneau au Munster » est délicieux !",
+            "zh": "另一家真正值得一游的阿尔萨斯餐厅。小贴士：他们的'芒斯特奶酪火腿肘'非常美味！"
+          },
+          "link": "https://www.facebook.com/Restaurant-Aux-Armes-de-Colmar-361763420514940/",
+          "name": "Aux Armes de Colmar"
+        }
+      ]
+    },
+    {
+      "_key": "ab95210904c93ac5f801821b88e310c3",
+      "categoryName": {
+        "de": "Bars",
+        "en": "Bars",
+        "fr": "Bars",
+        "zh": "酒吧"
+      },
+      "icon": "bar",
+      "items": [
+        {
+          "_key": "hQiVE6pILvyqpi183V3sRM",
+          "description": {
+            "de": "In dieser Bar können Sie Wein glasweise kaufen. Sie wählen die Weine aus, die sie verkaufen, und ihre Leidenschaft ist Wein... Sie können also für Sie wählen lassen! Sie machen auch kleine französische Tapas zum Probieren (Käse, Pastete...)",
+            "en": "In this bar, you can buy wine by the glass. They choose the wines they sell, and their passion is wine... So you can let them choose for you! They also make small sorts of French tapas to taste with it (cheese, pâté...)",
+            "fr": "Dans ce bar, vous pouvez acheter des vins au verre. Ils choisissent les vins qu'ils vendent, et leur passion c'est le vin… Alors vous pouvez les laisser choisir pour vous ! Ils font aussi de petites sortes de tapas français à déguster avec (fromage, pâté…)",
+            "zh": "在这个酒吧，您可以按杯购买葡萄酒。他们选择销售的葡萄酒，他们的热情就是葡萄酒……所以您可以让他们为您选择！他们还制作小型法式塔帕斯搭配品尝（奶酪、肉酱……）"
+          },
+          "link": "http://www.lun-des-sens.alsace/",
+          "name": "L'un des Sens",
+          "type": {
+            "de": "Weinbar",
+            "en": "Wine bar",
+            "fr": "Bar à vin",
+            "zh": "葡萄酒吧"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sSA",
+          "description": {
+            "de": "Wenn Sie etwas Gutes, Schmackhaftes, Günstiges und Qualitätsvolles essen möchten, gehen Sie dorthin!",
+            "en": "If you want to eat something good, tasty, cheap and quality, go there!",
+            "fr": "Si vous voulez manger quelque chose de bon, savoureux, pas cher et de bonne qualité, allez-y !",
+            "zh": "如果您想吃些美味、可口、便宜且优质的东西，就去那里吧！"
+          },
+          "link": "https://www.facebook.com/pages/category/Smoothie—Juice-Bar/100-Le-Bar-à-Jus-Colmar-197699546939055/",
+          "name": "100% Le Bar à Jus",
+          "type": {
+            "de": "Saftbar",
+            "en": "Juice bar",
+            "fr": "Bar à jus",
+            "zh": "果汁吧"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sSy",
+          "description": {
+            "de": "Für diejenigen, die lokal produzierte Craft-Biere schätzen...",
+            "en": "For those who appreciate locally produced craft beers...",
+            "fr": "Pour ceux qui apprécient les bières artisanales produites localement…",
+            "zh": "适合那些欣赏当地生产的精酿啤酒的人……"
+          },
+          "link": "https://www.facebook.com/Les-3-Singes-Colmar-1428103597433298/",
+          "name": "Les 3 Singes",
+          "type": {
+            "de": "Bierbar",
+            "en": "Beer bar",
+            "fr": "Bar à bières",
+            "zh": "啤酒吧"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sTm",
+          "description": {
+            "de": "Die Kuchen sind hausgemacht (sie haben auch vegane Optionen), Sie können lesen, während Sie in Vintage-Möbeln sitzen, umgeben von kleinen Objekten, die von Einheimischen gemacht wurden...",
+            "en": "The cakes are homemade (they also have vegan options), you can read while sitting in vintage furniture, surrounded by small objects made by local people...",
+            "fr": "Les gâteaux sont faits maison (ils ont aussi des vegans), vous pouvez lire en vous asseyant dans de vieux meubles, entouré de petits objets fabriqués par des gens d'ici…",
+            "zh": "蛋糕都是自制的（他们也有纯素选项），您可以坐在复古家具上阅读，周围环绕着当地人制作的小物件……"
+          },
+          "link": "https://www.facebook.com/La-libellule-café-librairie-128160717250571/",
+          "name": "La Libellule",
+          "type": {
+            "de": "Buchhandlungscafé",
+            "en": "Bookstore café",
+            "fr": "Café librairie",
+            "zh": "书店咖啡馆"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sUa",
+          "description": {
+            "de": "Ein Ort, an dem wir sonntags gerne zum Brunch gehen oder einen schnellen, sehr guten Kaffee trinken... Schauen Sie sich ihr Facebook an, da sie oft Veranstaltungen haben. Es ist definitiv ein Ort für Einheimische... und Sie werden willkommen sein!",
+            "en": "A place we love to go on Sundays for brunch, or for a quick, very good coffee... Check their Facebook, as they often have events. It's definitely a place for locals... and you'll be welcome!",
+            "fr": "Un endroit où nous aimons aller le dimanche pour bruncher, ou prendre un café rapide, très bon… Consultez leur Facebook, car ils ont souvent des événements. C'est définitivement un lieu pour les locaux… et vous serez les bienvenus !",
+            "zh": "我们喜欢周日去那里吃早午餐，或者喝杯快速而美味的咖啡……查看他们的Facebook，因为他们经常举办活动。这绝对是当地人的地方……您会受到欢迎！"
+          },
+          "link": "https://www.facebook.com/caferapp68/",
+          "name": "Café Rapp"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sVO",
+          "description": {
+            "de": "Ein ausgezeichneter Ort für Weinliebhaber. Sie bieten Weinproben an, die sich jede Woche ändern, sowie köstliche Käse-/Wurst-Snacks",
+            "en": "An excellent place for wine lovers. They offer wine tastings that change every week as well as delicious cheese/charcuterie snacks",
+            "fr": "Un excellent endroit pour les amateurs de vin. Ils proposent des dégustations de vin qui changent chaque semaine ainsi que de savoureux encas fromage/charcuterie",
+            "zh": "葡萄酒爱好者的绝佳去处。他们提供每周更换的葡萄酒品尝会以及美味的奶酪/熟食小吃"
+          },
+          "link": "https://www.facebook.com/Japadeunon-159870097905494/",
+          "name": "Japadeunon"
+        }
+      ]
+    },
+    {
+      "_key": "773608a11eeeb8306b989a8249feb467",
+      "categoryName": {
+        "de": "Spezialitäten",
+        "en": "Specialties",
+        "fr": "Spécialités",
+        "zh": "特色店"
+      },
+      "icon": "specialty",
+      "items": [
+        {
+          "_key": "hQiVE6pILvyqpi183V3sWC",
+          "description": {
+            "de": "Handwerkliche Konditorei und Schokoladengeschäft",
+            "en": "Artisanal pastry and chocolate shop",
+            "fr": "Pâtisserie et chocolaterie artisanale",
+            "zh": "手工糕点和巧克力店"
+          },
+          "name": "Pâtisserie Chocolaterie Richon"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sX0",
+          "description": {
+            "de": "Japanische Spezialitäten und Gebäck",
+            "en": "Japanese specialties and pastries",
+            "fr": "Spécialités japonaises et pâtisserie",
+            "zh": "日本特色和糕点"
+          },
+          "name": "Maison HIROSE Unterlinden"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sXo",
+          "description": {
+            "de": "Frische und lokale Produkte",
+            "en": "Fresh and local products",
+            "fr": "Produits frais et locaux",
+            "zh": "新鲜和本地产品"
+          },
+          "name": "Le Petit Maraîcher"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sYc",
+          "description": {
+            "de": "Eine alte Konditorei mit traditionellem Ansatz. Ich liebe das 'Lemon Extreme' Gebäck... genau die richtige Balance zwischen Geschmack, Zucker, Weichheit und Zitrone...",
+            "en": "An old pastry shop, with a traditional approach. I love the 'lemon extreme' pastry... just the right balance between taste, sugar, softness and lemon...",
+            "fr": "Une ancienne pâtisserie, avec une approche traditionnelle. J'aime la pâtisserie « lemon extreme »… juste le bon équilibre entre goût, sucre, moelleux et citron…",
+            "zh": "一家传统方法的老糕点店。我喜欢'柠檬极致'糕点……味道、糖分、柔软度和柠檬之间的完美平衡……"
+          },
+          "link": "https://www.facebook.com/patisseriegilg/",
+          "name": "Patisserie Gilg"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sZQ",
+          "description": {
+            "de": "Konditorei mit Schokolade... Letzten Sommer dachte ich, sie verkauften das beste Eis in Colmar. Ich liebe das Joghurteis (es macht mich tatsächlich verrückt) und das Himbeereis (mit frischen)... Aber das Gebäck ist auch köstlich...",
+            "en": "Pastry with chocolate... Last summer, I thought they sold the best ice cream in Colmar. I love the yogurt one (it actually drives me crazy), and the raspberry one (with fresh ones)... But the pastries are delicious too...",
+            "fr": "Pâtisserie avec chocolat… L'été dernier, je pensais qu'ils vendaient les meilleures glaces de Colmar. J'adore celle au yaourt (ça me rend fou en fait), et celle à la framboise (avec des fraîches)… Mais les pâtisseries sont délicieuses aussi…",
+            "zh": "巧克力糕点……去年夏天，我认为他们卖的是科尔马最好的冰淇淋。我喜欢酸奶味的（它真的让我着迷），还有覆盆子味的（带新鲜覆盆子）……但糕点也很美味……"
+          },
+          "link": "https://www.atelier-de-yann.com/",
+          "name": "L'atelier de Yann"
+        }
+      ]
+    },
+    {
+      "_key": "7c00399586944257fefdbc68dc5788b6",
+      "categoryName": {
+        "de": "Shopping",
+        "en": "Shopping",
+        "fr": "Shopping",
+        "zh": "购物"
+      },
+      "icon": "shopping",
+      "items": [
+        {
+          "_key": "hQiVE6pILvyqpi183V3saE",
+          "description": {
+            "de": "Ein Bekleidungs- und Stoffgeschäft, das lokal produzierte Artikel verkauft. Diese Stoffe wurden an Yves Saint Laurent und Chanel verkauft, als ich ein Kind war. Die Qualität ist einfach wunderbar...",
+            "en": "A clothing and fabric shop selling locally produced items. These fabrics were sold to Yves Saint Laurent and Chanel when I was a child. The quality is simply wonderful...",
+            "fr": "Une boutique de vêtements et tissus vendant des articles produits localement. Ces tissus étaient vendus à Yves Saint Laurent et Chanel quand j'étais enfant. La qualité est tout simplement formidable…",
+            "zh": "一家销售本地生产商品的服装和面料店。我小时候，这些面料被卖给伊夫·圣罗兰和香奈儿。质量简直太棒了……"
+          },
+          "name": "Matières Françaises",
+          "type": {
+            "de": "Textilgeschäft",
+            "en": "Textile shop",
+            "fr": "Boutique textile",
+            "zh": "纺织品店"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sb2",
+          "description": {
+            "de": "Dieser Laden gehört einer Frau, die lokale Stoffe liebt und traditionelle Designs neu erfindet. Sie produziert ihre Textilien nur in Frankreich. Wir lieben ihre Arbeit...",
+            "en": "This shop belongs to a woman who loves local fabrics, and reinvents traditional designs. She produces her textiles only in France. We love her work...",
+            "fr": "Cette boutique appartient à une femme qui aime les tissus locaux, et réinvente les dessins traditionnels. Elle produit ses textiles uniquement en France. Nous adorons son travail…",
+            "zh": "这家店属于一位热爱本地面料的女士，她重新演绎传统设计。她只在法国生产纺织品。我们喜欢她的作品……"
+          },
+          "name": "Avenue d'Alsace",
+          "type": {
+            "de": "Textilgeschäft",
+            "en": "Textile shop",
+            "fr": "Boutique textile",
+            "zh": "纺织品店"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sbq",
+          "description": {
+            "de": "Es ist ein schöner Florist, aber auch nett für kleine Geschenke... Wirklich im französischen Stil...",
+            "en": "It's a lovely florist, but also nice for small gifts... Really in the French style...",
+            "fr": "C'est un joli fleuriste, mais aussi sympa pour de petits cadeaux… Vraiment dans le style français…",
+            "zh": "这是一家可爱的花店，也适合购买小礼品……真正的法式风格……"
+          },
+          "link": "https://www.facebook.com/homejasmin.fleuriste/",
+          "name": "Home Jasmin",
+          "type": {
+            "de": "Blumen & Geschenke",
+            "en": "Flowers & gifts",
+            "fr": "Fleurs & souvenirs",
+            "zh": "鲜花与礼品"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sce",
+          "description": {
+            "de": "Hier finden Sie kleine Geschenke für diejenigen, die Schreiben und Lesen lieben... Auch hübsche Postkarten...",
+            "en": "You'll find here small gifts for those who love writing, reading... Pretty postcards too...",
+            "fr": "Vous trouverez ici des petits cadeaux pour ceux qui aiment écrire, lire… De jolies cartes postales aussi…",
+            "zh": "您会在这里找到适合喜欢写作和阅读的人的小礼品……还有漂亮的明信片……"
+          },
+          "link": "http://www.nospapeteries.com/papeterie/haut+rhin-68/colmar-68000/lafage-1539/",
+          "name": "Lafage",
+          "type": {
+            "de": "Geschenke",
+            "en": "Gifts",
+            "fr": "Cadeaux",
+            "zh": "礼品"
+          }
+        }
+      ]
+    },
+    {
+      "_key": "0983dae36489f4395a459a932d715c58",
+      "categoryName": {
+        "de": "Nützlich & Praktisch",
+        "en": "Useful & Practical",
+        "fr": "Utile et pratique",
+        "zh": "实用信息"
+      },
+      "icon": "practical",
+      "items": [
+        {
+          "_key": "hQiVE6pILvyqpi183V3sdS",
+          "description": {
+            "de": "Apotheke Jean François Kelber",
+            "en": "Pharmacy Jean François Kelber",
+            "fr": "Pharmacie Jean François Kelber",
+            "zh": "让-弗朗索瓦·凯尔伯药房"
+          },
+          "name": "Pharmacie du Cygne"
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3seG",
+          "description": {
+            "de": "Fitnesscenter",
+            "en": "Fitness center",
+            "fr": "Salle de sport",
+            "zh": "健身中心"
+          },
+          "name": "City Fitness",
+          "type": {
+            "de": "Fitnessstudio",
+            "en": "Gym",
+            "fr": "Salle de sport",
+            "zh": "健身房"
+          }
+        },
+        {
+          "_key": "hQiVE6pILvyqpi183V3sf4",
+          "description": {
+            "de": "Geöffnet 7-21 Uhr. Wir können Ihnen mit einer Parkkarte 24-Stunden-Zugang zu einem reduzierten Tagestarif bieten. Kontaktieren Sie uns unter www.lessuitesducygne.fr",
+            "en": "Open 7am-9pm. We can provide you with 24h access with a parking card at a reduced daily rate. Contact us at www.lessuitesducygne.fr",
+            "fr": "Ouvert 7h-21h. Nous pouvons vous fournir un accès 24h avec une carte de parking à un tarif journalier réduit. Contactez-nous sur www.lessuitesducygne.fr",
+            "zh": "开放时间7:00-21:00。我们可以为您提供停车卡，享受优惠日价的24小时访问。请通过www.lessuitesducygne.fr联系我们"
+          },
+          "name": "Parking Rapp",
+          "type": {
+            "de": "Parkplatz",
+            "en": "Parking",
+            "fr": "Parking",
+            "zh": "停车场"
+          }
+        }
+      ]
+    }
+  ],
+  "header": {
+    "subtitle": {
+      "de": "Unsere Favoriten in Colmar",
+      "en": "Our favorites in Colmar",
+      "fr": "Nos coups de cœur à Colmar",
+      "zh": "我们在科尔马的最爱"
+    },
+    "title": {
+      "de": "Gute Adressen",
+      "en": "Good Addresses",
+      "fr": "Bonnes Adresses",
+      "zh": "推荐地址"
+    }
+  }
+}

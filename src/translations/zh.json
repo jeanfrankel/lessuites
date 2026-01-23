@@ -47,7 +47,8 @@
     "mobile": "手机",
     "clientRelations": "客户关系",
     "administration": "行政管理",
-    "addressTitle": "地址与访问",
+    "addressTitle": "地址",
+    "parkingTitle": "停车与通道",
     "addressNote1": "套房位于20号，但",
     "addressNote1Bold": "入口在22号",
     "addressNote1End": "（就在药房右边）",
@@ -60,11 +61,15 @@
     "checkinNote2End": "在您到达之前",
     "checkinNote3": "如果您的到达时间不在下午5:00至晚上9:00之间，请联系我们安排您的访问",
     "checkoutTitle": "退房",
-    "checkoutTime": "中午12:00前"
+    "checkoutTime": "中午12:00前",
+    "fromTime": "从",
+    "untilTime": "至"
   },
   "addresses": {
     "title": "推荐地址",
-    "subtitle": "我们在科尔马的最爱"
+    "subtitle": "我们在科尔马的最爱",
+    "festiveSeason": "节日季",
+    "learnMore": "了解更多"
   },
   "extras": {
     "title": "附加服务",
@@ -129,6 +134,11 @@
     "title": "客户评价",
     "rating": "综合评分",
     "experiences": "条评价",
-    "onBooking": "来自 Booking.com"
+    "onBooking": "来自 Booking.com",
+    "bestRate": "直接在我们网站预订享受最优价格保证",
+    "viewOnBooking": "在Booking上查看",
+    "bookingReviews": "244条评价",
+    "airbnbReviews": "72条评价",
+    "fabulous": "棒极了"
   }
 }

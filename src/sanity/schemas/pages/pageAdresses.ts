@@ -38,6 +38,37 @@ export default defineType({
       ],
     }),
 
+    defineField({
+      name: 'addressesSectionHeader',
+      title: '📝 En-tête de section "Nos Adresses"',
+      description: 'Le titre et sous-titre affichés juste avant la liste des adresses (ex: Bonnes Adresses / Nos coups de cœur)',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Titre de section',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'subtitle',
+          title: 'Sous-titre de section',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+      ],
+    }),
+
     // CATÉGORIES D'ADRESSES
     defineField({
       name: 'categories',
@@ -150,6 +181,62 @@ export default defineType({
               }
             },
           },
+        },
+      ],
+    }),
+
+    // SECTION NOËL
+    defineField({
+      name: 'christmasSection',
+      title: '🎄 Section Noël à Colmar',
+      description: 'Une section spéciale mise en avant (ex: marchés de Noël)',
+      type: 'object',
+      fields: [
+        {
+          name: 'isActive',
+          title: 'Activer cette section',
+          type: 'boolean',
+          initialValue: true,
+        },
+        {
+          name: 'title',
+          title: 'Titre',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'text',
+          title: 'Texte descriptif',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'text', title: 'Français', rows: 4 },
+            { name: 'en', type: 'text', title: 'English', rows: 4 },
+            { name: 'de', type: 'text', title: 'Deutsch', rows: 4 },
+            { name: 'zh', type: 'text', title: '中文', rows: 4 },
+          ],
+        },
+        {
+          name: 'link',
+          title: 'Lien externe',
+          type: 'url',
+        },
+        {
+          name: 'gallery',
+          title: 'Galerie d\'images',
+          type: 'array',
+          of: [
+            {
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+            },
+          ],
         },
       ],
     }),
