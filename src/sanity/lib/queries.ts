@@ -210,6 +210,35 @@ export const pageAdressesQuery = `*[_id == "pageAdresses"][0] {
   }
 }`
 
+// ===== PAGES LÉGALES =====
+
+// Page Mentions Légales
+export const pageMentionsLegalesQuery = `*[_id == "pageMentionsLegales"][0] {
+  title,
+  lastUpdate,
+  editeur,
+  directeurPublication,
+  hebergeur,
+  sections,
+  contactEmail
+}`
+
+// Page Politique de Confidentialité
+export const pagePolitiqueConfidentialiteQuery = `*[_id == "pagePolitiqueConfidentialite"][0] {
+  title,
+  lastUpdate,
+  sections,
+  contact
+}`
+
+// Page Conditions Générales
+export const pageConditionsGeneralesQuery = `*[_id == "pageConditionsGenerales"][0] {
+  title,
+  lastUpdate,
+  articles,
+  contact
+}`
+
 // ===== NAVIGATION =====
 
 export const navbarQuery = `*[_id == "navbar"][0] {

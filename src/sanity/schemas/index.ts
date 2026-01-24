@@ -4,6 +4,9 @@ import pageAppartements from './pages/pageAppartements'
 import pageInfos from './pages/pageInfos'
 import pageExtras from './pages/pageExtras'
 import pageAdresses from './pages/pageAdresses'
+import pageMentionsLegales from './pages/pageMentionsLegales'
+import pagePolitiqueConfidentialite from './pages/pagePolitiqueConfidentialite'
+import pageConditionsGenerales from './pages/pageConditionsGenerales'
 
 // Contenu
 import suite from './suite'
@@ -18,6 +21,9 @@ export const schemaTypes = [
   pageInfos,
   pageExtras,
   pageAdresses,
+  pageMentionsLegales,
+  pagePolitiqueConfidentialite,
+  pageConditionsGenerales,
 
   // Contenu
   suite,

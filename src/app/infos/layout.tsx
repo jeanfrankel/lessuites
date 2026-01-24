@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Informations Pratiques & Contact | Les Suites du Cygne Colmar',
-  description: 'Toutes les informations pour votre séjour : horaires check-in/check-out, accès, parking, contact. 20-22 Rue des Boulangers, 68000 Colmar. Tél: +33 3 89 20 93 64.',
+  description: 'Toutes les informations pour votre séjour : horaires check-in/check-out, accès, parking, contact. 20-22 Rue des Boulangers, 68000 Colmar. Tél: 06 09 17 24 61.',
   keywords: [
     'contact Les Suites du Cygne',
     'horaires check-in Colmar',

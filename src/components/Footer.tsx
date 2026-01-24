@@ -81,8 +81,13 @@ export default function Footer() {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex justify-between items-center text-xs opacity-60">
+      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
         <p>© {new Date().getFullYear()} {siteConfig.name}.</p>
+        <div className="flex gap-4">
+          <Link href="/mentions-legales" className="hover:text-cygne-gold transition-colors">Mentions légales</Link>
+          <Link href="/politique-confidentialite" className="hover:text-cygne-gold transition-colors">Confidentialité</Link>
+          <Link href="/conditions-generales" className="hover:text-cygne-gold transition-colors">CGV</Link>
+        </div>
       </div>
     </footer>
   );

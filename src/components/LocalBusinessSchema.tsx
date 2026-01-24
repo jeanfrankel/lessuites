@@ -17,7 +17,7 @@ export default function LocalBusinessSchema() {
       `${baseUrl}/images/schubert.jpg`,
       `${baseUrl}/images/asselin1.jpg`
     ],
-    "telephone": "+33389209364",
+    "telephone": "+33609172461",
     "email": siteConfig.contact.emailClient,
     "address": {
       "@type": "PostalAddress",
