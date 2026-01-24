@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { Phone, Mail, MapPin, Clock, KeyRound, Train, Car } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, KeyRound, Train, Car, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 // Import dynamique pour Map
@@ -142,53 +142,64 @@ export default function InfosClient({ pageData }: InfosClientProps) {
                 <div>
                   <h3 className="text-xl font-serif text-cygne-brown mb-3">{t('info.parkingTitle')}</h3>
 
-                  <div className="space-y-4 text-sm text-cygne-brown/80 leading-relaxed">
+                  <div className="space-y-4 text-sm text-cygne-brown/80 leading-relaxed font-light">
                     {pageData?.accessNotes?.map((note, index) => {
                       const noteText = note.text?.[language] || note.text?.fr || '';
 
-                      // Style Warning (Piéton)
+                      // 1. WARNING / ALERT (Zone piétonne)
                       if (noteText.includes('⚠️')) {
                         return (
-                          <p key={index} className="font-bold text-red-800 bg-red-50 p-2 border-l-2 border-red-800">
-                            {noteText}
-                          </p>
+                          <div key={index} className="flex items-start gap-2 text-red-800 font-medium">
+                            <span className="shrink-0 mt-0.5">⚠️</span>
+                            <p>{noteText.replace('⚠️', '').trim()}</p>
+                          </div>
                         );
                       }
 
-                      // Style Link (Voir les parkings)
+                      // 2. LIEN EXTERNE (Voir les parkings)
                       if (noteText.includes('Voir les parkings') || noteText.includes('See nearby parking') || noteText.includes('Parkplätze') || noteText.includes('停车场')) {
                         return (
-                          <div key={index}>
+                          <div key={index} className="pt-1">
                             <a
                               href="https://www.colmar.fr/stationnement"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="font-bold underline hover:text-cygne-gold transition-colors text-cygne-brown"
+                              className="inline-flex items-center gap-1 font-medium text-cygne-gold hover:text-cygne-brown transition-colors border-b border-cygne-gold/30 hover:border-cygne-brown/30 pb-0.5"
                             >
                               {noteText}
+                              <ExternalLink size={12} />
                             </a>
                           </div>
                         );
                       }
 
-                      // Style Parking Details (Bold title support via simple string split if ** present, else standard)
-                      if (noteText.includes('**')) {
-                        // Simple Markdown Bold Parser for: **Title** Body
-                        const parts = noteText.split('**');
-                        // parts[0] empty, parts[1] title, parts[2] body
-                        if (parts.length >= 3) {
-                          return (
-                            <div key={index} className={noteText.includes('~3€') ? "mt-1 text-xs font-bold text-green-700" : ""}>
-                              <p className="font-bold text-cygne-brown mb-1">{parts[1]}</p>
-                              <p className="whitespace-pre-line">{parts[2]}</p>
-                            </div>
-                          )
-                        }
+                      // 3. PARKING TITRES
+                      // Détection simple : commence par "Parking" ou contient "**"
+                      const isParkingTitle = noteText.toLowerCase().startsWith('parking') || noteText.includes('**');
+
+                      if (isParkingTitle) {
+                        const cleanText = noteText.replace(/\*\*/g, '');
+                        return (
+                          <div key={index} className="pt-3 font-bold text-cygne-brown">
+                            {cleanText}
+                          </div>
+                        );
                       }
 
-                      // Fallback standard text
+                      // 4. INFORMATION GARE (Simple mise en valeur)
+                      if (noteText.toLowerCase().includes('gare') || noteText.toLowerCase().includes('station') || noteText.toLowerCase().includes('bahnhof')) {
+                        return (
+                          <div key={index} className="pt-2 flex items-center gap-2 text-cygne-brown font-medium">
+                            <Train size={14} className="text-cygne-brown/60" />
+                            <p>{noteText}</p>
+                          </div>
+                        );
+                      }
+
+                      // 5. TEXTE STANDARD (Adresse, prix, détails...)
+                      // Si contient un prix, on peut juste le laisser en standard, propre.
                       return (
-                        <p key={index} className="whitespace-pre-line">
+                        <p key={index} className="pl-0.5">
                           {noteText}
                         </p>
                       );
