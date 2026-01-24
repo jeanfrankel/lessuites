@@ -6,6 +6,36 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'seo',
+      title: 'SEO (Référencement)',
+      type: 'object',
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        {
+          name: 'metaTitle',
+          title: 'Méta Titre',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'metaDescription',
+          title: 'Méta Description',
+          type: 'object',
+          fields: [
+            { name: 'fr', type: 'text', title: 'Français', rows: 2 },
+            { name: 'en', type: 'text', title: 'English', rows: 2 },
+            { name: 'de', type: 'text', title: 'Deutsch', rows: 2 },
+            { name: 'zh', type: 'text', title: '中文', rows: 2 },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'title',
       title: 'Titre de la page',
       type: 'object',

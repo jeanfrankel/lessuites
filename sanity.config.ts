@@ -43,6 +43,28 @@ const structure = (S: any) =>
             .schemaType('pageAdresses')
             .documentId('pageAdresses')
         ),
+      S.divider(),
+      S.listItem()
+        .title('⚖️ Mentions Légales')
+        .child(
+          S.document()
+            .schemaType('pageMentionsLegales')
+            .documentId('pageMentionsLegales')
+        ),
+      S.listItem()
+        .title('🔒 Politique de Confidentialité')
+        .child(
+          S.document()
+            .schemaType('pagePolitiqueConfidentialite')
+            .documentId('pagePolitiqueConfidentialite')
+        ),
+      S.listItem()
+        .title('📝 CGV / CGU')
+        .child(
+          S.document()
+            .schemaType('pageConditionsGenerales')
+            .documentId('pageConditionsGenerales')
+        ),
     ])
 
 export default defineConfig({

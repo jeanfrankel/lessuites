@@ -217,6 +217,7 @@ export const pageAdressesQuery = `*[_id == "pageAdresses"][0] {
 // Page Mentions Légales
 export const pageMentionsLegalesQuery = `*[_id == "pageMentionsLegales"][0] {
   title,
+  seo,
   lastUpdate,
   editeur,
   directeurPublication,
@@ -228,6 +229,7 @@ export const pageMentionsLegalesQuery = `*[_id == "pageMentionsLegales"][0] {
 // Page Politique de Confidentialité
 export const pagePolitiqueConfidentialiteQuery = `*[_id == "pagePolitiqueConfidentialite"][0] {
   title,
+  seo,
   lastUpdate,
   sections,
   contact
@@ -236,6 +238,7 @@ export const pagePolitiqueConfidentialiteQuery = `*[_id == "pagePolitiqueConfide
 // Page Conditions Générales
 export const pageConditionsGeneralesQuery = `*[_id == "pageConditionsGenerales"][0] {
   title,
+  seo,
   lastUpdate,
   articles,
   contact

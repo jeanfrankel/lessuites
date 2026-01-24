@@ -40,11 +40,7 @@ export default function CompactBookingWidget() {
 
   return (
     <>
-      {/* jQuery */}
-      <Script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        strategy="afterInteractive"
-      />
+
 
       {/* CSS pour réduire la taille de l'interface Reservit */}
       <style jsx global>{`
@@ -110,8 +106,8 @@ export default function CompactBookingWidget() {
         <button
           onClick={toggleFullscreen}
           className={`absolute top-0 z-40 px-6 bg-cygne-white text-black text-xs uppercase tracking-wider font-bold hover:shadow-lg transition-all duration-300 shadow-md hidden md:flex items-center justify-start gap-3 ${isFullscreen
-              ? 'left-0 right-56 py-[1.69rem]'
-              : 'left-0 right-44 py-[1.375rem]'
+            ? 'left-0 right-56 py-[1.69rem]'
+            : 'left-0 right-44 py-[1.375rem]'
             }`}
         >
           <svg
