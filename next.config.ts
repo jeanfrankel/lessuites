@@ -126,16 +126,12 @@ const nextConfig: NextConfig = {
       // 2. Tarifs & Réservation
       {
         source: '/tarifs',
-        destination: '/appartement', // Les tarifs sont sur la page appartements
+        destination: '/appartements', // Les tarifs sont sur la page appartements
         permanent: true,
       },
 
       // 3. Suites (Mapping spécifique des slugs)
-      {
-        source: '/appartements',
-        destination: '/appartements',
-        permanent: true,
-      },
+
       {
         source: '/en/appartements',
         destination: '/appartements',
@@ -158,11 +154,8 @@ const nextConfig: NextConfig = {
       },
 
       // 4. Pages Légales & Techniques
-      {
-        source: '/mentions-legales',
-        destination: '/mentions-legales',
-        permanent: true,
-      },
+
+
       {
         source: '/en/legal-mentions',
         destination: '/mentions-legales',
