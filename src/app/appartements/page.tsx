@@ -3,7 +3,34 @@ import { pageAppartementsQuery } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/image';
 import AppartementsClient from './AppartementsClient';
 
+import { Metadata } from 'next';
+
 export const revalidate = 60;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const pageData = await client.fetch(pageAppartementsQuery);
+  const title = pageData?.seo?.metaTitle?.fr || 'Nos Appartements de Charme à Colmar | Les Suites du Cygne';
+  const description = pageData?.seo?.metaDescription?.fr || "Découvrez nos 3 suites d'exception au cœur de Colmar. Capacité de 2 à 10 personnes, décoration raffinée et équipements haut de gamme.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: 'https://lessuitesducygne.fr/appartements',
+      images: [
+        {
+          url: '/images/baudelaire.jpg',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+  };
+}
 
 export default async function AppartementsPage() {
   const pageData = await client.fetch(pageAppartementsQuery);
@@ -13,24 +40,24 @@ export default async function AppartementsPage() {
     // Préparer les images
     const mainImageUrl = suite.mainImage && suite.mainImage.asset
       ? urlFor(suite.mainImage)
-          .width(800)
-          .fit('max')
-          .auto('format')
-          .quality(75)
-          .url()
+        .width(800)
+        .fit('max')
+        .auto('format')
+        .quality(75)
+        .url()
       : '/images/placeholder.jpg';
 
     const galleryUrls = suite.gallery && suite.gallery.length > 0
       ? suite.gallery
-          .filter((img: any) => img && img.asset && (img.asset._ref || img.asset._id))
-          .map((img: any) =>
-            urlFor(img)
-              .width(1920)
-              .fit('max')
-              .auto('format')
-              .quality(75)
-              .url()
-          )
+        .filter((img: any) => img && img.asset && (img.asset._ref || img.asset._id))
+        .map((img: any) =>
+          urlFor(img)
+            .width(1920)
+            .fit('max')
+            .auto('format')
+            .quality(75)
+            .url()
+        )
       : [];
 
     return {

@@ -5,6 +5,43 @@ export default defineType({
   title: '🏨 Page Appartements',
   type: 'document',
   fields: [
+    // SECTION SEO
+    defineField({
+      name: 'seo',
+      title: 'SEO (Référencement)',
+      type: 'object',
+      fields: [
+        {
+          name: 'metaTitle',
+          title: 'Méta Titre',
+          type: 'object',
+          description: 'Idéalement: [Mot-clé Niche] à [Ville] | [Nom du Client]',
+          fields: [
+            { name: 'fr', type: 'string', title: 'Français' },
+            { name: 'en', type: 'string', title: 'English' },
+            { name: 'de', type: 'string', title: 'Deutsch' },
+            { name: 'zh', type: 'string', title: '中文' },
+          ],
+        },
+        {
+          name: 'metaDescription',
+          title: 'Méta Description',
+          type: 'object',
+          description: 'Description idéale pour Google (150-160 caractères)',
+          fields: [
+            { name: 'fr', type: 'text', title: 'Français', rows: 3 },
+            { name: 'en', type: 'text', title: 'English', rows: 3 },
+            { name: 'de', type: 'text', title: 'Deutsch', rows: 3 },
+            { name: 'zh', type: 'text', title: '中文', rows: 3 },
+          ],
+        },
+      ],
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    }),
+
     // EN-TÊTE
     defineField({
       name: 'header',

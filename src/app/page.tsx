@@ -3,7 +3,42 @@ import { pageHomeQuery } from '@/sanity/lib/queries';
 import { urlFor } from '@/sanity/lib/image';
 import HomeClient from './HomeClient';
 
+import { Metadata } from 'next';
+
 export const revalidate = 60; // Revalider toutes les 60 secondes
+
+export async function generateMetadata(): Promise<Metadata> {
+  const pageData = await client.fetch(pageHomeQuery);
+  const title = pageData?.seo?.metaTitle?.fr || 'Location Appartement de Charme à Colmar | Les Suites du Cygne';
+  const description = pageData?.seo?.metaDescription?.fr || "Location d'appartements de charme 4 étoiles à Colmar centre-ville. Appartements meublés pour 2 à 10 personnes, idéaux pour familles et groupes. Réservation en ligne.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: 'fr_FR',
+      url: 'https://lessuitesducygne.fr',
+      siteName: 'Les Suites du Cygne',
+      images: [
+        {
+          url: '/images/baudelaire.jpg',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/images/baudelaire.jpg'],
+    },
+  };
+}
 
 export default async function Home() {
   // Récupérer les données depuis Sanity

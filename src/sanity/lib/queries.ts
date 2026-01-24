@@ -88,6 +88,7 @@ export const siteSettingsQuery = `*[_type == "siteSettings"][0] {
 // Page d'accueil
 export const pageHomeQuery = `*[_id == "pageHome"][0] {
   hero,
+  seo,
   colmarSection {
     ...,
     gallery[] {
@@ -125,6 +126,7 @@ export const pageHomeQuery = `*[_id == "pageHome"][0] {
 // Page Appartements
 export const pageAppartementsQuery = `*[_id == "pageAppartements"][0] {
   header,
+  seo,
   intro,
   suites[] {
     title,
