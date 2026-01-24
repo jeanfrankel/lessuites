@@ -68,6 +68,163 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Gestion des redirections pour le SEO (Mapping Ancien Site -> Nouveau Site)
+  async redirects() {
+    return [
+      // 1. Pages Principales
+      {
+        source: '/a-propos',
+        destination: '/infos', // Plus pertinent que juste l'accueil
+        permanent: true,
+      },
+      {
+        source: '/lequipe-du-projet',
+        destination: '/infos',
+        permanent: true,
+      },
+      {
+        source: '/avis-clients',
+        destination: '/#reviews', // Ancre vers la section avis de la home
+        permanent: true,
+      },
+      {
+        source: '/temoignages',
+        destination: '/#reviews',
+        permanent: true,
+      },
+      {
+        source: '/nous-trouver',
+        destination: '/infos', // Contient la carte et l'adresse
+        permanent: true,
+      },
+      {
+        source: '/de/nous-trouver',
+        destination: '/infos',
+        permanent: true,
+      },
+      {
+        source: '/en/find-us',
+        destination: '/infos',
+        permanent: true,
+      },
+      {
+        source: '/plans-et-guide',
+        destination: '/infos',
+        permanent: true,
+      },
+      {
+        source: '/environs',
+        destination: '/adresses', // Page "Nos bonnes adresses"
+        permanent: true,
+      },
+      {
+        source: '/nos-bonnes-adresses',
+        destination: '/adresses',
+        permanent: true,
+      },
+
+      // 2. Tarifs & Réservation
+      {
+        source: '/tarifs',
+        destination: '/appartement', // Les tarifs sont sur la page appartements
+        permanent: true,
+      },
+
+      // 3. Suites (Mapping spécifique des slugs)
+      {
+        source: '/appartements',
+        destination: '/appartements',
+        permanent: true,
+      },
+      {
+        source: '/en/appartements',
+        destination: '/appartements',
+        permanent: true,
+      },
+      {
+        source: '/suite-baudelaire',
+        destination: '/appartements/baudelaire',
+        permanent: true,
+      },
+      {
+        source: '/suite-schubert',
+        destination: '/appartements/schubert',
+        permanent: true,
+      },
+      {
+        source: '/suite-asselin',
+        destination: '/appartements/asselin',
+        permanent: true,
+      },
+
+      // 4. Pages Légales & Techniques
+      {
+        source: '/mentions-legales',
+        destination: '/mentions-legales',
+        permanent: true,
+      },
+      {
+        source: '/en/legal-mentions',
+        destination: '/mentions-legales',
+        permanent: true,
+      },
+      {
+        source: '/de/impressum',
+        destination: '/mentions-legales',
+        permanent: true,
+      },
+      {
+        source: '/conditions-generales-de-vente',
+        destination: '/conditions-generales',
+        permanent: true,
+      },
+      {
+        source: '/en/terms-and-conditions',
+        destination: '/conditions-generales',
+        permanent: true,
+      },
+      {
+        source: '/terms-and-conditions-2', // URL "Garbage" détectée
+        destination: '/conditions-generales',
+        permanent: true,
+      },
+      {
+        source: '/de/allgemeine-verkaufsbedingungen',
+        destination: '/conditions-generales',
+        permanent: true,
+      },
+
+      // 5. Blog & Contenu Obsolète (Redirection vers l'accueil ou page pertinente)
+      {
+        source: '/blog',
+        destination: '/', // Pas de blog sur le nouveau site, redirection propre
+        permanent: true,
+      },
+      {
+        source: '/idees',
+        destination: '/adresses', // Plus pertinent que l'accueil
+        permanent: true,
+      },
+
+      // 6. Gestion des langues (Anciennes URLs de langues)
+      // On redirige vers la racine, le middleware de langue s'occupera du reste si nécessaire
+      {
+        source: '/en',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/de',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/zh-hans',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
