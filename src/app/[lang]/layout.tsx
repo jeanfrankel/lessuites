@@ -102,13 +102,12 @@ export async function generateStaticParams() {
     return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
-    children,
-    params,
-}: {
+export default async function RootLayout(props: {
     children: React.ReactNode;
-    params: { lang: string };
+    params: Promise<{ lang: string }>;
 }) {
+    const params = await props.params;
+
     return (
         <html lang={params.lang} className="overflow-x-hidden">
             <head>
@@ -119,7 +118,7 @@ export default function RootLayout({
             <body className={`${playfair.variable} ${lato.variable} font-sans antialiased bg-stone-50 overflow-x-hidden`}>
                 <LanguageProvider initialLang={params.lang as any}>
                     <ConditionalLayout>
-                        {children}
+                        {props.children}
                     </ConditionalLayout>
                 </LanguageProvider>
             </body>
