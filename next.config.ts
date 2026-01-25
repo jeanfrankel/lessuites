@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
+// Note: La configuration i18n (Internationalisation) est gérée par src/middleware.ts
+// car Next.js App Router ne supporte pas la config i18n dans ce fichier.
+
+
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -21,6 +25,7 @@ const nextConfig: NextConfig = {
   // Optimisation pour la production
   poweredByHeader: false,
   compress: true,
+  productionBrowserSourceMaps: true,
 
   // Optimisation du bundling et code splitting
   experimental: {

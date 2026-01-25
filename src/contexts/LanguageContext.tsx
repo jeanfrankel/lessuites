@@ -12,8 +12,8 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('fr');
+export function LanguageProvider({ children, initialLang = 'fr' }: { children: ReactNode, initialLang?: Language }) {
+  const [language, setLanguageState] = useState<Language>(initialLang);
   const [translations, setTranslations] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [minLoadingDone, setMinLoadingDone] = useState(false);
