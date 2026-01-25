@@ -218,7 +218,7 @@ export default function Navbar() {
 
           {links.map((link) => {
             const isActive = pathname === link.href;
-            const isBooking = link.href === '/reservation';
+            const isBooking = link.href.endsWith('/reservation');
 
             if (isBooking) {
               return (
@@ -226,7 +226,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-8 py-3 bg-cygne-gold text-white text-lg font-serif hover:bg-cygne-brown transition-all duration-300 rounded-sm"
+                  className="px-8 py-3 bg-cygne-gold text-white uppercase tracking-[0.15em] text-sm font-bold hover:bg-cygne-gold/80 transition-all duration-300 rounded-sm"
                 >
                   {link.name}
                 </Link>
