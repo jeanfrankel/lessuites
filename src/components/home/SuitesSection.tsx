@@ -26,7 +26,7 @@ export default function SuitesSection({ data }: { data: any }) {
                 </p>
 
                 <Link
-                    href="/appartements"
+                    href={`/${language}/appartements`}
                     className="group inline-block px-10 py-4 border border-white/40 hover:bg-white hover:text-cygne-brown transition-all duration-500 uppercase tracking-widest text-xs relative overflow-hidden"
                 >
                     <span className="relative z-10">{t('link')}</span>

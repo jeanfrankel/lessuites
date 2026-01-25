@@ -7,13 +7,26 @@ import { i18n } from './i18n-config';
 // Fichiers à ignorer pour le middleware (statiques, API, etc.)
 const PUBLIC_FILE = /\.(.*)$/;
 
-function getLocale(request: NextRequest): string | undefined {
-    // Négociation de contenu basée sur les headers
+/**
+ * Détecte la langue selon les préférences du navigateur (Accept-Language header).
+ *
+ * Architecture:
+ * - Tous les domaines (.de, .uk, .it, etc.) redirigent en 301 vers lessuitesducygne.fr
+ * - L'URL finale est toujours: www.lessuitesducygne.fr/[lang]/...
+ * - La langue est détectée automatiquement selon le navigateur du visiteur
+ *
+ * Avantages:
+ * - SEO optimisé (un seul domaine fort)
+ * - Un seul certificat SSL
+ * - Pas de dépendance aux domaines secondaires
+ *
+ * Langues supportées: fr (défaut), en, de, zh
+ */
+function getLocale(request: NextRequest): string {
     const negotiatorHeaders: Record<string, string> = {};
     request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-    // @ts-ignore locales are readonly
-    const locales: string[] = i18n.locales;
+    const locales: string[] = [...i18n.locales];
     const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
 
     try {

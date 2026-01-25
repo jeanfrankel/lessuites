@@ -19,12 +19,13 @@ export function LanguageProvider({ children, initialLang = 'fr' }: { children: R
   const [minLoadingDone, setMinLoadingDone] = useState(false);
 
   useEffect(() => {
-    // Load saved language from localStorage
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage) {
-      setLanguageState(savedLanguage);
+    // Force sync state with initialLang prop if it changes (e.g. navigation)
+    if (initialLang) {
+      setLanguageState(initialLang);
     }
+  }, [initialLang]);
 
+  useEffect(() => {
     // Délai minimum de 300ms pour l'écran de chargement
     const minLoadingTimer = setTimeout(() => {
       setMinLoadingDone(true);

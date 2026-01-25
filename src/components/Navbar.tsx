@@ -40,57 +40,70 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  // Utiliser la langue du contexte comme source de vérité pour la navigation
+  const localePrefix = `/${language}`;
+
   const links = [
-    { name: t('nav.home'), href: '/' },
-    { name: t('nav.apartments'), href: '/appartements' },
-    { name: t('nav.place'), href: '/infos' },
-    { name: t('nav.addresses'), href: '/adresses' },
-    { name: t('nav.extras'), href: '/extras' },
-    { name: t('nav.book'), href: '/reservation' },
+    { name: t('nav.home'), href: localePrefix }, // Toujours utiliser le préfixe (ex: /fr, /en) pour éviter les redirections
+    { name: t('nav.apartments'), href: `${localePrefix}/appartements` },
+    { name: t('nav.place'), href: `${localePrefix}/infos` },
+    { name: t('nav.addresses'), href: `${localePrefix}/adresses` },
+    { name: t('nav.extras'), href: `${localePrefix}/extras` },
+    { name: t('nav.book'), href: `${localePrefix}/reservation` },
   ];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-cygne-brown/95 py-3 shadow-sm' : 'bg-cygne-brown py-4'}`}>
       {/* Language Selector - Top Right */}
       <div className="absolute top-2 right-6 z-50 hidden md:flex items-center gap-1">
-        <button
-          onClick={() => setLanguage('fr')}
-          className={`px-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${language === 'fr' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
-            }`}
-        >
-          FR
-        </button>
-        <span className="text-cygne-cream/30 text-xs">|</span>
-        <button
-          onClick={() => setLanguage('en')}
-          className={`px-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${language === 'en' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
-            }`}
-        >
-          EN
-        </button>
-        <span className="text-cygne-cream/30 text-xs">|</span>
-        <button
-          onClick={() => setLanguage('de')}
-          className={`px-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${language === 'de' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
-            }`}
-        >
-          DE
-        </button>
-        <span className="text-cygne-cream/30 text-xs">|</span>
-        <button
-          onClick={() => setLanguage('zh')}
-          className={`px-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${language === 'zh' ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
-            }`}
-        >
-          中文
-        </button>
+        {[
+          { code: 'fr', label: 'FR' },
+          { code: 'en', label: 'EN' },
+          { code: 'de', label: 'DE' },
+          { code: 'zh', label: '中文' },
+        ].map((lang, index, arr) => (
+          <div key={lang.code} className="flex items-center">
+            <button
+              onClick={() => {
+                setLanguage(lang.code as any);
+                // Redirection vers la nouvelle locale
+                // Enlève la locale actuelle du chemin s'il y en a une (ex: /en/extras -> /extras)
+                const segments = pathname.split('/');
+                // segments[0] est vide "", segments[1] est la locale actuelle si on est dans [lang]
+                // Mais usePathname avec App Router renvoie le chemin complet
+
+                // Si le chemin commence par une locale connue (fr, en, de, zh), on la remplace
+                // Redirect logic
+                const currentLocale = ['fr', 'en', 'de', 'zh'].find(l => pathname.startsWith(`/${l}`));
+                let newPath = pathname;
+
+                if (currentLocale) {
+                  // Replace existing locale (e.g. /fr/extras -> /en/extras)
+                  newPath = pathname.replace(`/${currentLocale}`, `/${lang.code}`);
+                } else {
+                  // No locale present (should rarely happen with middleware, but handle root)
+                  // If root '/', make it '/en'
+                  // If '/extras' (unlikely without middleware redir), make it '/en/extras'
+                  newPath = `/${lang.code}${pathname === '/' ? '' : pathname}`;
+                }
+
+                window.location.href = newPath;
+              }}
+              className={`px-1.5 text-xs font-bold uppercase tracking-wider transition-colors ${language === lang.code ? 'text-cygne-gold' : 'text-cygne-cream/50 hover:text-cygne-cream'
+                }`}
+            >
+              {lang.label}
+            </button>
+            {index < arr.length - 1 && <span className="text-cygne-cream/30 text-xs">|</span>}
+          </div>
+        ))}
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-full">
 
         {/* Logo */}
         <Link
-          href="/"
+          href={localePrefix}
           onClick={() => setIsOpen(false)}
           className="block z-50 ml-4 md:ml-12"
         >
@@ -123,7 +136,7 @@ export default function Navbar() {
 
           {links.map((link) => {
             const isActive = pathname === link.href;
-            const isBooking = link.href === '/reservation';
+            const isBooking = link.href.endsWith('/reservation');
 
             if (isBooking) {
               return (
@@ -161,37 +174,36 @@ export default function Navbar() {
         <div className={`fixed inset-0 bg-cygne-cream flex flex-col items-center justify-center gap-4 transition-transform duration-500 ease-in-out md:hidden z-40 overflow-hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           {/* Language Selector Mobile */}
           <div className="flex gap-3">
-            <button
-              onClick={() => setLanguage('fr')}
-              className={`text-sm font-bold uppercase tracking-wider transition-colors ${language === 'fr' ? 'text-cygne-gold' : 'text-cygne-brown/50'
-                }`}
-            >
-              FR
-            </button>
-            <span className="text-cygne-brown/30">|</span>
-            <button
-              onClick={() => setLanguage('en')}
-              className={`text-sm font-bold uppercase tracking-wider transition-colors ${language === 'en' ? 'text-cygne-gold' : 'text-cygne-brown/50'
-                }`}
-            >
-              EN
-            </button>
-            <span className="text-cygne-brown/30">|</span>
-            <button
-              onClick={() => setLanguage('de')}
-              className={`text-sm font-bold uppercase tracking-wider transition-colors ${language === 'de' ? 'text-cygne-gold' : 'text-cygne-brown/50'
-                }`}
-            >
-              DE
-            </button>
-            <span className="text-cygne-brown/30">|</span>
-            <button
-              onClick={() => setLanguage('zh')}
-              className={`text-sm font-bold uppercase tracking-wider transition-colors ${language === 'zh' ? 'text-cygne-gold' : 'text-cygne-brown/50'
-                }`}
-            >
-              中文
-            </button>
+            {[
+              { code: 'fr', label: 'FR' },
+              { code: 'en', label: 'EN' },
+              { code: 'de', label: 'DE' },
+              { code: 'zh', label: '中文' },
+            ].map((lang, index, arr) => (
+              <div key={lang.code} className="flex items-center">
+                <button
+                  onClick={() => {
+                    setLanguage(lang.code as any);
+                    setIsOpen(false);
+                    const currentLocale = ['fr', 'en', 'de', 'zh'].find(l => pathname.startsWith(`/${l}`));
+                    let newPath = pathname;
+
+                    if (currentLocale) {
+                      newPath = pathname.replace(`/${currentLocale}`, `/${lang.code}`);
+                    } else {
+                      newPath = `/${lang.code}${pathname === '/' ? '' : pathname}`;
+                    }
+
+                    window.location.href = newPath;
+                  }}
+                  className={`text-sm font-bold uppercase tracking-wider transition-colors ${language === lang.code ? 'text-cygne-gold' : 'text-cygne-brown/50'
+                    }`}
+                >
+                  {lang.label}
+                </button>
+                {index < arr.length - 1 && <span className="text-cygne-brown/30 mx-1">|</span>}
+              </div>
+            ))}
           </div>
 
           {/* Call Button - Mobile */}

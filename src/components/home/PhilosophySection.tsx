@@ -28,7 +28,7 @@ export default function PhilosophySection({ data }: { data: any }) {
                 </p>
 
                 <Link
-                    href="/infos"
+                    href={`/${language}/infos`}
                     className="group inline-block text-cygne-brown border-b border-cygne-brown/30 pb-1 hover:text-cygne-gold hover:border-cygne-gold transition-all duration-400 uppercase tracking-widest text-xs"
                 >
                     {t('link')}

@@ -136,12 +136,7 @@ const nextConfig: NextConfig = {
       },
 
       // 3. Suites (Mapping spécifique des slugs)
-
-      {
-        source: '/en/appartements',
-        destination: '/appartements',
-        permanent: true,
-      },
+      // NOTE: /en/appartements est maintenant une route valide du système i18n, ne pas rediriger
       {
         source: '/suite-baudelaire',
         destination: '/appartements/baudelaire',
@@ -204,21 +199,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // 6. Gestion des langues (Anciennes URLs de langues)
-      // On redirige vers la racine, le middleware de langue s'occupera du reste si nécessaire
+      // 6. Gestion des anciennes URLs de langues (format obsolète uniquement)
+      // NOTE: Ne PAS rediriger /en, /de, /zh car ce sont les locales actives du système i18n [lang]
+      // Seules les anciennes URLs non-standard sont redirigées
       {
-        source: '/en',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/de',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/zh-hans',
-        destination: '/',
+        source: '/zh-hans',  // Ancien format chinois simplifié
+        destination: '/zh',  // Vers le nouveau format
         permanent: true,
       },
     ];

@@ -17,6 +17,11 @@ export default function HeroSection({ heroData, ctaData }: { heroData: any, ctaD
     const { language, t: tContext } = useLanguage();
 
     const t = (data: any, field: string) => {
+        // Debug pour comprendre pourquoi EN/DE ne marchent pas
+        if (field === 'title') {
+            console.log(`[DEBUG] Lang: ${language}, Field: ${field}, Available keys:`, Object.keys(data?.[field] || {}));
+            console.log(`[DEBUG] Value for ${language}:`, data?.[field]?.[language]);
+        }
         return data?.[field]?.[language] || data?.[field]?.fr || '';
     };
 
@@ -53,7 +58,7 @@ export default function HeroSection({ heroData, ctaData }: { heroData: any, ctaD
 
                 <div className="flex justify-center">
                     <Link
-                        href="/appartements"
+                        href={`/${language}/appartements`}
                         className="group px-10 py-5 bg-cygne-brown text-white uppercase tracking-[0.2em] text-xs font-bold hover:bg-cygne-gold transition-all duration-500 rounded-sm relative overflow-hidden"
                     >
                         <span className="relative z-10">{t(heroData, 'cta')}</span>
